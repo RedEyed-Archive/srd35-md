@@ -1,6 +1,6 @@
 This material is Open Game Content, and is licensed for public use under the terms of the Open Game License v1.0a.
 
-THE BASICS
+# The Basics
 
 
 
@@ -16,7 +16,7 @@ If the result equals or exceeds the target number, your character succeeds. If t
 
 
 
-DICE
+## Dice
 
 Dice rolls are described with expressions such as "3d4+3," which means "roll three four-sided dice and add 3" (resulting in a number between 6 and 15). The first number tells you how many dice to roll (adding the results together). The number immediately after the "d" tells you the type of die to use. Any number after that indicates a quantity that is added or subtracted from the result.
 
@@ -26,7 +26,7 @@ d%: Percentile dice work a little differently. You generate a number between 1 a
 
 
 
-ROUNDING FRACTIONS
+## Rounding Fractions
 
 In general, if you wind up with a fraction, round down, even if the fraction is one-half or larger.
 
@@ -34,7 +34,7 @@ Exception: Certain rolls, such as damage and hit points, have a minimum of 1.
 
 
 
-MULTIPLYING
+## Multiplying
 
 Sometimes a rule makes you multiply a number or a die roll. As long as you're applying a single multiplier, multiply the number normally. When two or more multipliers apply to any abstract value (such as a modifier or a die roll), however, combine them into a single multiple, with each extra multiple adding 1 less than its value to the first multiple. Thus, a double (x2) and a double (x2) applied to the same number results in a triple (x3, because 2 + 1 = 3).
 
@@ -44,11 +44,11 @@ When applying multipliers to real-world values (such as weight or distance), nor
 
 
 
-ABILITY SCORES
+## Ability Scores
 
 
 
-ABILITY MODIFIERS
+### Ability Modifiers
 
 Each ability, after changes made because of race, has a modifier ranging from -5 to +5. Table: Ability Modifiers and Bonus Spells shows the modifier for each score. It also shows bonus spells, which you'll need to know about if your character is a spellcaster.
 
@@ -87,19 +87,19 @@ that ability. You also use the modifier with some numbers that aren't die rolls.
 | etc. . . |  |  |  |  |  |  |  |  |  |  |  | |  |
 
 
-ABILITIES AND SPELLCASTERS
+### Abilities And Spellcasters
 
 The ability that governs bonus spells depends on what type of spellcaster your character is: Intelligence for wizards; Wisdom for clerics, druids, paladins, and rangers; or Charisma for sorcerers and bards. In addition to having a high ability score, a spellcaster must be of high enough class level to be able to cast spells of a given spell level. (See the class descriptions for details.)
 
 
 
-THE ABILITIES
+### The Abilities
 
 Each ability partially describes your character and affects some of his or her actions.
 
 
 
-STRENGTH (STR)
+### Strength (Str)
 
 Strength measures your character's muscle and physical power. This ability is especially important for fighters, barbarians, paladins, rangers, and monks because it helps them prevail in combat. Strength also limits the amount of equipment your character can carry.
 
@@ -115,7 +115,7 @@ You apply your character's Strength modifier to:
 
 
 
-DEXTERITY (DEX)
+### Dexterity (Dex)
 
 Dexterity measures hand-eye coordination, agility, reflexes, and balance. This ability is the most important one for rogues, but it's also high on the list for characters who typically wear light or medium armor (rangers and barbarians) or no armor at all (monks, wizards, and sorcerers), and for anyone who wants to be a skilled archer.
 
@@ -131,7 +131,7 @@ You apply your character's Dexterity modifier to:
 
 
 
-CONSTITUTION (CON)
+### Constitution (Con)
 
 Constitution represents your character's health and stamina. A Constitution bonus increases a character's hit points, so the ability is important for all classes.
 
@@ -147,7 +147,7 @@ If a character's Constitution score changes enough to alter his or her Constitut
 
 
 
-INTELLIGENCE (INT)
+### Intelligence (Int)
 
 Intelligence determines how well your character learns and reasons. This ability is important for wizards because it affects how many spells they can cast, how hard their spells are to resist, and how powerful their spells can be. It's also important for any character who wants to have a wide assortment of skills.
 
@@ -165,7 +165,7 @@ An animal has an Intelligence score of 1 or 2. A creature of humanlike intellige
 
 
 
-WISDOM (WIS)
+### Wisdom (Wis)
 
 Wisdom describes a character's willpower, common sense, perception, and intuition. While Intelligence represents one's ability to analyze information, Wisdom represents being in tune with and aware of one's surroundings. Wisdom is the most important ability for clerics and druids, and it is also important for paladins and rangers. If you want your character to have acute senses, put a high score in Wisdom. Every creature has a Wisdom score.
 
@@ -179,7 +179,7 @@ Clerics, druids, paladins, and rangers get bonus spells based on their Wisdom sc
 
 
 
-CHARISMA (CHA)
+### Charisma (Cha)
 
 Charisma measures a character's force of personality, persuasiveness, personal magnetism, ability to lead, and physical attractiveness. This ability represents actual strength of personality, not merely how one is perceived by others in a social setting. Charisma is most important for paladins, sorcerers, and bards. It is also important for clerics, since it affects their ability to turn undead. Every creature has a Charisma score.
 
@@ -193,7 +193,7 @@ You apply your character's Charisma modifier to:
 
 Sorcerers and bards get bonus spells based on their Charisma scores. The minimum Charisma score needed to cast a sorcerer or bard spell is 10 + the spell's level.
 
-
+### Ability Score Changes
 
 When an ability score changes, all attributes associated with that score change accordingly. A character does not retroactively get additional skill points for previous levels if she increases her intelligence.
 
