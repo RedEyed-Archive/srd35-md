@@ -1,0 +1,14 @@
+[book]
+authors = ["Lokathor"]
+language = "en"
+multilingual = false
+src = "book_src"
+title = "System Reference Document v3.5"
+description = "The System Reference Document v3.5"
+
+[rust]
+edition = "2018"
+
+[build]
+build-dir = "target/book_out"
+create-missing = false
