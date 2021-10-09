@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>System Reference Document v3.5</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The System Reference Document v3.5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="basics.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li class="chapter-item expanded affix "><a href="license.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">System Reference Document v3.5</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>This is the System Reference Document v3.5,
+converted from the original RTF files into Markdown.</p>
+<p>The bulk of the conversion work was done programmatically.
+After that, fixes were applied by hand.</p>
+<p>There are not any <em>intentional</em> rules differences between this markdown version and the official RTF version.
+However, typos and errors are always possible.
+If you notice any problems please <a href="https://github.com/Lokathor/srd35-md/issues">file an issue</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><p>This material is Open Game Content, and is licensed for public use under the terms of the Open Game License v1.0a.</p>
+<h1 id="the-basics"><a class="header" href="#the-basics">The Basics</a></h1>
+<p>The Core Mechanic: Whenever you attempt an action that has some chance of failure, you roll a twenty-sided die (d20). To determine if your character succeeds at a task you do this:</p>
+<ul>
+<li>
+<p>Roll a d20.</p>
+</li>
+<li>
+<p>Add any relevant modifiers.</p>
+</li>
+<li>
+<p>Compare the result to a target number.</p>
+</li>
+</ul>
+<p>If the result equals or exceeds the target number, your character succeeds. If the result is lower than the target number, you fail.</p>
+<h2 id="dice"><a class="header" href="#dice">Dice</a></h2>
+<p>Dice rolls are described with expressions such as &quot;3d4+3,&quot; which means &quot;roll three four-sided dice and add 3&quot; (resulting in a number between 6 and 15). The first number tells you how many dice to roll (adding the results together). The number immediately after the &quot;d&quot; tells you the type of die to use. Any number after that indicates a quantity that is added or subtracted from the result.</p>
+<p>d%: Percentile dice work a little differently. You generate a number between 1 and 100 by rolling two different ten-sided dice. One (designated before you roll) is the tens digit. The other is the ones digit. Two 0s represent 100.</p>
+<h2 id="rounding-fractions"><a class="header" href="#rounding-fractions">Rounding Fractions</a></h2>
+<p>In general, if you wind up with a fraction, round down, even if the fraction is one-half or larger.</p>
+<p>Exception: Certain rolls, such as damage and hit points, have a minimum of 1.</p>
+<h2 id="multiplying"><a class="header" href="#multiplying">Multiplying</a></h2>
+<p>Sometimes a rule makes you multiply a number or a die roll. As long as you're applying a single multiplier, multiply the number normally. When two or more multipliers apply to any abstract value (such as a modifier or a die roll), however, combine them into a single multiple, with each extra multiple adding 1 less than its value to the first multiple. Thus, a double (x2) and a double (x2) applied to the same number results in a triple (x3, because 2 + 1 = 3).</p>
+<p>When applying multipliers to real-world values (such as weight or distance), normal rules of math apply instead. A creature whose size doubles (thus multiplying its weight by 8) and then is turned to stone (which would multiply its weight by a factor of roughly 3) now weighs about 24 times normal, not 10 times normal. Similarly, a blinded creature attempting to negotiate difficult terrain would count each square as 4 squares (doubling the cost twice, for a total multiplier of x4), rather than as 3 squares (adding 100% twice). </p>
+<h2 id="ability-scores"><a class="header" href="#ability-scores">Ability Scores</a></h2>
+<h3 id="ability-modifiers"><a class="header" href="#ability-modifiers">Ability Modifiers</a></h3>
+<p>Each ability, after changes made because of race, has a modifier ranging from -5 to +5. Table: Ability Modifiers and Bonus Spells shows the modifier for each score. It also shows bonus spells, which you'll need to know about if your character is a spellcaster.</p>
+<p>The modifier is the number you apply to the die roll when your character tries to do something related to</p>
+<p>that ability. You also use the modifier with some numbers that aren't die rolls. A positive modifier is called a bonus, and a negative modifier is called a penalty.</p>
+<p>| Table: Ability Modifiers and Bonus Spells | |  |
+|  |  | ---------------------- Bonus Spells (by Spell Level) --------------------- | |  |
+| Score | Modifier | 0 | 1st | 2nd | 3rd | 4th | 5th | 6th | 7th | 8th | 9th | |  |
+| 1 | -5 | --------------------- Can't cast spells tied to this ability ------------------ | |  |
+| 2-3 | -4 | --------------------- Can't cast spells tied to this ability ------------------ | |  |
+| 4-5 | -3 | ---------------------- Can't cast spells tied to this ability ------------------ | |  |
+| 6-7 | -2 | ---------------------- Can't cast spells tied to this ability ------------------ | |  |
+| 8-9 | -1 | ---------------------- Can't cast spells tied to this ability ------------------ | |  |
+| 10-11 | 0 | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | |  |
+| 12-13 | +1 | -- | 1 | -- | -- | -- | -- | -- | -- | -- | -- | |  |
+| 14-15 | +2 | -- | 1 | 1 | -- | -- | -- | -- | -- | -- | -- | |  |
+| 16-17 | +3 | -- | 1 | 1 | 1 | -- | -- | -- | -- | -- | -- | |  |
+| 18-19 | +4 | -- | 1 | 1 | 1 | 1 | -- | -- | -- | -- | -- | |  |
+| 20-21 | +5 | -- | 2 | 1 | 1 | 1 | 1 | -- | -- | -- | -- | |  |
+| 22-23 | +6 | -- | 2 | 2 | 1 | 1 | 1 | 1 | -- | -- | -- | |  |
+| 24-25 | +7 | -- | 2 | 2 | 2 | 1 | 1 | 1 | 1 | -- | -- | |  |
+| 26-27 | +8 | -- | 2 | 2 | 2 | 2 | 1 | 1 | 1 | 1 | -- | |  |
+| 28-29 | +9 | -- | 3 | 2 | 2 | 2 | 2 | 1 | 1 | 1 | 1 | |  |
+| 30-31 | +10 | -- | 3 | 3 | 2 | 2 | 2 | 2 | 1 | 1 | 1 | |  |
+| 32-33 | +11 | -- | 3 | 3 | 3 | 2 | 2 | 2 | 2 | 1 | 1 | |  |
+| 34-35 | +12 | -- | 3 | 3 | 3 | 3 | 2 | 2 | 2 | 2 | 1 | |  |
+| 36-37 | +13 | -- | 4 | 3 | 3 | 3 | 3 | 2 | 2 | 2 | 2 | |  |
+| 38-39 | +14 | -- | 4 | 4 | 3 | 3 | 3 | 3 | 2 | 2 | 2 | |  |
+| 40-41 | +15 | -- | 4 | 4 | 4 | 3 | 3 | 3 | 3 | 2 | 2 | |  |
+| 42-43 | +16 | -- | 4 | 4 | 4 | 4 | 3 | 3 | 3 | 3 | 2 | |  |
+| 44-45 | +17 | -- | 5 | 4 | 4 | 4 | 4 | 3 | 3 | 3 | 3 | |  |
+| etc. . . |  |  |  |  |  |  |  |  |  |  |  | |  |</p>
+<h3 id="abilities-and-spellcasters"><a class="header" href="#abilities-and-spellcasters">Abilities And Spellcasters</a></h3>
+<p>The ability that governs bonus spells depends on what type of spellcaster your character is: Intelligence for wizards; Wisdom for clerics, druids, paladins, and rangers; or Charisma for sorcerers and bards. In addition to having a high ability score, a spellcaster must be of high enough class level to be able to cast spells of a given spell level. (See the class descriptions for details.)</p>
+<h3 id="the-abilities"><a class="header" href="#the-abilities">The Abilities</a></h3>
+<p>Each ability partially describes your character and affects some of his or her actions.</p>
+<h3 id="strength-str"><a class="header" href="#strength-str">Strength (Str)</a></h3>
+<p>Strength measures your character's muscle and physical power. This ability is especially important for fighters, barbarians, paladins, rangers, and monks because it helps them prevail in combat. Strength also limits the amount of equipment your character can carry.</p>
+<p>You apply your character's Strength modifier to:</p>
+<ul>
+<li>
+<p>Melee attack rolls.</p>
+</li>
+<li>
+<p>Damage rolls when using a melee weapon or a thrown weapon (including a sling). (Exceptions: Off-hand attacks receive only one-half the character's Strength bonus, while two-handed attacks receive one and a half times the Strength bonus. A Strength penalty, but not a bonus, applies to attacks made with a bow that is not a composite bow.)</p>
+</li>
+<li>
+<p>Climb, Jump, and Swim checks. These are the skills that have Strength as their key ability.</p>
+</li>
+<li>
+<p>Strength checks (for breaking down doors and the like).</p>
+</li>
+</ul>
+<h3 id="dexterity-dex"><a class="header" href="#dexterity-dex">Dexterity (Dex)</a></h3>
+<p>Dexterity measures hand-eye coordination, agility, reflexes, and balance. This ability is the most important one for rogues, but it's also high on the list for characters who typically wear light or medium armor (rangers and barbarians) or no armor at all (monks, wizards, and sorcerers), and for anyone who wants to be a skilled archer.</p>
+<p>You apply your character's Dexterity modifier to:</p>
+<ul>
+<li>
+<p>Ranged attack rolls, including those for attacks made with bows, crossbows, throwing axes, and other ranged weapons.</p>
+</li>
+<li>
+<p>Armor Class (AC), provided that the character can react to the attack.</p>
+</li>
+<li>
+<p>Reflex saving throws, for avoiding fireballs and other attacks that you can escape by moving quickly.</p>
+</li>
+<li>
+<p>Balance, Escape Artist, Hide, Move Silently, Open Lock, Ride, Sleight of Hand, Tumble, and Use Rope checks. These are the skills that have Dexterity as their key ability.</p>
+</li>
+</ul>
+<h3 id="constitution-con"><a class="header" href="#constitution-con">Constitution (Con)</a></h3>
+<p>Constitution represents your character's health and stamina. A Constitution bonus increases a character's hit points, so the ability is important for all classes.</p>
+<p>You apply your character's Constitution modifier to:</p>
+<ul>
+<li>
+<p>Each roll of a Hit Die (though a penalty can never drop a result below 1--that is, a character always gains at least 1 hit point each time he or she advances in level).</p>
+</li>
+<li>
+<p>Fortitude saving throws, for resisting poison and similar threats.</p>
+</li>
+<li>
+<p>Concentration checks. Concentration is a skill, important to spellcasters, that has Constitution as its key ability.</p>
+</li>
+</ul>
+<p>If a character's Constitution score changes enough to alter his or her Constitution modifier, the character's hit points also increase or decrease accordingly.</p>
+<h3 id="intelligence-int"><a class="header" href="#intelligence-int">Intelligence (Int)</a></h3>
+<p>Intelligence determines how well your character learns and reasons. This ability is important for wizards because it affects how many spells they can cast, how hard their spells are to resist, and how powerful their spells can be. It's also important for any character who wants to have a wide assortment of skills.</p>
+<p>You apply your character's Intelligence modifier to:</p>
+<ul>
+<li>
+<p>The number of languages your character knows at the start of the game.</p>
+</li>
+<li>
+<p>The number of skill points gained each level. (But your character always gets at least 1 skill point per level.)</p>
+</li>
+<li>
+<p>Appraise, Craft, Decipher Script, Disable Device, Forgery, Knowledge, Search, and Spellcraft checks. These are the skills that have Intelligence as their key ability.</p>
+</li>
+</ul>
+<p>A wizard gains bonus spells based on her Intelligence score. The minimum Intelligence score needed to cast a wizard spell is 10 + the spell's level. </p>
+<p>An animal has an Intelligence score of 1 or 2. A creature of humanlike intelligence has a score of at least 3.</p>
+<h3 id="wisdom-wis"><a class="header" href="#wisdom-wis">Wisdom (Wis)</a></h3>
+<p>Wisdom describes a character's willpower, common sense, perception, and intuition. While Intelligence represents one's ability to analyze information, Wisdom represents being in tune with and aware of one's surroundings. Wisdom is the most important ability for clerics and druids, and it is also important for paladins and rangers. If you want your character to have acute senses, put a high score in Wisdom. Every creature has a Wisdom score.</p>
+<p>You apply your character's Wisdom modifier to:</p>
+<ul>
+<li>
+<p>Will saving throws (for negating the effect of charm person and other spells).</p>
+</li>
+<li>
+<p>Heal, Listen, Profession, Sense Motive, Spot, and Survival checks. These are the skills that have Wisdom as their key ability.</p>
+</li>
+</ul>
+<p>Clerics, druids, paladins, and rangers get bonus spells based on their Wisdom scores. The minimum Wisdom score needed to cast a cleric, druid, paladin, or ranger spell is 10 + the spell's level.</p>
+<h3 id="charisma-cha"><a class="header" href="#charisma-cha">Charisma (Cha)</a></h3>
+<p>Charisma measures a character's force of personality, persuasiveness, personal magnetism, ability to lead, and physical attractiveness. This ability represents actual strength of personality, not merely how one is perceived by others in a social setting. Charisma is most important for paladins, sorcerers, and bards. It is also important for clerics, since it affects their ability to turn undead. Every creature has a Charisma score.</p>
+<p>You apply your character's Charisma modifier to:</p>
+<ul>
+<li>
+<p>Bluff, Diplomacy, Disguise, Gather Information, Handle Animal, Intimidate, Perform, and Use Magic Device checks. These are the skills that have Charisma as their key ability.</p>
+</li>
+<li>
+<p>Checks that represent attempts to influence others. </p>
+</li>
+<li>
+<p>Turning checks for clerics and paladins attempting to turn zombies, vampires, and other undead.</p>
+</li>
+</ul>
+<p>Sorcerers and bards get bonus spells based on their Charisma scores. The minimum Charisma score needed to cast a sorcerer or bard spell is 10 + the spell's level.</p>
+<h3 id="ability-score-changes"><a class="header" href="#ability-score-changes">Ability Score Changes</a></h3>
+<p>When an ability score changes, all attributes associated with that score change accordingly. A character does not retroactively get additional skill points for previous levels if she increases her intelligence.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="legal-information"><a class="header" href="#legal-information">Legal Information</a></h1>
+<p>Permission to copy, modify and distribute the files collectively known as the System Reference Document (&quot;SRD&quot;) is granted solely through the use of the Open Gaming License, Version 1.0a. </p>
+<p>This material is being released using the Open Gaming License Version 1.0a and you should read and understand the terms of that license before using this material. </p>
+<p>The text of the Open Gaming License itself is not Open Game Content. Instructions on using the License are provided within the License itself. </p>
+<p>The following items are designated Product Identity, as defined in Section 1(e) of the Open Game License Version 1.0a, and are subject to the conditions set forth in Section 7 of the OGL, and are not Open Content: Dungeons &amp; Dragons, D&amp;D, Player's Handbook, Dungeon Master, Monster Manual, d20 System, Wizards of the Coast, d20 (when used as a trademark), Forgotten Realms, Faerûn, proper names (including those used in the names of spells or items), places, Red Wizard of Thay, the City of Union, Heroic Domains of Ysgard, Ever-Changing Chaos of Limbo, Windswept Depths of Pandemonium, Infinite Layers of the Abyss, Tarterian Depths of Carceri, Gray Waste of Hades, Bleak Eternity of Gehenna, Nine Hells of Baator, Infernal Battlefield of Acheron, Clockwork Nirvana of Mechanus, Peaceable Kingdoms of Arcadia, Seven Mounting Heavens of Celestia, Twin Paradises of Bytopia, Blessed Fields of Elysium, Wilderness of the Beastlands, Olympian Glades of Arborea, Concordant Domain of the Outlands, Sigil, Lady of Pain, Book of Exalted Deeds, Book of Vile Darkness, beholder, gauth, carrion crawler, tanar'ri, baatezu, displacer beast, githyanki, githzerai, mind flayer, illithid, umber hulk, yuan-ti.</p>
+<p>All of the rest of the SRD is Open Game Content as described in Section 1(d) of the License. </p>
+<p>More information on the Open Game License can be found at www.wizards.com/d20.</p>
+<p>The terms of the Open Gaming License Version 1.0a are as follows: </p>
+<h2 id="open-game-license-version-10a"><a class="header" href="#open-game-license-version-10a">Open Game License, Version 1.0a</a></h2>
+<p>The following text is the property of Wizards of the Coast, Inc. and is Copyright 2000 Wizards of the Coast, Inc (&quot;Wizards&quot;). All Rights Reserved. </p>
+<ol>
+<li>
+<p>Definitions:
+(a) &quot;Contributors&quot; means the copyright and/or trademark owners who have contributed Open Game Content;
+(b) &quot;Derivative Material&quot; means copyrighted material including derivative works and translations (including into other computer languages), potation, modification, correction, addition, extension, upgrade, improvement, compilation, abridgment or other form in which an existing work may be recast, transformed or adapted;
+(c) &quot;Distribute&quot; means to reproduce, license, rent, lease, sell, broadcast, publicly display, transmit or otherwise distribute;
+(d) &quot;Open Game Content&quot; means the game mechanic and includes the methods, procedures, processes and routines to the extent such content does not embody the Product Identity and is an enhancement over the prior art and any additional content clearly identified as Open Game Content by the Contributor, and means any work covered by this License, including translations and derivative works under copyright law, but specifically excludes Product Identity.
+(e) &quot;Product Identity&quot; means product and product line names, logos and identifying marks including trade dress; artifacts; creatures characters; stories, storylines, plots, thematic elements, dialogue, incidents, language, artwork, symbols, designs, depictions, likenesses, formats, poses, concepts, themes and graphic, photographic and other visual or audio representations; names and descriptions of characters, spells, enchantments, personalities, teams, personas, likenesses and special abilities; places, locations, environments, creatures, equipment, magical or supernatural abilities or effects, logos, symbols, or graphic designs; and any other trademark or registered trademark clearly identified as Product identity by the owner of the Product Identity, and which specifically excludes the Open Game Content;
+(f) &quot;Trademark&quot; means the logos, names, mark, sign, motto, designs that are used by a Contributor to identify itself or its products or the associated products contributed to the Open Game License by the Contributor
+(g) &quot;Use&quot;, &quot;Used&quot; or &quot;Using&quot; means to use, Distribute, copy, edit, format, modify, translate and otherwise create Derivative Material of Open Game Content.
+(h) &quot;You&quot; or &quot;Your&quot; means the licensee in terms of this agreement. </p>
+</li>
+<li>
+<p>The License: This License applies to any Open Game Content that contains a notice indicating that the Open Game Content may only be Used under and in terms of this License. You must affix such a notice to any Open Game Content that you Use. No terms may be added to or subtracted from this License except as described by the License itself. No other terms or conditions may be applied to any Open Game Content distributed using this License. </p>
+</li>
+<li>
+<p>Offer and Acceptance: By Using the Open Game Content You indicate Your acceptance of the terms of this License. </p>
+</li>
+<li>
+<p>Grant and Consideration: In consideration for agreeing to use this License, the Contributors grant You a perpetual, worldwide, royalty-free, non-exclusive license with the exact terms of this License to Use, the Open Game Content. </p>
+</li>
+<li>
+<p>Representation of Authority to Contribute: If You are contributing original material as Open Game Content, You represent that Your Contributions are Your original creation and/or You have sufficient rights to grant the rights conveyed by this License. </p>
+</li>
+<li>
+<p>Notice of License Copyright: You must update the COPYRIGHT NOTICE portion of this License to include the exact text of the COPYRIGHT NOTICE of any Open Game Content You are copying, modifying or distributing, and You must add the title, the copyright date, and the copyright holder's name to the COPYRIGHT NOTICE of any original Open Game Content you Distribute. </p>
+</li>
+<li>
+<p>Use of Product Identity: You agree not to Use any Product Identity, including as an indication as to compatibility, except as expressly licensed in another, independent Agreement with the owner of each element of that Product Identity. You agree not to indicate compatibility or co-adaptability with any Trademark or Registered Trademark in conjunction with a work containing Open Game Content except as expressly licensed in another, independent Agreement with the owner of such Trademark or Registered Trademark. The use of any Product Identity in Open Game Content does not constitute a challenge to the ownership of that Product Identity. The owner of any Product Identity used in Open Game Content shall retain all rights, title and interest in and to that Product Identity. </p>
+</li>
+<li>
+<p>Identification: If you distribute Open Game Content You must clearly indicate which portions of the work that you are distributing are Open Game Content. </p>
+</li>
+<li>
+<p>Updating the License: Wizards or its designated Agents may publish updated versions of this License. You may use any authorized version of this License to copy, modify and distribute any Open Game Content originally distributed under any version of this License. </p>
+</li>
+<li>
+<p>Copy of this License: You MUST include a copy of this License with every copy of the Open Game Content You Distribute. </p>
+</li>
+<li>
+<p>Use of Contributor Credits: You may not market or advertise the Open Game Content using the name of any Contributor unless You have written permission from the Contributor to do so. </p>
+</li>
+<li>
+<p>Inability to Comply: If it is impossible for You to comply with any of the terms of this License with respect to some or all of the Open Game Content due to statute, judicial order, or governmental regulation then You may not Use any Open Game Material so affected. </p>
+</li>
+<li>
+<p>Termination: This License will terminate automatically if You fail to comply with all terms herein and fail to cure such breach within 30 days of becoming aware of the breach. All sublicenses shall survive the termination of this License. </p>
+</li>
+<li>
+<p>Reformation: If any provision of this License is held to be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable. </p>
+</li>
+<li>
+<p>COPYRIGHT NOTICE </p>
+</li>
+</ol>
+<p>Open Game License v 1.0a Copyright 2000, Wizards of the Coast, Inc. </p>
+<p><a href="https://www.wizards.com/default.asp?x=d20/article/srd35">System Reference Document</a>
+Copyright 2000-2003, Wizards of the Coast, Inc.; Authors Jonathan Tweet, Monte Cook, Skip Williams, Rich Baker, Andy Collins, David Noonan, Rich Redman, Bruce R. Cordell, John D. Rateliff, Thomas Reid, James Wyatt, based on original material by E. Gary Gygax and Dave Arneson. </p>
+<p>END OF LICENSE </p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>
