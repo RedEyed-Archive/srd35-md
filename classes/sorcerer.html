@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Sorcerer - System Reference Document v3.5</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The System Reference Document v3.5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="../basics.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li class="chapter-item expanded "><a href="../races/index.html"><strong aria-hidden="true">2.</strong> Races</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../races/dwarf.html"><strong aria-hidden="true">2.1.</strong> Dwarf</a></li><li class="chapter-item expanded "><a href="../races/elf.html"><strong aria-hidden="true">2.2.</strong> Elf</a></li><li class="chapter-item expanded "><a href="../races/gnome.html"><strong aria-hidden="true">2.3.</strong> Gnome</a></li><li class="chapter-item expanded "><a href="../races/half-elf.html"><strong aria-hidden="true">2.4.</strong> Half-Elf</a></li><li class="chapter-item expanded "><a href="../races/half-orc.html"><strong aria-hidden="true">2.5.</strong> Half-Orc</a></li><li class="chapter-item expanded "><a href="../races/halfling.html"><strong aria-hidden="true">2.6.</strong> Halfling</a></li><li class="chapter-item expanded "><a href="../races/human.html"><strong aria-hidden="true">2.7.</strong> Human</a></li></ol></li><li class="chapter-item expanded "><a href="../classes/index.html"><strong aria-hidden="true">3.</strong> Classes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../classes/barbarian.html"><strong aria-hidden="true">3.1.</strong> Barbarian</a></li><li class="chapter-item expanded "><a href="../classes/bard.html"><strong aria-hidden="true">3.2.</strong> Bard</a></li><li class="chapter-item expanded "><a href="../classes/cleric.html"><strong aria-hidden="true">3.3.</strong> Cleric</a></li><li class="chapter-item expanded "><a href="../classes/druid.html"><strong aria-hidden="true">3.4.</strong> Druid</a></li><li class="chapter-item expanded "><a href="../classes/fighter.html"><strong aria-hidden="true">3.5.</strong> Fighter</a></li><li class="chapter-item expanded "><a href="../classes/monk.html"><strong aria-hidden="true">3.6.</strong> Monk</a></li><li class="chapter-item expanded "><a href="../classes/paladin.html"><strong aria-hidden="true">3.7.</strong> Paladin</a></li><li class="chapter-item expanded "><a href="../classes/ranger.html"><strong aria-hidden="true">3.8.</strong> Ranger</a></li><li class="chapter-item expanded "><a href="../classes/rogue.html"><strong aria-hidden="true">3.9.</strong> Rogue</a></li><li class="chapter-item expanded "><a href="../classes/sorcerer.html" class="active"><strong aria-hidden="true">3.10.</strong> Sorcerer</a></li><li class="chapter-item expanded "><a href="../classes/wizard.html"><strong aria-hidden="true">3.11.</strong> Wizard</a></li></ol></li><li class="chapter-item expanded "><a href="../license.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">System Reference Document v3.5</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="sorcerer"><a class="header" href="#sorcerer">Sorcerer</a></h1>
+<h4 id="table-the-sorcerer"><a class="header" href="#table-the-sorcerer">Table: The Sorcerer</a></h4>
+<table><thead><tr><th align="center">Level</th><th align="center">Base Attack Bonus</th><th align="center">Fort Save</th><th align="center">Ref Save</th><th align="center">Will Save</th><th align="left">Special</th><th align="center">0th</th><th align="center">1st</th><th align="center">2nd</th><th align="center">3rd</th><th align="center">4th</th><th align="center">5th</th><th align="center">6th</th><th align="center">7th</th><th align="center">8th</th><th align="center">9th</th></tr></thead><tbody>
+<tr><td align="center">1st</td><td align="center">+0</td><td align="center">+0</td><td align="center">+0</td><td align="center">+2</td><td align="left">Summon familiar</td><td align="center">5</td><td align="center">3</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">2nd</td><td align="center">+1</td><td align="center">+0</td><td align="center">+0</td><td align="center">+3</td><td align="left"></td><td align="center">6</td><td align="center">4</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">3rd</td><td align="center">+1</td><td align="center">+1</td><td align="center">+1</td><td align="center">+3</td><td align="left"></td><td align="center">6</td><td align="center">5</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">4th</td><td align="center">+2</td><td align="center">+1</td><td align="center">+1</td><td align="center">+4</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">3</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">5th</td><td align="center">+2</td><td align="center">+1</td><td align="center">+1</td><td align="center">+4</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">4</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">6th</td><td align="center">+3</td><td align="center">+2</td><td align="center">+2</td><td align="center">+5</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">5</td><td align="center">3</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">7th</td><td align="center">+3</td><td align="center">+2</td><td align="center">+2</td><td align="center">+5</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">4</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">8th</td><td align="center">+4</td><td align="center">+2</td><td align="center">+2</td><td align="center">+6</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">5</td><td align="center">3</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">9th</td><td align="center">+4</td><td align="center">+3</td><td align="center">+3</td><td align="center">+6</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">4</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">10th</td><td align="center">+5</td><td align="center">+3</td><td align="center">+3</td><td align="center">+7</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">5</td><td align="center">3</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">11th</td><td align="center">+5</td><td align="center">+3</td><td align="center">+3</td><td align="center">+7</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">4</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">12th</td><td align="center">+6</td><td align="center">+4</td><td align="center">+4</td><td align="center">+8</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">5</td><td align="center">3</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">13th</td><td align="center">+6</td><td align="center">+4</td><td align="center">+4</td><td align="center">+8</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">4</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">14th</td><td align="center">+7</td><td align="center">+4</td><td align="center">+4</td><td align="center">+9</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">5</td><td align="center">3</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">15th</td><td align="center">+7</td><td align="center">+5</td><td align="center">+5</td><td align="center">+9</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">4</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">16th</td><td align="center">+8</td><td align="center">+5</td><td align="center">+5</td><td align="center">+10</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">5</td><td align="center">3</td><td align="center">--</td></tr>
+<tr><td align="center">17th</td><td align="center">+8</td><td align="center">+5</td><td align="center">+5</td><td align="center">+10</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">4</td><td align="center">--</td></tr>
+<tr><td align="center">18th</td><td align="center">+9</td><td align="center">+6</td><td align="center">+6</td><td align="center">+11</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">5</td><td align="center">3</td></tr>
+<tr><td align="center">19th</td><td align="center">+9</td><td align="center">+6</td><td align="center">+6</td><td align="center">+11</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">4</td></tr>
+<tr><td align="center">20th</td><td align="center">+10</td><td align="center">+6</td><td align="center">+6</td><td align="center">+12</td><td align="left"></td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td><td align="center">6</td></tr>
+</tbody></table>
+<p><strong>Alignment:</strong> Any.</p>
+<p><strong>Hit Die:</strong> d4.</p>
+<h4 id="table-sorcerer-spells-known"><a class="header" href="#table-sorcerer-spells-known">Table: Sorcerer Spells Known</a></h4>
+<table><thead><tr><th align="center">Level</th><th align="center">0th</th><th align="center">1st</th><th align="center">2nd</th><th align="center">3rd</th><th align="center">4th</th><th align="center">5th</th><th align="center">6th</th><th align="center">7th</th><th align="center">8th</th><th align="center">9th</th></tr></thead><tbody>
+<tr><td align="center">1st</td><td align="center">4</td><td align="center">2</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">2nd</td><td align="center">5</td><td align="center">2</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">3rd</td><td align="center">5</td><td align="center">3</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">4th</td><td align="center">6</td><td align="center">3</td><td align="center">1</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">5th</td><td align="center">6</td><td align="center">4</td><td align="center">2</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">6th</td><td align="center">7</td><td align="center">4</td><td align="center">2</td><td align="center">1</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">7th</td><td align="center">7</td><td align="center">5</td><td align="center">3</td><td align="center">2</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">8th</td><td align="center">8</td><td align="center">5</td><td align="center">3</td><td align="center">2</td><td align="center">1</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">9th</td><td align="center">8</td><td align="center">5</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">10th</td><td align="center">9</td><td align="center">5</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">1</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">11th</td><td align="center">9</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">12th</td><td align="center">9</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">1</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">13th</td><td align="center">9</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">14th</td><td align="center">9</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">1</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">15th</td><td align="center">9</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">16th</td><td align="center">9</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">1</td><td align="center">--</td></tr>
+<tr><td align="center">17th</td><td align="center">9</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">2</td><td align="center">--</td></tr>
+<tr><td align="center">18th</td><td align="center">9</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">2</td><td align="center">1</td></tr>
+<tr><td align="center">19th</td><td align="center">9</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">3</td><td align="center">2</td></tr>
+<tr><td align="center">20th</td><td align="center">9</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">3</td><td align="center">3</td></tr>
+</tbody></table>
+<h2 id="class-skills"><a class="header" href="#class-skills">Class Skills</a></h2>
+<p>The sorcerer's class skills (and the key ability for each skill) are Bluff (Cha), Concentration (Con), Craft (Int), Knowledge (arcana) (Int), Profession (Wis), and Spellcraft (Int).</p>
+<p><strong>Skill Points at 1st Level:</strong> (2 + Int modifier) x 4.</p>
+<p><strong>Skill Points at Each Additional Level:</strong> 2 + Int modifier.</p>
+<h2 id="class-features"><a class="header" href="#class-features">Class Features</a></h2>
+<p>All of the following are class features of the sorcerer.</p>
+<p><strong>Weapon and Armor Proficiency:</strong> Sorcerers are proficient with all simple weapons. They are not proficient with any type of armor or shield. Armor of any type interferes with a sorcerer's gestures, which can cause his spells with somatic components to fail.</p>
+<p><strong>Spells:</strong> A sorcerer casts arcane spells which are drawn primarily from the sorcerer/wizard spell list. He can cast any spell he knows without preparing it ahead of time, the way a wizard or a cleric must (see below).</p>
+<p>To learn or cast a spell, a sorcerer must have a Charisma score equal to at least 10 + the spell level. The Difficulty Class for a saving throw against a sorcerer's spell is 10 + the spell level + the sorcerer's Charisma modifier.</p>
+<p>Like other spellcasters, a sorcerer can cast only a certain number of spells of each spell level per day. His base daily spell allotment is given on Table: The Sorcerer. In addition, he receives bonus spells per day if he has a high Charisma score.</p>
+<p>A sorcerer's selection of spells is extremely limited. A sorcerer begins play knowing four 0-level spells and two 1st-level spells of your choice. At each new sorcerer level, he gains one or more new spells, as indicated on Table: Sorcerer Spells Known. (Unlike spells per day, the number of spells a sorcerer knows is not affected by his Charisma score; the numbers on Table: Sorcerer Spells Known are fixed.) These new spells can be common spells chosen from the sorcerer/wizard spell list, or they can be unusual spells that the sorcerer has gained some understanding of by study. The sorcerer can't use this method of spell acquisition to learn spells at a faster rate, however.</p>
+<p>Upon reaching 4th level, and at every even-numbered sorcerer level after that (6th, 8th, and so on), a sorcerer can choose to learn a new spell in place of one he already knows. In effect, the sorcerer &quot;loses&quot; the old spell in exchange for the new one. The new spell's level must be the same as that of the spell being exchanged, and it must be at least two levels lower than the highest-level sorcerer spell the sorcerer can cast. A sorcerer may swap only a single spell at any given level, and must choose whether or not to swap the spell at the same time that he gains new spells known for the level.</p>
+<p>Unlike a wizard or a cleric, a sorcerer need not prepare his spells in advance. He can cast any spell he knows at any time, assuming he has not yet used up his spells per day for that spell level. He does not have to decide ahead of time which spells he'll cast.</p>
+<p><strong>Familiar:</strong> A sorcerer can obtain a familiar (see below). Doing so takes 24 hours and uses up magical materials that cost 100 gp. A familiar is a magical beast that resembles a small animal and is unusually tough and intelligent. The creature serves as a companion and servant.</p>
+<p>The sorcerer chooses the kind of familiar he gets. As the sorcerer advances in level, his familiar also increases in power.</p>
+<p>If the familiar dies or is dismissed by the sorcerer, the sorcerer must attempt a DC 15 Fortitude saving throw. Failure means he loses 200 experience points per sorcerer level; success reduces the loss to one-half that amount. However, a sorcerer's experience point total can never go below 0 as the result of a familiar's demise or dismissal. A slain or dismissed familiar cannot be replaced for a year and day. A slain familiar can be raised from the dead just as a character can be, and it does not lose a level or a Constitution point when this happy event occurs.</p>
+<p>A character with more than one class that grants a familiar may have only one familiar at a time.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../classes/rogue.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../classes/wizard.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../classes/rogue.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../classes/wizard.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

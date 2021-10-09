@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Cleric - System Reference Document v3.5</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The System Reference Document v3.5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="../basics.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li class="chapter-item expanded "><a href="../races/index.html"><strong aria-hidden="true">2.</strong> Races</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../races/dwarf.html"><strong aria-hidden="true">2.1.</strong> Dwarf</a></li><li class="chapter-item expanded "><a href="../races/elf.html"><strong aria-hidden="true">2.2.</strong> Elf</a></li><li class="chapter-item expanded "><a href="../races/gnome.html"><strong aria-hidden="true">2.3.</strong> Gnome</a></li><li class="chapter-item expanded "><a href="../races/half-elf.html"><strong aria-hidden="true">2.4.</strong> Half-Elf</a></li><li class="chapter-item expanded "><a href="../races/half-orc.html"><strong aria-hidden="true">2.5.</strong> Half-Orc</a></li><li class="chapter-item expanded "><a href="../races/halfling.html"><strong aria-hidden="true">2.6.</strong> Halfling</a></li><li class="chapter-item expanded "><a href="../races/human.html"><strong aria-hidden="true">2.7.</strong> Human</a></li></ol></li><li class="chapter-item expanded "><a href="../classes/index.html"><strong aria-hidden="true">3.</strong> Classes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../classes/barbarian.html"><strong aria-hidden="true">3.1.</strong> Barbarian</a></li><li class="chapter-item expanded "><a href="../classes/bard.html"><strong aria-hidden="true">3.2.</strong> Bard</a></li><li class="chapter-item expanded "><a href="../classes/cleric.html" class="active"><strong aria-hidden="true">3.3.</strong> Cleric</a></li><li class="chapter-item expanded "><a href="../classes/druid.html"><strong aria-hidden="true">3.4.</strong> Druid</a></li><li class="chapter-item expanded "><a href="../classes/fighter.html"><strong aria-hidden="true">3.5.</strong> Fighter</a></li><li class="chapter-item expanded "><a href="../classes/monk.html"><strong aria-hidden="true">3.6.</strong> Monk</a></li><li class="chapter-item expanded "><a href="../classes/paladin.html"><strong aria-hidden="true">3.7.</strong> Paladin</a></li><li class="chapter-item expanded "><a href="../classes/ranger.html"><strong aria-hidden="true">3.8.</strong> Ranger</a></li><li class="chapter-item expanded "><a href="../classes/rogue.html"><strong aria-hidden="true">3.9.</strong> Rogue</a></li><li class="chapter-item expanded "><a href="../classes/sorcerer.html"><strong aria-hidden="true">3.10.</strong> Sorcerer</a></li><li class="chapter-item expanded "><a href="../classes/wizard.html"><strong aria-hidden="true">3.11.</strong> Wizard</a></li></ol></li><li class="chapter-item expanded "><a href="../license.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">System Reference Document v3.5</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="cleric"><a class="header" href="#cleric">Cleric</a></h1>
+<h4 id="table-the-cleric"><a class="header" href="#table-the-cleric">Table: The Cleric</a></h4>
+<table><thead><tr><th align="center">Level</th><th align="center">Base Attack Bonus</th><th align="center">Fort Save</th><th align="center">Ref Save</th><th align="center">Will Save</th><th align="left">Special</th><th align="center">0th</th><th>1st</th><th>2nd</th><th>3rd</th><th>4th</th><th>5th</th><th>6th</th><th>7th</th><th>8th</th><th>9th</th></tr></thead><tbody>
+<tr><td align="center">1st</td><td align="center">+0</td><td align="center">+2</td><td align="center">+0</td><td align="center">+2</td><td align="left">Turn or rebuke undead</td><td align="center">3</td><td>1+1</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td align="center">2nd</td><td align="center">+1</td><td align="center">+3</td><td align="center">+0</td><td align="center">+3</td><td align="left"></td><td align="center">4</td><td>2+1</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td align="center">3rd</td><td align="center">+2</td><td align="center">+3</td><td align="center">+1</td><td align="center">+3</td><td align="left"></td><td align="center">4</td><td>2+1</td><td>1+1</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td align="center">4th</td><td align="center">+3</td><td align="center">+4</td><td align="center">+1</td><td align="center">+4</td><td align="left"></td><td align="center">5</td><td>3+1</td><td>2+1</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td align="center">5th</td><td align="center">+3</td><td align="center">+4</td><td align="center">+1</td><td align="center">+4</td><td align="left"></td><td align="center">5</td><td>3+1</td><td>2+1</td><td>1+1</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td align="center">6th</td><td align="center">+4</td><td align="center">+5</td><td align="center">+2</td><td align="center">+5</td><td align="left"></td><td align="center">5</td><td>3+1</td><td>3+1</td><td>2+1</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td align="center">7th</td><td align="center">+5</td><td align="center">+5</td><td align="center">+2</td><td align="center">+5</td><td align="left"></td><td align="center">6</td><td>4+1</td><td>3+1</td><td>2+1</td><td>1+1</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td align="center">8th</td><td align="center">+6</td><td align="center">+6</td><td align="center">+2</td><td align="center">+6</td><td align="left"></td><td align="center">6</td><td>4+1</td><td>3+1</td><td>3+1</td><td>2+1</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td align="center">9th</td><td align="center">+6</td><td align="center">+6</td><td align="center">+3</td><td align="center">+6</td><td align="left"></td><td align="center">6</td><td>4+1</td><td>4+1</td><td>3+1</td><td>2+1</td><td>1+1</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td align="center">10th</td><td align="center">+7</td><td align="center">+7</td><td align="center">+3</td><td align="center">+7</td><td align="left"></td><td align="center">6</td><td>4+1</td><td>4+1</td><td>3+1</td><td>3+1</td><td>2+1</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td align="center">11th</td><td align="center">+8</td><td align="center">+7</td><td align="center">+3</td><td align="center">+7</td><td align="left"></td><td align="center">6</td><td>5+1</td><td>4+1</td><td>4+1</td><td>3+1</td><td>2+1</td><td>1+1</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td align="center">12th</td><td align="center">+9</td><td align="center">+8</td><td align="center">+4</td><td align="center">+8</td><td align="left"></td><td align="center">6</td><td>5+1</td><td>4+1</td><td>4+1</td><td>3+1</td><td>3+1</td><td>2+1</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td align="center">13th</td><td align="center">+9</td><td align="center">+8</td><td align="center">+4</td><td align="center">+8</td><td align="left"></td><td align="center">6</td><td>5+1</td><td>5+1</td><td>4+1</td><td>4+1</td><td>3+1</td><td>2+1</td><td>1+1</td><td>--</td><td>--</td></tr>
+<tr><td align="center">14th</td><td align="center">+10</td><td align="center">+9</td><td align="center">+4</td><td align="center">+9</td><td align="left"></td><td align="center">6</td><td>5+1</td><td>5+1</td><td>4+1</td><td>4+1</td><td>3+1</td><td>3+1</td><td>2+1</td><td>--</td><td>--</td></tr>
+<tr><td align="center">15th</td><td align="center">+11</td><td align="center">+9</td><td align="center">+5</td><td align="center">+9</td><td align="left"></td><td align="center">6</td><td>5+1</td><td>5+1</td><td>5+1</td><td>4+1</td><td>4+1</td><td>3+1</td><td>2+1</td><td>1+1</td><td>--</td></tr>
+<tr><td align="center">16th</td><td align="center">+12</td><td align="center">+10</td><td align="center">+5</td><td align="center">+10</td><td align="left"></td><td align="center">6</td><td>5+1</td><td>5+1</td><td>5+1</td><td>4+1</td><td>4+1</td><td>3+1</td><td>3+1</td><td>2+1</td><td>--</td></tr>
+<tr><td align="center">17th</td><td align="center">+12</td><td align="center">+10</td><td align="center">+5</td><td align="center">+10</td><td align="left"></td><td align="center">6</td><td>5+1</td><td>5+1</td><td>5+1</td><td>5+1</td><td>4+1</td><td>4+1</td><td>3+1</td><td>2+1</td><td>1+1</td></tr>
+<tr><td align="center">18th</td><td align="center">+13</td><td align="center">+11</td><td align="center">+6</td><td align="center">+11</td><td align="left"></td><td align="center">6</td><td>5+1</td><td>5+1</td><td>5+1</td><td>5+1</td><td>4+1</td><td>4+1</td><td>3+1</td><td>3+1</td><td>2+1</td></tr>
+<tr><td align="center">19th</td><td align="center">+14</td><td align="center">+11</td><td align="center">+6</td><td align="center">+11</td><td align="left"></td><td align="center">6</td><td>5+1</td><td>5+1</td><td>5+1</td><td>5+1</td><td>5+1</td><td>4+1</td><td>4+1</td><td>3+1</td><td>3+1</td></tr>
+<tr><td align="center">20th</td><td align="center">+15</td><td align="center">+12</td><td align="center">+6</td><td align="center">+12</td><td align="left"></td><td align="center">6</td><td>5+1</td><td>5+1</td><td>5+1</td><td>5+1</td><td>5+1</td><td>4+1</td><td>4+1</td><td>4+1</td><td>4+1</td></tr>
+</tbody></table>
+<p>In addition to the stated number of spells per day for 1st- through 9th-level spells, a cleric gets a domain spell for each spell level, starting at 1st.</p>
+<p>The &quot;+1&quot; in the entries on this table represents that spell. Domain spells are in addition to any bonus spells the cleric may receive for having a high Wisdom score.</p>
+<p><strong>Alignment:</strong> A cleric's alignment must be within one step of his deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both). A cleric may not be neutral unless his deity's alignment is also neutral.</p>
+<p><strong>Hit Die:</strong> d8.</p>
+<h2 id="class-skills"><a class="header" href="#class-skills">Class Skills</a></h2>
+<p>The cleric's class skills (and the key ability for each skill) are Concentration (Con), Craft (Int), Diplomacy (Cha), Heal (Wis), Knowledge (arcana) (Int), Knowledge (history) (Int), Knowledge (religion) (Int), Knowledge (the planes) (Int), Profession (Wis), and Spellcraft (Int). </p>
+<p><strong>Domains and Class Skills:</strong> A cleric who chooses the Animal or Plant domain adds Knowledge (nature) (Int) to the cleric class skills listed above. A cleric who chooses the Knowledge domain adds all Knowledge (Int) skills to the list. A cleric who chooses the Travel domain adds Survival (Wis) to the list. A cleric who chooses the Trickery domain adds Bluff (Cha), Disguise (Cha), and Hide (Dex) to the list. See Deity, Domains, and Domain Spells, below, for more information.</p>
+<p><strong>Skill Points at 1st Level:</strong> (2 + Int modifier) x4.</p>
+<p><strong>Skill Points at Each Additional Level:</strong> 2 + Int modifier.</p>
+<h2 id="class-features"><a class="header" href="#class-features">Class Features</a></h2>
+<p>All of the following are class features of the cleric.</p>
+<p><strong>Weapon and Armor Proficiency:</strong> Clerics are proficient with all simple weapons, with all types of armor (light, medium, and heavy), and with shields (except tower shields).</p>
+<p>A cleric who chooses the War domain receives the Weapon Focus feat related to his deity's weapon as a bonus feat. He also receives the appropriate Martial Weapon Proficiency feat as a bonus feat, if the weapon falls into that category.</p>
+<p><strong>Aura (Ex):</strong> A cleric of a chaotic, evil, good, or lawful deity has a particularly powerful aura corresponding to the deity's alignment (see the detect evil spell for details). Clerics who don't worship a specific deity but choose the Chaotic, Evil, Good, or Lawful domain have a similarly powerful aura of the corresponding alignment.</p>
+<p><strong>Spells:</strong> A cleric casts divine spells, which are drawn from the cleric spell list. However, his alignment may restrict him from casting certain spells opposed to his moral or ethical beliefs; see Chaotic, Evil, Good, and Lawful Spells, below. A cleric must choose and prepare his spells in advance (see below).</p>
+<p>To prepare or cast a spell, a cleric must have a Wisdom score equal to at least 10 + the spell level. The Difficulty Class for a saving throw against a cleric's spell is 10 + the spell level + the cleric's Wisdom modifier.</p>
+<p>Like other spellcasters, a cleric can cast only a certain number of spells of each spell level per day. His base daily spell allotment is given on Table: The Cleric. In addition, he receives bonus spells per day if he has a high Wisdom score. A cleric also gets one domain spell of each spell level he can cast, starting at 1st level. When a cleric prepares a spell in a domain spell slot, it must come from one of his two domains (see Deities, Domains, and Domain Spells, below).</p>
+<p>Clerics meditate or pray for their spells. Each cleric must choose a time at which he must spend 1 hour each day in quiet contemplation or supplication to regain his daily allotment of spells. Time spent resting has no effect on whether a cleric can prepare spells. A cleric may prepare and cast any spell on the cleric spell list, provided that he can cast spells of that level, but he must choose which spells to prepare during his daily meditation.</p>
+<p><strong>Deity, Domains, and Domain Spells:</strong> A cleric's deity influences his alignment, what magic he can perform, his values, and how others see him. A cleric chooses two domains from among those belonging to his deity. A cleric can select an alignment domain (Chaos, Evil, Good, or Law) only if his alignment matches that domain.</p>
+<p>If a cleric is not devoted to a particular deity, he still selects two domains to represent his spiritual inclinations and abilities. The restriction on alignment domains still applies.</p>
+<p>Each domain gives the cleric access to a domain spell at each spell level he can cast, from 1st on up, as well as a granted power. The cleric gets the granted powers of both the domains selected.</p>
+<p>With access to two domain spells at a given spell level, a cleric prepares one or the other each day in his domain spell slot. If a domain spell is not on the cleric spell list, a cleric can prepare it only in his domain spell slot.</p>
+<p><strong>Spontaneous Casting:</strong> A good cleric (or a neutral cleric of a good deity) can channel stored spell energy into healing spells that the cleric did not prepare ahead of time. The cleric can &quot;lose&quot; any prepared spell that is not a domain spell in order to cast any cure spell of the same spell level or lower (a cure spell is any spell with &quot;cure&quot; in its name). </p>
+<p>An evil cleric (or a neutral cleric of an evil deity), can't convert prepared spells to cure spells but can convert them to inflict spells (an inflict spell is one with &quot;inflict&quot; in its name).</p>
+<p>A cleric who is neither good nor evil and whose deity is neither good nor evil can convert spells to either cure spells or inflict spells (player's choice). Once the player makes this choice, it cannot be reversed. This choice also determines whether the cleric turns or commands undead (see below).</p>
+<p><strong>Chaotic, Evil, Good, and Lawful Spells:</strong> A cleric can't cast spells of an alignment opposed to his own or his deity's (if he has one). Spells associated with particular alignments are indicated by the chaos, evil, good, and law descriptors in their spell descriptions.</p>
+<p><strong>Turn or Rebuke Undead (Su):</strong> Any cleric, regardless of alignment, has the power to affect undead creatures by channeling the power of his faith through his holy (or unholy) symbol (see Turn or Rebuke Undead).</p>
+<p>A good cleric (or a neutral cleric who worships a good deity) can turn or destroy undead creatures. An evil cleric (or a neutral cleric who worships an evil deity) instead rebukes or commands such creatures. A neutral cleric of a neutral deity must choose whether his turning ability functions as that of a good cleric or an evil cleric. Once this choice is made, it cannot be reversed. This decision also determines whether the cleric can cast spontaneous cure or inflict spells (see above).</p>
+<p>A cleric may attempt to turn undead a number of times per day equal to 3 + his Charisma modifier. A cleric with 5 or more ranks in Knowledge (religion) gets a +2 bonus on turning checks against undead.</p>
+<p><strong>Bonus Languages:</strong> A cleric's bonus language options include Celestial, Abyssal, and Infernal (the languages of good, chaotic evil, and lawful evil outsiders, respectively). These choices are in addition to the bonus languages available to the character because of his race.</p>
+<h2 id="ex-clerics"><a class="header" href="#ex-clerics">Ex-Clerics</a></h2>
+<p>A cleric who grossly violates the code of conduct required by his god loses all spells and class features, except for armor and shield proficiencies and proficiency with simple weapons. He cannot thereafter gain levels as a cleric of that god until he atones (see the atonement spell description).</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../classes/bard.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../classes/druid.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../classes/bard.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../classes/druid.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

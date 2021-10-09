@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Paladin - System Reference Document v3.5</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The System Reference Document v3.5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="../basics.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li class="chapter-item expanded "><a href="../races/index.html"><strong aria-hidden="true">2.</strong> Races</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../races/dwarf.html"><strong aria-hidden="true">2.1.</strong> Dwarf</a></li><li class="chapter-item expanded "><a href="../races/elf.html"><strong aria-hidden="true">2.2.</strong> Elf</a></li><li class="chapter-item expanded "><a href="../races/gnome.html"><strong aria-hidden="true">2.3.</strong> Gnome</a></li><li class="chapter-item expanded "><a href="../races/half-elf.html"><strong aria-hidden="true">2.4.</strong> Half-Elf</a></li><li class="chapter-item expanded "><a href="../races/half-orc.html"><strong aria-hidden="true">2.5.</strong> Half-Orc</a></li><li class="chapter-item expanded "><a href="../races/halfling.html"><strong aria-hidden="true">2.6.</strong> Halfling</a></li><li class="chapter-item expanded "><a href="../races/human.html"><strong aria-hidden="true">2.7.</strong> Human</a></li></ol></li><li class="chapter-item expanded "><a href="../classes/index.html"><strong aria-hidden="true">3.</strong> Classes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../classes/barbarian.html"><strong aria-hidden="true">3.1.</strong> Barbarian</a></li><li class="chapter-item expanded "><a href="../classes/bard.html"><strong aria-hidden="true">3.2.</strong> Bard</a></li><li class="chapter-item expanded "><a href="../classes/cleric.html"><strong aria-hidden="true">3.3.</strong> Cleric</a></li><li class="chapter-item expanded "><a href="../classes/druid.html"><strong aria-hidden="true">3.4.</strong> Druid</a></li><li class="chapter-item expanded "><a href="../classes/fighter.html"><strong aria-hidden="true">3.5.</strong> Fighter</a></li><li class="chapter-item expanded "><a href="../classes/monk.html"><strong aria-hidden="true">3.6.</strong> Monk</a></li><li class="chapter-item expanded "><a href="../classes/paladin.html" class="active"><strong aria-hidden="true">3.7.</strong> Paladin</a></li><li class="chapter-item expanded "><a href="../classes/ranger.html"><strong aria-hidden="true">3.8.</strong> Ranger</a></li><li class="chapter-item expanded "><a href="../classes/rogue.html"><strong aria-hidden="true">3.9.</strong> Rogue</a></li><li class="chapter-item expanded "><a href="../classes/sorcerer.html"><strong aria-hidden="true">3.10.</strong> Sorcerer</a></li><li class="chapter-item expanded "><a href="../classes/wizard.html"><strong aria-hidden="true">3.11.</strong> Wizard</a></li></ol></li><li class="chapter-item expanded "><a href="../license.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">System Reference Document v3.5</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="paladin"><a class="header" href="#paladin">Paladin</a></h1>
+<h4 id="table-the-paladin"><a class="header" href="#table-the-paladin">Table: The Paladin</a></h4>
+<table><thead><tr><th align="center">Level</th><th align="center">Base Attack Bonus</th><th align="center">Fort Save</th><th align="center">Ref Save</th><th align="left">Will Save</th><th align="left">Special</th><th align="center">1st</th><th align="center">2nd</th><th align="center">3rd</th><th align="center">4th</th></tr></thead><tbody>
+<tr><td align="center">1st</td><td align="center">+1</td><td align="center">+2</td><td align="center">+0</td><td align="left">+0</td><td align="left">Aura of good, detect evil, smite evil 1/day</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">2nd</td><td align="center">+2</td><td align="center">+3</td><td align="center">+0</td><td align="left">+0</td><td align="left">Divine grace, lay on hands</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">3rd</td><td align="center">+3</td><td align="center">+3</td><td align="center">+1</td><td align="left">+1</td><td align="left">Aura of courage, divine health</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">4th</td><td align="center">+4</td><td align="center">+4</td><td align="center">+1</td><td align="left">+1</td><td align="left">Turn undead</td><td align="center">0</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">5th</td><td align="center">+5</td><td align="center">+4</td><td align="center">+1</td><td align="left">+1</td><td align="left">Smite evil 2/day, special mount</td><td align="center">0</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">6th</td><td align="center">+6</td><td align="center">+5</td><td align="center">+2</td><td align="left">+2</td><td align="left">Remove disease 1/week</td><td align="center">1</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">7th</td><td align="center">+7</td><td align="center">+5</td><td align="center">+2</td><td align="left">+2</td><td align="left"></td><td align="center">1</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">8th</td><td align="center">+8</td><td align="center">+6</td><td align="center">+2</td><td align="left">+2</td><td align="left"></td><td align="center">1</td><td align="center">0</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">9th</td><td align="center">+9</td><td align="center">+6</td><td align="center">+3</td><td align="left">+3</td><td align="left">Remove disease 2/week</td><td align="center">1</td><td align="center">0</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">10th</td><td align="center">+10</td><td align="center">+7</td><td align="center">+3</td><td align="left">+3</td><td align="left">Smite evil 3/day</td><td align="center">1</td><td align="center">1</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">11th</td><td align="center">+11</td><td align="center">+7</td><td align="center">+3</td><td align="left">+3</td><td align="left"></td><td align="center">1</td><td align="center">1</td><td align="center">0</td><td align="center">--</td></tr>
+<tr><td align="center">12th</td><td align="center">+12</td><td align="center">+8</td><td align="center">+4</td><td align="left">+4</td><td align="left">Remove disease 3/week</td><td align="center">1</td><td align="center">1</td><td align="center">1</td><td align="center">--</td></tr>
+<tr><td align="center">13th</td><td align="center">+13</td><td align="center">+8</td><td align="center">+4</td><td align="left">+4</td><td align="left"></td><td align="center">1</td><td align="center">1</td><td align="center">1</td><td align="center">--</td></tr>
+<tr><td align="center">14th</td><td align="center">+14</td><td align="center">+9</td><td align="center">+4</td><td align="left">+4</td><td align="left"></td><td align="center">2</td><td align="center">1</td><td align="center">1</td><td align="center">0</td></tr>
+<tr><td align="center">15th</td><td align="center">+15</td><td align="center">+9</td><td align="center">+5</td><td align="left">+5</td><td align="left">Remove disease 4/week, smite evil 4/day</td><td align="center">2</td><td align="center">1</td><td align="center">1</td><td align="center">1</td></tr>
+<tr><td align="center">16th</td><td align="center">+16</td><td align="center">+10</td><td align="center">+5</td><td align="left">+5</td><td align="left"></td><td align="center">2</td><td align="center">2</td><td align="center">1</td><td align="center">1</td></tr>
+<tr><td align="center">17th</td><td align="center">+17</td><td align="center">+10</td><td align="center">+5</td><td align="left">+5</td><td align="left"></td><td align="center">2</td><td align="center">2</td><td align="center">2</td><td align="center">1</td></tr>
+<tr><td align="center">18th</td><td align="center">+18</td><td align="center">+11</td><td align="center">+6</td><td align="left">+6</td><td align="left">Remove disease 5/week</td><td align="center">3</td><td align="center">2</td><td align="center">2</td><td align="center">1</td></tr>
+<tr><td align="center">19th</td><td align="center">+19</td><td align="center">+11</td><td align="center">+6</td><td align="left">+6</td><td align="left"></td><td align="center">3</td><td align="center">3</td><td align="center">3</td><td align="center">2</td></tr>
+<tr><td align="center">20th</td><td align="center">+20</td><td align="center">+12</td><td align="center">+6</td><td align="left">+6</td><td align="left">Smite evil 5/day</td><td align="center">3</td><td align="center">3</td><td align="center">3</td><td align="center">3</td></tr>
+</tbody></table>
+<p><strong>Alignment:</strong> Lawful good.</p>
+<p><strong>Hit Die:</strong> d10.</p>
+<h2 id="class-skills"><a class="header" href="#class-skills">Class Skills</a></h2>
+<p>The paladin's class skills (and the key ability for each skill) are Concentration (Con), Craft (Int), Diplomacy (Cha), Handle Animal (Cha), Heal (Wis), Knowledge (nobility and royalty) (Int), Knowledge (religion) (Int), Profession (Wis), Ride (Dex), and Sense Motive (Wis).</p>
+<p><strong>Skill Points at 1st Level:</strong> (2 + Int modifier) x4.</p>
+<p><strong>Skill Points at Each Additional Level:</strong> 2 + Int modifier.</p>
+<h2 id="class-features"><a class="header" href="#class-features">Class Features</a></h2>
+<p>All of the following are class features of the paladin.</p>
+<p><strong>Weapon and Armor Proficiency:</strong> Paladins are proficient with all simple and martial weapons, with all types of armor (heavy, medium, and light), and with shields (except tower shields).</p>
+<p><strong>Aura of Good (Ex):</strong> The power of a paladin's aura of good (see the detect good spell) is equal to her paladin level.</p>
+<p><strong>Detect Evil (Sp):</strong> At will, a paladin can use detect evil, as the spell.</p>
+<p><strong>Smite Evil (Su):</strong> Once per day, a paladin may attempt to smite evil with one normal melee attack. She adds her Charisma bonus (if any) to her attack roll and deals 1 extra point of damage per paladin level. If the paladin accidentally smites a creature that is not evil, the smite has no effect, but the ability is still used up for that day.</p>
+<p>At 5th level, and at every five levels thereafter, the paladin may smite evil one additional time per day, as indicated on Table: The Paladin, to a maximum of five times per day at 20th level.</p>
+<p>Divine Grace (Su): At 2nd level, a paladin gains a bonus equal to her Charisma bonus (if any) on all saving throws.</p>
+<p><strong>Lay on Hands (Su):</strong> Beginning at 2nd level, a paladin with a Charisma score of 12 or higher can heal wounds (her own or those of others) by touch. Each day she can heal a total number of hit points of damage equal to her paladin level x her Charisma bonus. A paladin may choose to divide her healing among multiple recipients, and she doesn't have to use it all at once. Using lay on hands is a standard action.</p>
+<p>Alternatively, a paladin can use any or all of this healing power to deal damage to undead creatures. Using lay on hands in this way requires a successful melee touch attack and doesn't provoke an attack of opportunity. The paladin decides how many of her daily allotment of points to use as damage after successfully touching an undead creature.</p>
+<p><strong>Aura of Courage (Su):</strong> Beginning at 3rd level, a paladin is immune to fear (magical or otherwise). Each ally within 10 feet of her gains a +4 morale bonus on saving throws against fear effects.</p>
+<p>This ability functions while the paladin is conscious, but not if she is unconscious or dead.</p>
+<p><strong>Divine Health (Ex):</strong> At 3rd level, a paladin gains immunity to all diseases, including supernatural and magical diseases.</p>
+<p><strong>Turn Undead (Su):</strong> When a paladin reaches 4th level, she gains the supernatural ability to turn undead. She may use this ability a number of times per day equal to 3 + her Charisma modifier. She turns undead as a cleric of three levels lower would.</p>
+<p><strong>Spells:</strong> Beginning at 4th level, a paladin gains the ability to cast a small number of divine spells, which are drawn from the paladin spell list. A paladin must choose and prepare her spells in advance.</p>
+<p>To prepare or cast a spell, a paladin must have a Wisdom score equal to at least 10 + the spell level. The Difficulty Class for a saving throw against a paladin's spell is 10 + the spell level + the paladin's Wisdom modifier.</p>
+<p>Like other spellcasters, a paladin can cast only a certain number of spells of each spell level per day. Her base daily spell allotment is given on Table: The Paladin. In addition, she receives bonus spells per day if she has a high Wisdom score. When Table: The Paladin indicates that the paladin gets 0 spells per day of a given spell level, she gains only the bonus spells she would be entitled to based on her Wisdom score for that spell level The paladin does not have access to any domain spells or granted powers, as a cleric does.</p>
+<p>A paladin prepares and casts spells the way a cleric does, though she cannot lose a prepared spell to spontaneously cast a cure spell in its place. A paladin may prepare and cast any spell on the paladin spell list, provided that she can cast spells of that level, but she must choose which spells to prepare during her daily meditation.</p>
+<p>Through 3rd level, a paladin has no caster level. At 4th level and higher, her caster level is one-half her paladin level.</p>
+<p><strong>Special Mount (Sp):</strong> Upon reaching 5th level, a paladin gains the service of an unusually intelligent, strong, and loyal steed to serve her in her crusade against evil (see below). This mount is usually a heavy warhorse (for a Medium paladin) or a warpony (for a Small paladin).</p>
+<p>Once per day, as a full-round action, a paladin may magically call her mount from the celestial realms in which it resides. This ability is the equivalent of a spell of a level equal to one-third the paladin's level. The mount immediately appears adjacent to the paladin and remains for 2 hours per paladin level; it may be dismissed at any time as a free action. The mount is the same creature each time it is summoned, though the paladin may release a particular mount from service.</p>
+<p>Each time the mount is called, it appears in full health, regardless of any damage it may have taken previously. The mount also appears wearing or carrying any gear it had when it was last dismissed. Calling a mount is a conjuration (calling) effect.</p>
+<p>Should the paladin's mount die, it immediately disappears, leaving behind any equipment it was carrying. The paladin may not summon another mount for thirty days or until she gains a paladin level, whichever comes first, even if the mount is somehow returned from the dead. During this thirty-day period, the paladin takes a -1 penalty on attack and weapon damage rolls.</p>
+<p><strong>Remove Disease (Sp):</strong> At 6th level, a paladin can produce a remove disease effect, as the spell, once per week. She can use this ability one additional time per week for every three levels after 6th (twice per week at 9th, three times at 12th, and so forth).</p>
+<p><strong>Code of Conduct:</strong> A paladin must be of lawful good alignment and loses all class abilities if she ever willingly commits an evil act.</p>
+<p>Additionally, a paladin's code requires that she respect legitimate authority, act with honor (not lying, not cheating, not using poison, and so forth), help those in need (provided they do not use the help for evil or chaotic ends), and punish those who harm or threaten innocents.</p>
+<p><strong>Associates:</strong> While she may adventure with characters of any good or neutral alignment, a paladin will never knowingly associate with evil characters, nor will she continue an association with someone who consistently offends her moral code. A paladin may accept only henchmen, followers, or cohorts who are lawful good.</p>
+<h2 id="ex-paladins"><a class="header" href="#ex-paladins">Ex-Paladins</a></h2>
+<p>A paladin who ceases to be lawful good, who willfully commits an evil act, or who grossly violates the code of conduct loses all paladin spells and abilities (including the service of the paladin's mount, but not weapon, armor, and shield proficiencies). She may not progress any farther in levels as a paladin. She regains her abilities and advancement potential if she atones for her violations (see the atonement spell description), as appropriate.</p>
+<p>Like a member of any other class, a paladin may be a multiclass character, but multiclass paladins face a special restriction. A paladin who gains a level in any class other than paladin may never again raise her paladin level, though she retains all her paladin abilities.</p>
+<h2 id="the-paladins-mount"><a class="header" href="#the-paladins-mount">The Paladin's Mount</a></h2>
+<p>The paladin's mount is superior to a normal mount of its kind and has special powers, as described below. The standard mount for a Medium paladin is a heavy warhorse, and the standard mount for a Small paladin is a warpony. Another kind of mount, such as a riding dog (for a halfling paladin) or a Large shark (for a paladin in an aquatic campaign) may be allowed as well.</p>
+<p>A paladin's mount is treated as a magical beast, not an animal, for the purpose of all effects that depend on its type (though it retains an animal's HD, base attack bonus, saves, skill points, and feats).</p>
+<table><thead><tr><th align="center">Paladin Level</th><th align="center">Bonus HD</th><th align="center">Natural Armor Adj.</th><th align="center">Str Adj.</th><th align="center">Int</th><th align="left">Special</th></tr></thead><tbody>
+<tr><td align="center">5th-7th</td><td align="center">+2</td><td align="center">+4</td><td align="center">+1</td><td align="center">6</td><td align="left">Empathic link, improved evasion, share spells, share saving throws</td></tr>
+<tr><td align="center">8th-10th</td><td align="center">+4</td><td align="center">+6</td><td align="center">+2</td><td align="center">7</td><td align="left">Improved speed</td></tr>
+<tr><td align="center">11th-14th</td><td align="center">+6</td><td align="center">+8</td><td align="center">+3</td><td align="center">8</td><td align="left">Command creatures of its kind</td></tr>
+<tr><td align="center">15th-20th</td><td align="center">+8</td><td align="center">+10</td><td align="center">+4</td><td align="center">9</td><td align="left">Spell resistance</td></tr>
+</tbody></table>
+<p><strong>Paladin's Mount Basics:</strong> Use the base statistics for a creature of the mount's kind, but make changes to take into account the attributes and characteristics summarized on the table and described below.</p>
+<p><strong>Bonus HD:</strong> Extra eight-sided (d8) Hit Dice, each of which gains a Constitution modifier, as normal. Extra Hit Dice improve the mount's base attack and base save bonuses. A special mount's base attack bonus is equal to that of a cleric of a level equal to the mount's HD. A mount has good Fortitude and Reflex saves (treat it as a character whose level equals the animal's HD). The mount gains additional skill points or feats for bonus HD as normal for advancing a monster's Hit Dice.</p>
+<p><strong>Natural Armor Adj.:</strong> The number on the table is an improvement to the mount's existing natural armor bonus.</p>
+<p><strong>Str Adj.:</strong> Add this figure to the mount's Strength score.</p>
+<p><strong>Int:</strong> The mount's Intelligence score.</p>
+<p><strong>Empathic Link (Su):</strong> The paladin has an empathic link with her mount out to a distance of up to 1 mile. The paladin cannot see through the mount's eyes, but they can communicate empathically.</p>
+<p>Note that even intelligent mounts see the world differently from humans, so misunderstandings are always possible.</p>
+<p>Because of this empathic link, the paladin has the same connection to an item or place that her mount does, just as with a master and his familiar (see Familiars).</p>
+<p><strong>Improved Evasion (Ex):</strong> When subjected to an attack that normally allows a Reflex saving throw for half damage, a mount takes no damage if it makes a successful saving throw and half damage if the saving throw fails.</p>
+<p><strong>Share Spells:</strong> At the paladin's option, she may have any spell (but not any spell-like ability) she casts on herself also affect her mount. </p>
+<p>The mount must be within 5 feet at the time of casting to receive the benefit. If the spell or effect has a duration other than instantaneous, it stops affecting the mount if it moves farther than 5 feet away and will not affect the mount again even if it returns to the paladin before the duration expires. Additionally, the paladin may cast a spell with a target of &quot;You&quot; on her mount (as a touch range spell) instead of on herself. A paladin and her mount can share spells even if the spells normally do not affect creatures of the mount's type (magical beast).</p>
+<p><strong>Share Saving Throws:</strong> For each of its saving throws, the mount uses its own base save bonus or the paladin's, whichever is higher. The mount applies its own ability modifiers to saves, and it doesn't share any other bonuses on saves that the master might have.</p>
+<p><strong>Improved Speed (Ex):</strong> The mount's speed increases by 10 feet.</p>
+<p><strong>Command (Sp):</strong> Once per day per two paladin levels of its master, a mount can use this ability to command other any normal animal of approximately the same kind as itself (for warhorses and warponies, this category includes donkeys, mules, and ponies), as long as the target creature has fewer Hit Dice than the mount. This ability functions like the command spell, but the mount must make a DC 21 Concentration check to succeed if it's being ridden at the time. If the check fails, the ability does not work that time, but it still counts against the mount's daily uses. Each target may attempt a Will save (DC 10 + 1/2 paladin's level + paladin's Cha modifier) to negate the effect.</p>
+<p><strong>Spell Resistance (Ex):</strong> A mount's spell resistance equals its master's paladin level + 5. To affect the mount with a spell, a spellcaster must get a result on a caster level check (1d20 + caster level) that equals or exceeds the mount's spell resistance.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../classes/monk.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../classes/ranger.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../classes/monk.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../classes/ranger.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

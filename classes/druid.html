@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Druid - System Reference Document v3.5</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The System Reference Document v3.5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="../basics.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li class="chapter-item expanded "><a href="../races/index.html"><strong aria-hidden="true">2.</strong> Races</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../races/dwarf.html"><strong aria-hidden="true">2.1.</strong> Dwarf</a></li><li class="chapter-item expanded "><a href="../races/elf.html"><strong aria-hidden="true">2.2.</strong> Elf</a></li><li class="chapter-item expanded "><a href="../races/gnome.html"><strong aria-hidden="true">2.3.</strong> Gnome</a></li><li class="chapter-item expanded "><a href="../races/half-elf.html"><strong aria-hidden="true">2.4.</strong> Half-Elf</a></li><li class="chapter-item expanded "><a href="../races/half-orc.html"><strong aria-hidden="true">2.5.</strong> Half-Orc</a></li><li class="chapter-item expanded "><a href="../races/halfling.html"><strong aria-hidden="true">2.6.</strong> Halfling</a></li><li class="chapter-item expanded "><a href="../races/human.html"><strong aria-hidden="true">2.7.</strong> Human</a></li></ol></li><li class="chapter-item expanded "><a href="../classes/index.html"><strong aria-hidden="true">3.</strong> Classes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../classes/barbarian.html"><strong aria-hidden="true">3.1.</strong> Barbarian</a></li><li class="chapter-item expanded "><a href="../classes/bard.html"><strong aria-hidden="true">3.2.</strong> Bard</a></li><li class="chapter-item expanded "><a href="../classes/cleric.html"><strong aria-hidden="true">3.3.</strong> Cleric</a></li><li class="chapter-item expanded "><a href="../classes/druid.html" class="active"><strong aria-hidden="true">3.4.</strong> Druid</a></li><li class="chapter-item expanded "><a href="../classes/fighter.html"><strong aria-hidden="true">3.5.</strong> Fighter</a></li><li class="chapter-item expanded "><a href="../classes/monk.html"><strong aria-hidden="true">3.6.</strong> Monk</a></li><li class="chapter-item expanded "><a href="../classes/paladin.html"><strong aria-hidden="true">3.7.</strong> Paladin</a></li><li class="chapter-item expanded "><a href="../classes/ranger.html"><strong aria-hidden="true">3.8.</strong> Ranger</a></li><li class="chapter-item expanded "><a href="../classes/rogue.html"><strong aria-hidden="true">3.9.</strong> Rogue</a></li><li class="chapter-item expanded "><a href="../classes/sorcerer.html"><strong aria-hidden="true">3.10.</strong> Sorcerer</a></li><li class="chapter-item expanded "><a href="../classes/wizard.html"><strong aria-hidden="true">3.11.</strong> Wizard</a></li></ol></li><li class="chapter-item expanded "><a href="../license.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">System Reference Document v3.5</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="druid"><a class="header" href="#druid">Druid</a></h1>
+<h4 id="table-the-druid"><a class="header" href="#table-the-druid">Table: The Druid</a></h4>
+<table><thead><tr><th align="center">Level</th><th align="center">Base Attack Bonus</th><th align="center">Fort Save</th><th align="center">Ref Save</th><th align="center">Will Save</th><th align="left">Special</th><th align="center">0th</th><th align="center">1st</th><th align="center">2nd</th><th align="center">3rd</th><th align="center">4th</th><th align="center">5th</th><th align="center">6th</th><th align="center">7th</th><th align="center">8th</th><th align="center">9th</th></tr></thead><tbody>
+<tr><td align="center">1st</td><td align="center">+0</td><td align="center">+2</td><td align="center">+0</td><td align="center">+2</td><td align="left">Animal companion, nature sense, wild empathy</td><td align="center">3</td><td align="center">1</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">2nd</td><td align="center">+1</td><td align="center">+3</td><td align="center">+0</td><td align="center">+3</td><td align="left">Woodland stride</td><td align="center">4</td><td align="center">2</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">3rd</td><td align="center">+2</td><td align="center">+3</td><td align="center">+1</td><td align="center">+3</td><td align="left">Trackless step</td><td align="center">4</td><td align="center">2</td><td align="center">1</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">4th</td><td align="center">+3</td><td align="center">+4</td><td align="center">+1</td><td align="center">+4</td><td align="left">Resist nature's lure</td><td align="center">5</td><td align="center">3</td><td align="center">2</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">5th</td><td align="center">+3</td><td align="center">+4</td><td align="center">+1</td><td align="center">+4</td><td align="left">Wild shape (1/day)</td><td align="center">5</td><td align="center">3</td><td align="center">2</td><td align="center">1</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">6th</td><td align="center">+4</td><td align="center">+5</td><td align="center">+2</td><td align="center">+5</td><td align="left">Wild shape (2/day)</td><td align="center">5</td><td align="center">3</td><td align="center">3</td><td align="center">2</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">7th</td><td align="center">+5</td><td align="center">+5</td><td align="center">+2</td><td align="center">+5</td><td align="left">Wild shape (3/day)</td><td align="center">6</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">1</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">8th</td><td align="center">+6</td><td align="center">+6</td><td align="center">+2</td><td align="center">+6</td><td align="left">Wild shape (Large)</td><td align="center">6</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">2</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">9th</td><td align="center">+6</td><td align="center">+6</td><td align="center">+3</td><td align="center">+6</td><td align="left">Venom immunity</td><td align="center">6</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">1</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">10th</td><td align="center">+7</td><td align="center">+7</td><td align="center">+3</td><td align="center">+7</td><td align="left">Wild shape (4/day)</td><td align="center">6</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">2</td><td align="center">--</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">11th</td><td align="center">+8</td><td align="center">+7</td><td align="center">+3</td><td align="center">+7</td><td align="left">Wild shape (Tiny)</td><td align="center">6</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">1</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">12th</td><td align="center">+9</td><td align="center">+8</td><td align="center">+4</td><td align="center">+8</td><td align="left">Wild shape (plant)</td><td align="center">6</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">2</td><td align="center">--</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">13th</td><td align="center">+9</td><td align="center">+8</td><td align="center">+4</td><td align="center">+8</td><td align="left">A thousand faces</td><td align="center">6</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">1</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">14th</td><td align="center">+10</td><td align="center">+9</td><td align="center">+4</td><td align="center">+9</td><td align="left">Wild shape (5/day)</td><td align="center">6</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">2</td><td align="center">--</td><td align="center">--</td></tr>
+<tr><td align="center">15th</td><td align="center">+11</td><td align="center">+9</td><td align="center">+5</td><td align="center">+9</td><td align="left">Timeless body, wild shape (Huge)</td><td align="center">6</td><td align="center">5</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">1</td><td align="center">--</td></tr>
+<tr><td align="center">16th</td><td align="center">+12</td><td align="center">+10</td><td align="center">+5</td><td align="center">+10</td><td align="left">Wild shape (elemental 1/day)</td><td align="center">6</td><td align="center">5</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">2</td><td align="center">--</td></tr>
+<tr><td align="center">17th</td><td align="center">+12</td><td align="center">+10</td><td align="center">+5</td><td align="center">+10</td><td align="left"></td><td align="center">6</td><td align="center">5</td><td align="center">5</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">1</td></tr>
+<tr><td align="center">18th</td><td align="center">+13</td><td align="center">+11</td><td align="center">+6</td><td align="center">+11</td><td align="left">Wild shape (6/day, elemental 2/day)</td><td align="center">6</td><td align="center">5</td><td align="center">5</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">2</td></tr>
+<tr><td align="center">19th</td><td align="center">+14</td><td align="center">+11</td><td align="center">+6</td><td align="center">+11</td><td align="left"></td><td align="center">6</td><td align="center">5</td><td align="center">5</td><td align="center">5</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">3</td><td align="center">3</td></tr>
+<tr><td align="center">20th</td><td align="center">+15</td><td align="center">+12</td><td align="center">+6</td><td align="center">+12</td><td align="left">Wild shape (elemental 3/day, Huge elemental)</td><td align="center">6</td><td align="center">5</td><td align="center">5</td><td align="center">5</td><td align="center">5</td><td align="center">5</td><td align="center">4</td><td align="center">4</td><td align="center">4</td><td align="center">4</td></tr>
+</tbody></table>
+<p><strong>Alignment:</strong> Neutral good, lawful neutral, neutral, chaotic neutral, or neutral evil.</p>
+<p><strong>Hit Die:</strong> d8.</p>
+<h2 id="class-skills"><a class="header" href="#class-skills">Class Skills</a></h2>
+<p>The druid's class skills (and the key ability for each skill) are Concentration (Con), Craft (Int), Diplomacy (Cha), Handle Animal (Cha), Heal (Wis), Knowledge (nature) (Int), Listen (Wis), Profession (Wis), Ride (Dex), Spellcraft (Int), Spot (Wis), Survival (Wis), and Swim (Str). </p>
+<p><strong>Skill Points at 1st Level:</strong> (4 + Int modifier) x4.</p>
+<p><strong>Skill Points at Each Additional Level:</strong> 4 + Int modifier.</p>
+<h2 id="class-features"><a class="header" href="#class-features">Class Features</a></h2>
+<p>All of the following are class features of the druid.</p>
+<p><strong>Weapon and Armor Proficiency:</strong> Druids are proficient with the following weapons: club, dagger, dart, quarterstaff, scimitar, sickle, shortspear, sling, and spear. They are also proficient with all natural attacks (claw, bite, and so forth) of any form they assume with wild shape (see below).</p>
+<p>Druids are proficient with light and medium armor but are prohibited from wearing metal armor; thus, they may wear only padded, leather, or hide armor. (A druid may also wear wooden armor that has been altered by the ironwood spell so that it functions as though it were steel. See the ironwood spell description) Druids are proficient with shields (except tower shields) but must use only wooden ones.</p>
+<p>A druid who wears prohibited armor or carries a prohibited shield is unable to cast druid spells or use any of her supernatural or spell-like class abilities while doing so and for 24 hours thereafter.</p>
+<p><strong>Spells:</strong> A druid casts divine spells, which are drawn from the druid spell list. Her alignment may restrict her from casting certain spells opposed to her moral or ethical beliefs; see Chaotic, Evil, Good, and Lawful Spells, below. A druid must choose and prepare her spells in advance (see below).</p>
+<p>To prepare or cast a spell, the druid must have a Wisdom score equal to at least 10 + the spell level. The Difficulty Class for a saving throw against a druid's spell is 10 + the spell level + the druid's Wisdom modifier.</p>
+<p>Like other spellcasters, a druid can cast only a certain number of spells of each spell level per day. Her base daily spell allotment is given on Table: The Druid. In addition, she receives bonus spells per day if she has a high Wisdom score. She does not have access to any domain spells or granted powers, as a cleric does.</p>
+<p>A druid prepares and casts spells the way a cleric does, though she cannot lose a prepared spell to cast a cure spell in its place (but see Spontaneous Casting, below). A druid may prepare and cast any spell on the druid spell list, provided that she can cast spells of that level, but she must choose which spells to prepare during her daily meditation.</p>
+<p><strong>Spontaneous Casting:</strong> A druid can channel stored spell energy into summoning spells that she hasn't prepared ahead of time. She can &quot;lose&quot; a prepared spell in order to cast any summon nature's ally spell of the same level or lower. Chaotic, Evil, Good, and Lawful Spells: A druid can't cast spells of an alignment opposed to her own or her deity's (if she has one). Spells associated with particular alignments are indicated by the chaos, evil, good, and law descriptors in their spell descriptions.</p>
+<p><strong>Bonus Languages:</strong> A druid's bonus language options include Sylvan, the language of woodland creatures. This choice is in addition to the bonus languages available to the character because of her race.</p>
+<p>A druid also knows Druidic, a secret language known only to druids, which she learns upon becoming a 1st-level druid. Druidic is a free language for a druid; that is, she knows it in addition to her regular allotment of languages and it doesn't take up a language slot. Druids are forbidden to teach this language to nondruids.</p>
+<p>Druidic has its own alphabet.</p>
+<p><strong>Animal Companion (Ex):</strong> A druid may begin play with an animal companion selected from the following list: badger, camel, dire rat, dog, riding dog, eagle, hawk, horse (light or heavy), owl, pony, snake (Small or Medium viper), or wolf. If the campaign takes place wholly or partly in an aquatic environment, the following creatures are also available: crocodile, porpoise, Medium shark, and squid. This animal is a loyal companion that accompanies the druid on her adventures as appropriate for its kind.</p>
+<p>A 1st-level druid's companion is completely typical for its kind except as noted below. As a druid advances in level, the animal's power increases as shown on the table. If a druid releases her companion from service, she may gain a new one by performing a ceremony requiring 24 uninterrupted hours of prayer. This ceremony can also replace an animal companion that has perished.</p>
+<p>A druid of 4th level or higher may select from alternative lists of animals (see below). Should she select an animal companion from one of these alternative lists, the creature gains abilities as if the character's druid level were lower than it actually is. Subtract the value indicated in the appropriate list header from the character's druid level and compare the result with the druid level entry on the table to determine the animal companion's powers. (If this adjustment would reduce the druid's effective level to 0 or lower, she can't have that animal as a companion.) </p>
+<p><strong>Nature Sense (Ex):</strong> A druid gains a +2 bonus on Knowledge (nature) and Survival checks.</p>
+<p><strong>Wild Empathy (Ex):</strong> A druid can improve the attitude of an animal. This ability functions just like a Diplomacy check made to improve the attitude of a person. The druid rolls 1d20 and adds her druid level and her Charisma modifier to determine the wild empathy check result.</p>
+<p>The typical domestic animal has a starting attitude of indifferent, while wild animals are usually unfriendly.</p>
+<p>To use wild empathy, the druid and the animal must be able to study each other, which means that they must be within 30 feet of one another under normal conditions. Generally, influencing an animal in this way takes 1 minute but, as with influencing people, it might take more or less time.</p>
+<p>A druid can also use this ability to influence a magical beast with an Intelligence score of 1 or 2, but she takes a -4 penalty on the check.</p>
+<p><strong>Woodland Stride (Ex):</strong> Starting at 2nd level, a druid may move through any sort of undergrowth (such as natural thorns, briars, overgrown areas, and similar terrain) at her normal speed and without taking damage or suffering any other impairment. However, thorns, briars, and overgrown areas that have been magically manipulated to impede motion still affect her.</p>
+<p><strong>Trackless Step (Ex):</strong> Starting at 3rd level, a druid leaves no trail in natural surroundings and cannot be tracked. She may choose to leave a trail if so desired.</p>
+<p><strong>Resist Nature's Lure (Ex):</strong> Starting at 4th level, a druid gains a +4 bonus on saving throws against the spell-like abilities of fey.</p>
+<p><strong>Wild Shape (Su):</strong> At 5th level, a druid gains the ability to turn herself into any Small or Medium animal and back again once per day. Her options for new forms include all creatures with the animal type. This ability functions like the polymorph spell, except as noted here. The effect lasts for 1 hour per druid level, or until she changes back. Changing form (to animal or back) is a standard action and doesn't provoke an attack of opportunity.</p>
+<p>The form chosen must be that of an animal the druid is familiar with. </p>
+<p>A druid loses her ability to speak while in animal form because she is limited to the sounds that a normal, untrained animal can make, but she can communicate normally with other animals of the same general grouping as her new form. (The normal sound a wild parrot makes is a squawk, so changing to this form does not permit speech.)</p>
+<p>A druid can use this ability more times per day at 6th, 7th, 10th, 14th, and 18th level, as noted on Table: The Druid. In addition, she gains the ability to take the shape of a Large animal at 8th level, a Tiny animal at 11th level, and a Huge animal at 15th level.</p>
+<p>The new form's Hit Dice can't exceed the character's druid level.</p>
+<p>At 12th level, a druid becomes able to use wild shape to change into a plant creature with the same size restrictions as for animal forms. (A druid can't use this ability to take the form of a plant that isn't a creature.)</p>
+<p>At 16th level, a druid becomes able to use wild shape to change into a Small, Medium, or Large elemental (air, earth, fire, or water) once per day. These elemental forms are in addition to her normal wild shape usage. In addition to the normal effects of wild shape, the druid gains all the elemental's extraordinary, supernatural, and spell-like abilities. She also gains the elemental's feats for as long as she maintains the wild shape, but she retains her own creature type.</p>
+<p>At 18th level, a druid becomes able to assume elemental form twice per day, and at 20th level she can do so three times per day. At 20th level, a druid may use this wild shape ability to change into a Huge elemental.</p>
+<p><strong>Venom Immunity (Ex):</strong> At 9th level, a druid gains immunity to all poisons. </p>
+<p><strong>A Thousand Faces (Su):</strong> At 13th level, a druid gains the ability to change her appearance at will, as if using the alter self spell, but only while in her normal form.</p>
+<p><strong>Timeless Body (Ex):</strong> After attaining 15th level, a druid no longer takes ability score penalties for aging and cannot be magically aged. Any penalties she may have already incurred, however, remain in place.</p>
+<p>Bonuses still accrue, and the druid still dies of old age when her time is up.</p>
+<h2 id="ex-druids"><a class="header" href="#ex-druids">Ex-Druids</a></h2>
+<p>A druid who ceases to revere nature, changes to a prohibited alignment, or teaches the Druidic language to a nondruid loses all spells and druid abilities (including her animal companion, but not including weapon, armor, and shield proficiencies). She cannot thereafter gain levels as a druid until she atones (see the atonement spell description).</p>
+<h1 id="the-druids-animal-companion"><a class="header" href="#the-druids-animal-companion">The Druid's Animal Companion</a></h1>
+<p>A druid's animal companion is different from a normal animal of its kind in many ways. A druid's animal companion is superior to a normal animal of its kind and has special powers, as described below.</p>
+<table><thead><tr><th align="center">Class Level</th><th align="center">Bonus HD</th><th align="center">Natural Armor Adj.</th><th align="center">Str/Dex Adj.</th><th align="center">Bonus Tricks</th><th align="left">Special</th></tr></thead><tbody>
+<tr><td align="center">1st-2nd</td><td align="center">+0</td><td align="center">+0</td><td align="center">+0</td><td align="center">1</td><td align="left">Link, share spells</td></tr>
+<tr><td align="center">3rd-5th</td><td align="center">+2</td><td align="center">+2</td><td align="center">+1</td><td align="center">2</td><td align="left">Evasion</td></tr>
+<tr><td align="center">6th-8th</td><td align="center">+4</td><td align="center">+4</td><td align="center">+2</td><td align="center">3</td><td align="left">Devotion</td></tr>
+<tr><td align="center">9th-11th</td><td align="center">+6</td><td align="center">+6</td><td align="center">+3</td><td align="center">4</td><td align="left">Multiattack</td></tr>
+<tr><td align="center">12th-14th</td><td align="center">+8</td><td align="center">+8</td><td align="center">+4</td><td align="center">5</td><td align="left"></td></tr>
+<tr><td align="center">15th-17th</td><td align="center">+10</td><td align="center">+10</td><td align="center">+5</td><td align="center">6</td><td align="left">Improved evasion</td></tr>
+<tr><td align="center">18th-20th</td><td align="center">+12</td><td align="center">+12</td><td align="center">+6</td><td align="center">7</td><td align="left"></td></tr>
+</tbody></table>
+<p><strong>Animal Companion Basics:</strong> Use the base statistics for a creature of the companion's kind, but make the following changes.</p>
+<p><strong>Class Level:</strong> The character's druid level. The druid's class levels stack with levels of any other classes that are entitled to an animal companion for the purpose of determining the companion's abilities and the alternative lists available to the character.</p>
+<p><strong>Bonus HD:</strong> Extra eight-sided (d8) Hit Dice, each of which gains a Constitution modifier, as normal. Remember that extra Hit Dice improve the animal companion's base attack and base save bonuses. An animal companion's base attack bonus is the same as that of a druid of a level equal to the animal's HD. An animal companion has good Fortitude and Reflex saves (treat it as a character whose level equals the animal's HD). An animal companion gains additional skill points and feats for bonus HD as normal for advancing a monster's Hit Dice.</p>
+<p>**Natural Armor Adj.: **The number noted here is an improvement to the animal companion's existing natural armor bonus.</p>
+<p><strong>Str/Dex Adj.:</strong> Add this value to the animal companion's Strength and Dexterity scores.</p>
+<p><strong>Bonus Tricks:</strong> The value given in this column is the total number of &quot;bonus&quot; tricks that the animal knows in addition to any that the druid might choose to teach it (see the Handle Animal skill). These bonus tricks don't require any training time or Handle Animal checks, and they don't count against the normal limit of tricks known by the animal. The druid selects these bonus tricks, and once selected, they can't be changed.</p>
+<p><strong>Link (Ex):</strong> A druid can handle her animal companion as a free action, or push it as a move action, even if she doesn't have any ranks in the Handle Animal skill. The druid gains a +4 circumstance bonus on all wild empathy checks and Handle Animal checks made regarding an animal companion.</p>
+<p><strong>Share Spells (Ex):</strong> At the druid's option, she may have any spell (but not any spell-like ability) she casts upon herself also affect her animal companion. The animal companion must be within 5 feet of her at the time of casting to receive the benefit. If the spell or effect has a duration other than instantaneous, it stops affecting the animal companion if the companion moves farther than 5 feet away and will not affect the animal again, even if it returns to the druid before the duration expires. </p>
+<p>Additionally, the druid may cast a spell with a target of &quot;You&quot; on her animal companion (as a touch range spell) instead of on herself. A druid and her animal companion can share spells even if the spells normally do not affect creatures of the companion's type (animal).</p>
+<p><strong>Evasion (Ex):</strong> If an animal companion is subjected to an attack that normally allows a Reflex saving throw for half damage, it takes no damage if it makes a successful saving throw.</p>
+<p><strong>Devotion (Ex):</strong> An animal companion gains a +4 morale bonus on Will saves against enchantment spells and effects.</p>
+<p><strong>Multiattack:</strong> An animal companion gains Multiattack as a bonus feat if it has three or more natural attacks and does not already have that feat. If it does not have the requisite three or more natural attacks, the animal companion instead gains a second attack with its primary natural weapon, albeit at a -5 penalty.</p>
+<p><strong>Improved Evasion (Ex):</strong> When subjected to an attack that normally allows a Reflex saving throw for half damage, an animal companion takes no damage if it makes a successful saving throw and only half damage if the saving throw fails.</p>
+<h3 id="alternative-animal-companions"><a class="header" href="#alternative-animal-companions">Alternative Animal Companions</a></h3>
+<p>A druid of sufficiently high level can select her animal companion from one of the following lists, applying the indicated adjustment to the druid's level (in parentheses) for purposes of determining the companion's characteristics and special abilities.</p>
+<ol>
+<li>Available only in an aquatic environment.</li>
+</ol>
+<h4 id="4th-level-or-higher-level--3"><a class="header" href="#4th-level-or-higher-level--3">4th Level or Higher (Level -3)</a></h4>
+<ul>
+<li>Ape (animal) </li>
+<li>Bear, black (animal) </li>
+<li>Bison (animal)</li>
+<li>Boar (animal) </li>
+<li>Cheetah (animal) </li>
+<li>Crocodile (animal)<sup>1</sup></li>
+<li>Dire badger </li>
+<li>Dire bat</li>
+<li>Dire weasel</li>
+<li>Leopard (animal)</li>
+<li>Lizard, monitor (animal)</li>
+<li>Shark, Large<sup>1</sup> (animal)</li>
+<li>Snake, constrictor (animal)</li>
+<li>Snake, Large viper (animal)</li>
+<li>Wolverine (animal)</li>
+</ul>
+<h4 id="7th-level-or-higher-level--6"><a class="header" href="#7th-level-or-higher-level--6">7th Level or Higher (Level -6)</a></h4>
+<ul>
+<li>Bear, brown (animal) </li>
+<li>Dire wolverine</li>
+<li>Crocodile, giant (animal) </li>
+<li>Deinonychus (dinosaur) </li>
+<li>Dire ape </li>
+<li>Dire boar </li>
+<li>Dire wolf </li>
+<li>Elasmosaurus<sup>1</sup> (dinosaur)</li>
+<li>Lion (animal)</li>
+<li>Rhinoceros (animal)</li>
+<li>Snake, Huge viper (animal)</li>
+<li>Tiger (animal)</li>
+</ul>
+<h4 id="10th-level-or-higher-level--9"><a class="header" href="#10th-level-or-higher-level--9">10th Level or Higher (Level -9)</a></h4>
+<ul>
+<li>Bear, polar (animal) </li>
+<li>Dire lion </li>
+<li>Megaraptor (dinosaur) </li>
+<li>Shark, Huge<sup>1</sup> (animal)</li>
+<li>Snake, giant constrictor (animal)</li>
+<li>Whale, orca<sup>1</sup> (animal)</li>
+</ul>
+<h4 id="13th-level-or-higher-level--12"><a class="header" href="#13th-level-or-higher-level--12">13th Level or Higher (Level -12)</a></h4>
+<ul>
+<li>Dire bear </li>
+<li>Elephant (animal)</li>
+<li>Octopus, giant<sup>1</sup> (animal)</li>
+</ul>
+<h4 id="16th-level-or-higher-level--15"><a class="header" href="#16th-level-or-higher-level--15">16th Level or Higher (Level -15)</a></h4>
+<ul>
+<li>Dire shark<sup>1</sup> </li>
+<li>Dire tiger </li>
+<li>Squid, giant<sup>1</sup> (animal)</li>
+<li>Triceratops (dinosaur)</li>
+<li>Tyrannosaurus (dinosaur)</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../classes/cleric.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../classes/fighter.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../classes/cleric.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../classes/fighter.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

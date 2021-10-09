@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Barbarian - System Reference Document v3.5</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The System Reference Document v3.5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="../basics.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li class="chapter-item expanded "><a href="../races/index.html"><strong aria-hidden="true">2.</strong> Races</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../races/dwarf.html"><strong aria-hidden="true">2.1.</strong> Dwarf</a></li><li class="chapter-item expanded "><a href="../races/elf.html"><strong aria-hidden="true">2.2.</strong> Elf</a></li><li class="chapter-item expanded "><a href="../races/gnome.html"><strong aria-hidden="true">2.3.</strong> Gnome</a></li><li class="chapter-item expanded "><a href="../races/half-elf.html"><strong aria-hidden="true">2.4.</strong> Half-Elf</a></li><li class="chapter-item expanded "><a href="../races/half-orc.html"><strong aria-hidden="true">2.5.</strong> Half-Orc</a></li><li class="chapter-item expanded "><a href="../races/halfling.html"><strong aria-hidden="true">2.6.</strong> Halfling</a></li><li class="chapter-item expanded "><a href="../races/human.html"><strong aria-hidden="true">2.7.</strong> Human</a></li></ol></li><li class="chapter-item expanded "><a href="../classes/index.html"><strong aria-hidden="true">3.</strong> Classes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../classes/barbarian.html" class="active"><strong aria-hidden="true">3.1.</strong> Barbarian</a></li><li class="chapter-item expanded "><a href="../classes/bard.html"><strong aria-hidden="true">3.2.</strong> Bard</a></li><li class="chapter-item expanded "><a href="../classes/cleric.html"><strong aria-hidden="true">3.3.</strong> Cleric</a></li><li class="chapter-item expanded "><a href="../classes/druid.html"><strong aria-hidden="true">3.4.</strong> Druid</a></li><li class="chapter-item expanded "><a href="../classes/fighter.html"><strong aria-hidden="true">3.5.</strong> Fighter</a></li><li class="chapter-item expanded "><a href="../classes/monk.html"><strong aria-hidden="true">3.6.</strong> Monk</a></li><li class="chapter-item expanded "><a href="../classes/paladin.html"><strong aria-hidden="true">3.7.</strong> Paladin</a></li><li class="chapter-item expanded "><a href="../classes/ranger.html"><strong aria-hidden="true">3.8.</strong> Ranger</a></li><li class="chapter-item expanded "><a href="../classes/rogue.html"><strong aria-hidden="true">3.9.</strong> Rogue</a></li><li class="chapter-item expanded "><a href="../classes/sorcerer.html"><strong aria-hidden="true">3.10.</strong> Sorcerer</a></li><li class="chapter-item expanded "><a href="../classes/wizard.html"><strong aria-hidden="true">3.11.</strong> Wizard</a></li></ol></li><li class="chapter-item expanded "><a href="../license.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">System Reference Document v3.5</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="barbarian"><a class="header" href="#barbarian">Barbarian</a></h1>
+<h4 id="table-the-barbarian"><a class="header" href="#table-the-barbarian">Table: The Barbarian</a></h4>
+<table><thead><tr><th align="center">Level</th><th align="center">Base Attack Bonus</th><th align="center">Fort Save</th><th align="center">Ref Save</th><th align="center">Will Save</th><th align="left">Special</th></tr></thead><tbody>
+<tr><td align="center">1st</td><td align="center">+1</td><td align="center">+2</td><td align="center">+0</td><td align="center">+0</td><td align="left">Fast movement, illiteracy, rage 1/day</td></tr>
+<tr><td align="center">2nd</td><td align="center">+2</td><td align="center">+3</td><td align="center">+0</td><td align="center">+0</td><td align="left">Uncanny dodge</td></tr>
+<tr><td align="center">3rd</td><td align="center">+3</td><td align="center">+3</td><td align="center">+1</td><td align="center">+1</td><td align="left">Trap sense +1</td></tr>
+<tr><td align="center">4th</td><td align="center">+4</td><td align="center">+4</td><td align="center">+1</td><td align="center">+1</td><td align="left">Rage 2/day</td></tr>
+<tr><td align="center">5th</td><td align="center">+5</td><td align="center">+4</td><td align="center">+1</td><td align="center">+1</td><td align="left">Improved uncanny dodge</td></tr>
+<tr><td align="center">6th</td><td align="center">+6</td><td align="center">+5</td><td align="center">+2</td><td align="center">+2</td><td align="left">Trap sense +2</td></tr>
+<tr><td align="center">7th</td><td align="center">+7</td><td align="center">+5</td><td align="center">+2</td><td align="center">+2</td><td align="left">Damage reduction 1/--</td></tr>
+<tr><td align="center">8th</td><td align="center">+8</td><td align="center">+6</td><td align="center">+2</td><td align="center">+2</td><td align="left">Rage 3/day</td></tr>
+<tr><td align="center">9th</td><td align="center">+9</td><td align="center">+6</td><td align="center">+3</td><td align="center">+3</td><td align="left">Trap sense +3</td></tr>
+<tr><td align="center">10th</td><td align="center">+10</td><td align="center">+7</td><td align="center">+3</td><td align="center">+3</td><td align="left">Damage reduction 2/--</td></tr>
+<tr><td align="center">11th</td><td align="center">+11</td><td align="center">+7</td><td align="center">+3</td><td align="center">+3</td><td align="left">Greater rage</td></tr>
+<tr><td align="center">12th</td><td align="center">+12</td><td align="center">+8</td><td align="center">+4</td><td align="center">+4</td><td align="left">Rage 4/day, trap sense +4</td></tr>
+<tr><td align="center">13th</td><td align="center">+13</td><td align="center">+8</td><td align="center">+4</td><td align="center">+4</td><td align="left">Damage reduction 3/--</td></tr>
+<tr><td align="center">14th</td><td align="center">+14</td><td align="center">+9</td><td align="center">+4</td><td align="center">+4</td><td align="left">Indomitable will</td></tr>
+<tr><td align="center">15th</td><td align="center">+15</td><td align="center">+9</td><td align="center">+5</td><td align="center">+5</td><td align="left">Trap sense +5</td></tr>
+<tr><td align="center">16th</td><td align="center">+16</td><td align="center">+10</td><td align="center">+5</td><td align="center">+5</td><td align="left">Damage reduction 4/--, rage 5/day</td></tr>
+<tr><td align="center">17th</td><td align="center">+17</td><td align="center">+10</td><td align="center">+5</td><td align="center">+5</td><td align="left">Tireless rage</td></tr>
+<tr><td align="center">18th</td><td align="center">+18</td><td align="center">+11</td><td align="center">+6</td><td align="center">+6</td><td align="left">Trap sense +6</td></tr>
+<tr><td align="center">19th</td><td align="center">+19</td><td align="center">+11</td><td align="center">+6</td><td align="center">+6</td><td align="left">Damage reduction 5/--</td></tr>
+<tr><td align="center">20th</td><td align="center">+20</td><td align="center">+12</td><td align="center">+6</td><td align="center">+6</td><td align="left">Mighty rage, rage 6/day</td></tr>
+</tbody></table>
+<p><strong>Alignment:</strong> Any nonlawful.</p>
+<p><strong>Hit Die:</strong> d12.</p>
+<h2 id="class-skills"><a class="header" href="#class-skills">Class Skills</a></h2>
+<p>The barbarian's class skills (and the key ability for each skill) are Climb (Str), Craft (Int), Handle Animal (Cha), Intimidate (Cha), Jump (Str), Listen (Wis), Ride (Dex), Survival (Wis), and Swim (Str).</p>
+<p><strong>Skill Points at 1st Level:</strong> (4 + Int modifier) x4.</p>
+<p><strong>Skill Points at Each Additional Level:</strong> 4 + Int modifier.</p>
+<h2 id="class-features"><a class="header" href="#class-features">Class Features</a></h2>
+<p>All of the following are class features of the barbarian.</p>
+<p><strong>Weapon and Armor Proficiency:</strong> A barbarian is proficient with all simple and martial weapons, light armor, medium armor, and shields (except tower shields).</p>
+<p><strong>Fast Movement (Ex):</strong> A barbarian's land speed is faster than the norm for his race by +10 feet. This benefit applies only when he is wearing no armor, light armor, or medium armor and not carrying a heavy load. Apply this bonus before modifying the barbarian's speed because of any load carried or armor worn.</p>
+<p><strong>Illiteracy:</strong> Barbarians are the only characters who do not automatically know how to read and write. A barbarian may spend 2 skill points to gain the ability to read and write all languages he is able to speak.</p>
+<p>A barbarian who gains a level in any other class automatically gains literacy. Any other character who gains a barbarian level does not lose the literacy he or she already had.</p>
+<p><strong>Rage (Ex):</strong> A barbarian can fly into a rage a certain number of times per day. In a rage, a barbarian temporarily gains a +4 bonus to Strength, a +4 bonus to Constitution, and a +2 morale bonus on Will saves, but he takes a -2 penalty to Armor Class. The increase in Constitution increases the barbarian's hit points by 2 points per level, but these hit points go away at the end of the rage when his Constitution score drops back to normal. (These extra hit points are not lost first the way temporary hit points are.) While raging, a barbarian cannot use any Charisma-, Dexterity-, or Intelligence-based skills (except for Balance, Escape Artist, Intimidate, and Ride), the Concentration skill, or any abilities that require patience or concentration, nor can he cast spells or activate magic items that require a command word, a spell trigger (such as a wand), or spell completion (such as a scroll) to function. He can use any feat he has except Combat Expertise, item creation feats, and metamagic feats. A fit of rage lasts for a number of rounds equal to 3 + the character's (newly improved) Constitution modifier. A barbarian may prematurely end his rage. At the end of the rage, the barbarian loses the rage modifiers and restrictions and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity, can't charge or run) for the duration of the current encounter (unless he is a 17th-level barbarian, at which point this limitation no longer applies; see below).</p>
+<p>A barbarian can fly into a rage only once per encounter. At 1st level he can use his rage ability once per day. At 4th level and every four levels thereafter, he can use it one additional time per day (to a maximum of six times per day at 20th level). Entering a rage takes no time itself, but a barbarian can do it only during his action, not in response to someone else's action.</p>
+<p><strong>Uncanny Dodge (Ex):</strong> At 2nd level, a barbarian retains his Dexterity bonus to AC (if any) even if he is caught flat-footed or struck by an invisible attacker. However, he still loses his Dexterity bonus to AC if immobilized. If a barbarian already has uncanny dodge from a different class, he automatically gains improved uncanny dodge (see below) instead.</p>
+<p><strong>Trap Sense (Ex):</strong> Starting at 3rd level, a barbarian gains a +1 bonus on Reflex saves made to avoid traps and a +1 dodge bonus to AC against attacks made by traps. These bonuses rise by +1 every three barbarian levels thereafter (6th, 9th, 12th, 15th, and 18th level). Trap sense bonuses gained from multiple classes stack.</p>
+<p><strong>Improved Uncanny Dodge (Ex):</strong> At 5th level and higher, a barbarian can no longer be flanked. This defense denies a rogue the ability to sneak attack the barbarian by flanking him, unless the attacker has at least four more rogue levels than the target has barbarian levels. If a character already has uncanny dodge (see above) from a second class, the character automatically gains improved uncanny dodge instead, and the levels from the classes that grant uncanny dodge stack to determine the minimum level a rogue must be to flank the character.</p>
+<p><strong>Damage Reduction (Ex):</strong> At 7th level, a barbarian gains Damage Reduction. Subtract 1 from the damage the barbarian takes each time he is dealt damage from a weapon or a natural attack. At 10th level, and every three barbarian levels thereafter (13th, 16th, and 19th level), this damage reduction rises by 1 point. Damage reduction can reduce damage to 0 but not below 0.</p>
+<p><strong>Greater Rage (Ex):</strong> At 11th level, a barbarian's bonuses to Strength and Constitution during his rage each increase to +6, and his morale bonus on Will saves increases to +3. The penalty to AC remains at -2.</p>
+<p><strong>Indomitable Will (Ex):</strong> While in a rage, a barbarian of 14th level or higher gains a +4 bonus on Will saves to resist enchantment spells. This bonus stacks with all other modifiers, including the morale bonus on Will saves he also receives during his rage.</p>
+<p><strong>Tireless Rage (Ex):</strong> At 17th level and higher, a barbarian no longer becomes fatigued at the end of his rage.</p>
+<p><strong>Mighty Rage (Ex):</strong> At 20th level, a barbarian's bonuses to Strength and Constitution during his rage each increase to +8, and his morale bonus on Will saves increases to +4. The penalty to AC remains at -2.</p>
+<h2 id="ex-barbarians"><a class="header" href="#ex-barbarians">Ex-Barbarians</a></h2>
+<p>A barbarian who becomes lawful loses the ability to rage and cannot gain more levels as a barbarian. He retains all the other benefits of the class (damage reduction, fast movement, trap sense, and uncanny dodge).</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../classes/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../classes/bard.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../classes/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../classes/bard.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
