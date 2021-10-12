@@ -60,5 +60,11 @@
   * [Use Magic Device](skills/use_magic_device.md)
   * [Use Rope](skills/use_rope.md)
 * [Feats](feats.md)
+<!-- TODO: Equipment -->
+<!-- TODO: Magic -->
+<!-- TODO: Exploration -->
+<!-- TODO: Combat -->
+<!-- TODO: Treasure -->
+<!-- TODO: Monsters -->
 
 [License](license.md)
