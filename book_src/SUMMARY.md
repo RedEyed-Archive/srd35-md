@@ -59,5 +59,6 @@
   * [Tumble](skills/tumble.md)
   * [Use Magic Device](skills/use_magic_device.md)
   * [Use Rope](skills/use_rope.md)
+* [Feats](feats.md)
 
 [License](license.md)
