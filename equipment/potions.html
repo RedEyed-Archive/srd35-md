@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Potions - System Reference Document v3.5</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The System Reference Document v3.5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../introduction.html">Introduction</a></li><li class="chapter-item "><a href="../basics.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li class="chapter-item "><a href="../races/index.html"><strong aria-hidden="true">2.</strong> Races</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../races/dwarf.html"><strong aria-hidden="true">2.1.</strong> Dwarf</a></li><li class="chapter-item "><a href="../races/elf.html"><strong aria-hidden="true">2.2.</strong> Elf</a></li><li class="chapter-item "><a href="../races/gnome.html"><strong aria-hidden="true">2.3.</strong> Gnome</a></li><li class="chapter-item "><a href="../races/half-elf.html"><strong aria-hidden="true">2.4.</strong> Half-Elf</a></li><li class="chapter-item "><a href="../races/half-orc.html"><strong aria-hidden="true">2.5.</strong> Half-Orc</a></li><li class="chapter-item "><a href="../races/halfling.html"><strong aria-hidden="true">2.6.</strong> Halfling</a></li><li class="chapter-item "><a href="../races/human.html"><strong aria-hidden="true">2.7.</strong> Human</a></li></ol></li><li class="chapter-item "><a href="../classes/index.html"><strong aria-hidden="true">3.</strong> Classes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../classes/barbarian.html"><strong aria-hidden="true">3.1.</strong> Barbarian</a></li><li class="chapter-item "><a href="../classes/bard.html"><strong aria-hidden="true">3.2.</strong> Bard</a></li><li class="chapter-item "><a href="../classes/cleric.html"><strong aria-hidden="true">3.3.</strong> Cleric</a></li><li class="chapter-item "><a href="../classes/druid.html"><strong aria-hidden="true">3.4.</strong> Druid</a></li><li class="chapter-item "><a href="../classes/fighter.html"><strong aria-hidden="true">3.5.</strong> Fighter</a></li><li class="chapter-item "><a href="../classes/monk.html"><strong aria-hidden="true">3.6.</strong> Monk</a></li><li class="chapter-item "><a href="../classes/paladin.html"><strong aria-hidden="true">3.7.</strong> Paladin</a></li><li class="chapter-item "><a href="../classes/ranger.html"><strong aria-hidden="true">3.8.</strong> Ranger</a></li><li class="chapter-item "><a href="../classes/rogue.html"><strong aria-hidden="true">3.9.</strong> Rogue</a></li><li class="chapter-item "><a href="../classes/sorcerer.html"><strong aria-hidden="true">3.10.</strong> Sorcerer</a></li><li class="chapter-item "><a href="../classes/wizard.html"><strong aria-hidden="true">3.11.</strong> Wizard</a></li></ol></li><li class="chapter-item "><a href="../skills/index.html"><strong aria-hidden="true">4.</strong> Skills</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../skills/appraise.html"><strong aria-hidden="true">4.1.</strong> Appraise</a></li><li class="chapter-item "><a href="../skills/balance.html"><strong aria-hidden="true">4.2.</strong> Balance</a></li><li class="chapter-item "><a href="../skills/bluff.html"><strong aria-hidden="true">4.3.</strong> Bluff</a></li><li class="chapter-item "><a href="../skills/climb.html"><strong aria-hidden="true">4.4.</strong> Climb</a></li><li class="chapter-item "><a href="../skills/concentration.html"><strong aria-hidden="true">4.5.</strong> Concentration</a></li><li class="chapter-item "><a href="../skills/craft.html"><strong aria-hidden="true">4.6.</strong> Craft</a></li><li class="chapter-item "><a href="../skills/decipher_script.html"><strong aria-hidden="true">4.7.</strong> Decipher Script</a></li><li class="chapter-item "><a href="../skills/diplomacy.html"><strong aria-hidden="true">4.8.</strong> Diplomacy</a></li><li class="chapter-item "><a href="../skills/disable_device.html"><strong aria-hidden="true">4.9.</strong> Disable Device</a></li><li class="chapter-item "><a href="../skills/disguise.html"><strong aria-hidden="true">4.10.</strong> Disguise</a></li><li class="chapter-item "><a href="../skills/escape_artist.html"><strong aria-hidden="true">4.11.</strong> Escape Artist</a></li><li class="chapter-item "><a href="../skills/forgery.html"><strong aria-hidden="true">4.12.</strong> Forgery</a></li><li class="chapter-item "><a href="../skills/gather_information.html"><strong aria-hidden="true">4.13.</strong> Gather Information</a></li><li class="chapter-item "><a href="../skills/handle_animal.html"><strong aria-hidden="true">4.14.</strong> Handle Animal</a></li><li class="chapter-item "><a href="../skills/heal.html"><strong aria-hidden="true">4.15.</strong> Heal</a></li><li class="chapter-item "><a href="../skills/hide.html"><strong aria-hidden="true">4.16.</strong> Hide</a></li><li class="chapter-item "><a href="../skills/index.html"><strong aria-hidden="true">4.17.</strong> Index</a></li><li class="chapter-item "><a href="../skills/intimidate.html"><strong aria-hidden="true">4.18.</strong> Intimidate</a></li><li class="chapter-item "><a href="../skills/jump.html"><strong aria-hidden="true">4.19.</strong> Jump</a></li><li class="chapter-item "><a href="../skills/knowledge.html"><strong aria-hidden="true">4.20.</strong> Knowledge</a></li><li class="chapter-item "><a href="../skills/listen.html"><strong aria-hidden="true">4.21.</strong> Listen</a></li><li class="chapter-item "><a href="../skills/move_silently.html"><strong aria-hidden="true">4.22.</strong> Move Silently</a></li><li class="chapter-item "><a href="../skills/open_lock.html"><strong aria-hidden="true">4.23.</strong> Open Lock</a></li><li class="chapter-item "><a href="../skills/perform.html"><strong aria-hidden="true">4.24.</strong> Perform</a></li><li class="chapter-item "><a href="../skills/profession.html"><strong aria-hidden="true">4.25.</strong> Profession</a></li><li class="chapter-item "><a href="../skills/ride.html"><strong aria-hidden="true">4.26.</strong> Ride</a></li><li class="chapter-item "><a href="../skills/search.html"><strong aria-hidden="true">4.27.</strong> Search</a></li><li class="chapter-item "><a href="../skills/sense_motive.html"><strong aria-hidden="true">4.28.</strong> Sense Motive</a></li><li class="chapter-item "><a href="../skills/sleight_of_hand.html"><strong aria-hidden="true">4.29.</strong> Sleight Of Hand</a></li><li class="chapter-item "><a href="../skills/speak_language.html"><strong aria-hidden="true">4.30.</strong> Speak Language</a></li><li class="chapter-item "><a href="../skills/spellcraft.html"><strong aria-hidden="true">4.31.</strong> Spellcraft</a></li><li class="chapter-item "><a href="../skills/spot.html"><strong aria-hidden="true">4.32.</strong> Spot</a></li><li class="chapter-item "><a href="../skills/survival.html"><strong aria-hidden="true">4.33.</strong> Survival</a></li><li class="chapter-item "><a href="../skills/swim.html"><strong aria-hidden="true">4.34.</strong> Swim</a></li><li class="chapter-item "><a href="../skills/tumble.html"><strong aria-hidden="true">4.35.</strong> Tumble</a></li><li class="chapter-item "><a href="../skills/use_magic_device.html"><strong aria-hidden="true">4.36.</strong> Use Magic Device</a></li><li class="chapter-item "><a href="../skills/use_rope.html"><strong aria-hidden="true">4.37.</strong> Use Rope</a></li></ol></li><li class="chapter-item "><a href="../feats.html"><strong aria-hidden="true">5.</strong> Feats</a></li><li class="chapter-item expanded "><a href="../equipment/index.html"><strong aria-hidden="true">6.</strong> Equipment</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../equipment/weapons.html"><strong aria-hidden="true">6.1.</strong> Weapons</a></li><li class="chapter-item "><a href="../equipment/armor.html"><strong aria-hidden="true">6.2.</strong> Armor</a></li><li class="chapter-item "><a href="../equipment/goods_and_services.html"><strong aria-hidden="true">6.3.</strong> Goods And Services</a></li><li class="chapter-item "><a href="../equipment/special_materials.html"><strong aria-hidden="true">6.4.</strong> Special Materials</a></li><li class="chapter-item "><a href="../equipment/magic_item_basics.html"><strong aria-hidden="true">6.5.</strong> Magic Item Basics</a></li><li class="chapter-item "><a href="../equipment/magic_weapons.html"><strong aria-hidden="true">6.6.</strong> Magic Weapons</a></li><li class="chapter-item "><a href="../equipment/magic_armor.html"><strong aria-hidden="true">6.7.</strong> Magic Armor</a></li><li class="chapter-item expanded "><a href="../equipment/potions.html" class="active"><strong aria-hidden="true">6.8.</strong> Potions</a></li><li class="chapter-item "><a href="../equipment/scrolls.html"><strong aria-hidden="true">6.9.</strong> Scrolls</a></li><li class="chapter-item "><a href="../equipment/wands.html"><strong aria-hidden="true">6.10.</strong> Wands</a></li><li class="chapter-item "><a href="../equipment/staffs.html"><strong aria-hidden="true">6.11.</strong> Staffs</a></li><li class="chapter-item "><a href="../equipment/rods.html"><strong aria-hidden="true">6.12.</strong> Rods</a></li><li class="chapter-item "><a href="../equipment/rings.html"><strong aria-hidden="true">6.13.</strong> Rings</a></li><li class="chapter-item "><a href="../equipment/wondrous_items.html"><strong aria-hidden="true">6.14.</strong> Wondrous Items</a></li><li class="chapter-item "><a href="../equipment/magic_item_creation.html"><strong aria-hidden="true">6.15.</strong> Magic Item Creation</a></li><li class="chapter-item "><a href="../equipment/intelligent_magic_items.html"><strong aria-hidden="true">6.16.</strong> Intelligent Magic Items</a></li><li class="chapter-item "><a href="../equipment/cursed_magic_items.html"><strong aria-hidden="true">6.17.</strong> Cursed Magic Items</a></li><li class="chapter-item "><a href="../equipment/artifacts.html"><strong aria-hidden="true">6.18.</strong> Artifacts</a></li></ol></li><li class="chapter-item "><a href="../license.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">System Reference Document v3.5</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>This material is Open Game Content, and is licensed for public use under the terms of the Open Game License v1.0a.</p>
+<p>MAGIC ITEMS III (POTIONS, RINGS, &amp; RODS)</p>
+<p>POTIONS AND OILS</p>
+<p>A potion is a magic liquid that produces its effect when imbibed. Magic oils are similar to potions, except that oils are applied externally rather than imbibed. A potion or oil can be used only once. It can duplicate the effect of a spell of up to 3rd level that has a casting time of less than 1 minute.</p>
+<p>Potions are like spells cast upon the imbiber. The character taking the potion doesn't get to make any decisions about the effect --the caster who brewed the potion has already done so. The drinker of a potion is both the effective target and the caster of the effect (though the potion indicates the caster level, the drinker still controls the effect).</p>
+<p>The person applying an oil is the effective caster, but the object is the target.</p>
+<p>Physical Description: A typical potion or oil consists of 1 ounce of liquid held in a ceramic or glass vial fitted with a tight stopper. The stoppered container is usually no more than 1 inch wide and 2 inches high. The vial has AC 13, 1 hit point, hardness 1, and a break DC of 12. Vials hold 1 ounce of liquid.</p>
+<p>Identifying Potions: In addition to the standard methods of identification, PCs can sample from each container they find to attempt to determine the nature of the liquid inside. An experienced character learns to identify potions by memory</p>
+<p>--for example, the last time she tasted a liquid that reminded her of almonds, it turned out to be a potion of cure moderate wounds. </p>
+<p>Activation: Drinking a potion or applying an oil requires no special skill. The user merely removes the stopper and swallows the potion or smears on the oil. The following rules govern potion and oil use.</p>
+<p>Drinking a potion or using an oil on an item of gear is a standard action. The potion or oil takes effect immediately. Using a potion or oil provokes attacks of opportunity. A successful attack (including grappling attacks) against the character forces a Concentration check (as for casting a spell). If the character fails this check, she cannot drink the potion. An enemy may direct an attack of opportunity against the potion or oil container rather than against the character. A successful attack of this sort can destroy the container. </p>
+<p>A creature must be able to swallow a potion or smear on an oil. Because of this, incorporeal creatures cannot use potions or oils. </p>
+<p>Any corporeal creature can imbibe a potion. The potion must be swallowed. Any corporeal creature can use an oil.</p>
+<p>A character can carefully administer a potion to an unconscious creature as a full-round action, trickling the liquid down the creature's throat. Likewise, it takes a full-round action to apply an oil to an unconscious creature.</p>
+<p>Potion Descriptions</p>
+<p>The caster level for a standard potion is the minimum caster level needed to cast the spell (unless otherwise specified).</p>
+<p>| Table: Potions and Oils | |  |
+| Minor | Medium | Major | | Potion or Oil | | Market Price | |  |
+| 01-10 | -- | -- | | Cure light wounds (potion) | | 50 gp | |  |
+| 11-13 | -- | -- | | Endure elements (potion) | | 50 gp | |  |
+| 14-15 | -- | -- | | Hide from animals (potion) | | 50 gp | |  |
+| 16-17 | -- | -- | | Hide from undead (potion) | | 50 gp | |  |
+| 18-19 | -- | -- | | Jump (potion) | | 50 gp | |  |
+| 20-22 | -- | -- | | Mage armor (potion) | | 50 gp | |  |
+| 23-25 | -- | -- | | Magic fang (potion) | | 50 gp | |  |
+| 26 | -- | -- | | Magic stone (oil) | | 50 gp | |  |
+| 27-29 | -- | -- | | Magic weapon (oil) | | 50 gp | |  |
+| 30 | -- | -- | | Pass without trace (potion) | | 50 gp | |  |
+| 31-32 | -- | -- | | Protection from (alignment) (potion) | | 50 gp | |  |
+| 33-34 | -- | -- | | Remove fear (potion) | | 50 gp | |  |
+| 35 | -- | -- | | Sanctuary (potion) | | 50 gp | |  |
+| 36-38 | -- | -- | | Shield of faith +2 (potion) | | 50 gp | |  |
+| 39 | -- | -- | | Shillelagh (oil) | | 50 gp | |  |
+| 40-41 | 01-02 | -- | | Bless weapon (oil) | | 100 gp | |  |
+| 42-44 | 03-04 | -- | | Enlarge person (potion) | | 250 gp | |  |
+| 45 | 05 | -- | | Reduce person (potion) | | 250 gp | |  |
+| 46-47 | 06 | -- | | Aid (potion) | | 300 gp | |  |
+| 48-50 | 07 | -- | | Barkskin +2 (potion) | | 300 gp | |  |
+| 51-53 | 08-10 | -- | | Bear's endurance (potion) | | 300 gp | |  |
+| 54-56 | 11-13 | 01-02 | | Blur (potion) | | 300 gp | |  |
+| 57-59 | 14-16 | -- | | Bull's strength (potion) | | 300 gp | |  |
+| 60-62 | 17-19 | -- | | Cat's grace (potion) | | 300 gp | |  |
+| 63-67 | 20-27 | 03-07 | | Cure moderate wounds (potion) | | 300 gp | |  |
+| 68 | 28 | -- | | Darkness (oil) | | 300 gp | |  |
+| 69-71 | 29-30 | 08-09 | | Darkvision (potion) | | 300 gp | |  |
+| 72-74 | 31 | -- | | Delay poison (potion) | | 300 gp | |  |
+| 75-76 | 32-33 | -- | | Eagle's splendor (potion) | | 300 gp | |  |
+| 77-78 | 34-35 | -- | | Fox's cunning (potion) | | 300 gp | |  |
+| 79-81 | 36-37 | 10-11 | | Invisibility (potion or oil) | | 300 gp | |  |
+| 82-84 | 38 | 12 | | Lesser restoration (potion) | | 300 gp | |  |
+| 85-86 | 39 | -- | | Levitate (potion or oil) | | 300 gp | |  |
+| 87 | 40 | -- | | Misdirection (potion) | | 300 gp | |  |
+| 88-89 | 41-42 | -- | | Owl's wisdom (potion) | | 300 gp | |  |
+| 90-91 | 43 | -- | | Protection from arrows 10/magic (potion) | | 300 gp | |  |
+| 92-93 | 44 | 13 | | Remove paralysis (potion) | | 300 gp | |  |
+| 94-96 | 45-46 | -- | | Resist energy (type) 10 (potion) | | 300 gp | |  |
+| 97 | 47-48 | 14 | | Shield of faith +3 (potion) | | 300 gp | |  |
+| 98-99 | 49 | -- | | Spider climb (potion) | | 300 gp | |  |
+| 100 | 50 | 15 | | Undetectable alignment (potion) | | 300 gp | |  |
+| -- | 51 | 16 | | Barkskin +3 (potion) | | 600 gp | |  |
+| -- | 52 | 17-18 | | Shield of faith +4 (potion) | | 600 gp | |  |
+| -- | 53-55 | 19-20 | | Resist energy (type) 20 (potion) | | 700 gp | |  |
+| -- | 56-60 | 21-28 | | Cure serious wounds (potion) | | 750 gp | |  |
+| -- | 61 | 29 | | Daylight (oil) | | 750 gp | |  |
+| -- | 62-64 | 30-32 | | Displacement (potion) | | 750 gp | |  |
+| -- | 65 | 33 | | Flame arrow (oil) | | 750 gp | |  |
+| -- | 66-68 | 34-38 | | Fly (potion) | | 750 gp | |  |
+| -- | 69 | 39 | | Gaseous form (potion) | | 750 gp | |  |
+| -- | 70-71 | -- | | Greater magic fang +1 (potion) | | 750 gp | |  |
+| -- | 72-73 | -- | | Greater magic weapon +1 (oil) | | 750 gp | |  |
+| -- | 74-75 | 40-41 | | Haste (potion) | | 750 gp | |  |
+| -- | 76-78 | 42-44 | | Heroism (potion) | | 750 gp | |  |
+| -- | 79-80 | 45-46 | | Keen edge (oil) | | 750 gp | |  |
+| -- | 81 | 47 | | Magic circle against (alignment) (potion) | | 750 gp | |  |
+| -- | 82-83 | -- | | Magic vestment +1 (oil) | | 750 gp | |  |
+| -- | 84-86 | 48-50 | | Neutralize poison (potion) | | 750 gp | |  |
+| -- | 87-88 | 51-52 | | Nondetection (potion) | | 750 gp | |  |
+| -- | 89-91 | 53-54 | | Protection from energy (type) (potion) | | 750 gp | |  |
+| -- | 92-93 | 55 | | Rage (potion) | | 750 gp | |  |
+| -- | 94 | 56 | | Remove blindness/deafness (potion) | | 750 gp | |  |
+| -- | 95 | 57 | | Remove curse (potion) | | 750 gp | |  |
+| -- | 96 | 58 | | Remove disease (potion) | | 750 gp | |  |
+| -- | 97 | 59 | | Tongues (potion) | | 750 gp | |  |
+| -- | 98-99 | 60 | | Water breathing (potion) | | 750 gp | |  |
+| -- | 100 | 61 | | Water walk (potion) | | 750 gp | |  |
+| -- | -- | 62-63 | | Barkskin +4 (potion) | | 900 gp | |  |
+| -- | -- | 64 | | Shield of faith +5 (potion) | | 900 gp | |  |
+| -- | -- | 65 | | Good hope (potion) | | 1,050 gp | |  |
+| -- | -- | 66-68 | | Resist energy (type) 30 (potion) | | 1,100 gp | |  |
+| -- | -- | 69 | | Barkskin +5 (potion) | | 1,200 gp | |  |
+| -- | -- | 70-73 | | Greater magic fang +2 (potion) | | 1,200 gp | |  |
+| -- | -- | 74-77 | | Greater magic weapon +2 (oil) | | 1,200 gp | |  |
+| -- | -- | 78-81 | | Magic vestment +2 (oil) | | 1,200 gp | |  |
+| -- | -- | 82 | | Protection from arrows 15/magic (potion) | | 1,500 gp | |  |
+| -- | -- | 83-85 | | Greater magic fang +3 (potion) | | 1,800 gp | |  |
+| -- | -- | 86-88 | | Greater magic weapon +3 (oil) | | 1,800 gp | |  |
+| -- | -- | 89-91 | | Magic vestment +3 (oil) | | 1,800 gp | |  |
+| -- | -- | 92-93 | | Greater magic fang +4 (potion) | | 2,400 gp | |  |
+| -- | -- | 94-95 | | Greater magic weapon +4 (oil) | | 2,400 gp | |  |
+| -- | -- | 96-97 | | Magic vestment +4 (oil) | | 2,400 gp | |  |
+| -- | -- | 98 | | Greater magic fang +5 (potion) | | 3,000 gp | |  |
+| -- | -- | 99 | | Greater magic weapon +5 (oil) | | 3,000 gp | |  |
+| -- | -- | 100 | | Magic vestment +5 (oil) | | 3,000 gp | |  |</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../equipment/magic_armor.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../equipment/scrolls.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../equipment/magic_armor.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../equipment/scrolls.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

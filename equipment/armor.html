@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Armor - System Reference Document v3.5</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The System Reference Document v3.5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../introduction.html">Introduction</a></li><li class="chapter-item "><a href="../basics.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li class="chapter-item "><a href="../races/index.html"><strong aria-hidden="true">2.</strong> Races</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../races/dwarf.html"><strong aria-hidden="true">2.1.</strong> Dwarf</a></li><li class="chapter-item "><a href="../races/elf.html"><strong aria-hidden="true">2.2.</strong> Elf</a></li><li class="chapter-item "><a href="../races/gnome.html"><strong aria-hidden="true">2.3.</strong> Gnome</a></li><li class="chapter-item "><a href="../races/half-elf.html"><strong aria-hidden="true">2.4.</strong> Half-Elf</a></li><li class="chapter-item "><a href="../races/half-orc.html"><strong aria-hidden="true">2.5.</strong> Half-Orc</a></li><li class="chapter-item "><a href="../races/halfling.html"><strong aria-hidden="true">2.6.</strong> Halfling</a></li><li class="chapter-item "><a href="../races/human.html"><strong aria-hidden="true">2.7.</strong> Human</a></li></ol></li><li class="chapter-item "><a href="../classes/index.html"><strong aria-hidden="true">3.</strong> Classes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../classes/barbarian.html"><strong aria-hidden="true">3.1.</strong> Barbarian</a></li><li class="chapter-item "><a href="../classes/bard.html"><strong aria-hidden="true">3.2.</strong> Bard</a></li><li class="chapter-item "><a href="../classes/cleric.html"><strong aria-hidden="true">3.3.</strong> Cleric</a></li><li class="chapter-item "><a href="../classes/druid.html"><strong aria-hidden="true">3.4.</strong> Druid</a></li><li class="chapter-item "><a href="../classes/fighter.html"><strong aria-hidden="true">3.5.</strong> Fighter</a></li><li class="chapter-item "><a href="../classes/monk.html"><strong aria-hidden="true">3.6.</strong> Monk</a></li><li class="chapter-item "><a href="../classes/paladin.html"><strong aria-hidden="true">3.7.</strong> Paladin</a></li><li class="chapter-item "><a href="../classes/ranger.html"><strong aria-hidden="true">3.8.</strong> Ranger</a></li><li class="chapter-item "><a href="../classes/rogue.html"><strong aria-hidden="true">3.9.</strong> Rogue</a></li><li class="chapter-item "><a href="../classes/sorcerer.html"><strong aria-hidden="true">3.10.</strong> Sorcerer</a></li><li class="chapter-item "><a href="../classes/wizard.html"><strong aria-hidden="true">3.11.</strong> Wizard</a></li></ol></li><li class="chapter-item "><a href="../skills/index.html"><strong aria-hidden="true">4.</strong> Skills</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../skills/appraise.html"><strong aria-hidden="true">4.1.</strong> Appraise</a></li><li class="chapter-item "><a href="../skills/balance.html"><strong aria-hidden="true">4.2.</strong> Balance</a></li><li class="chapter-item "><a href="../skills/bluff.html"><strong aria-hidden="true">4.3.</strong> Bluff</a></li><li class="chapter-item "><a href="../skills/climb.html"><strong aria-hidden="true">4.4.</strong> Climb</a></li><li class="chapter-item "><a href="../skills/concentration.html"><strong aria-hidden="true">4.5.</strong> Concentration</a></li><li class="chapter-item "><a href="../skills/craft.html"><strong aria-hidden="true">4.6.</strong> Craft</a></li><li class="chapter-item "><a href="../skills/decipher_script.html"><strong aria-hidden="true">4.7.</strong> Decipher Script</a></li><li class="chapter-item "><a href="../skills/diplomacy.html"><strong aria-hidden="true">4.8.</strong> Diplomacy</a></li><li class="chapter-item "><a href="../skills/disable_device.html"><strong aria-hidden="true">4.9.</strong> Disable Device</a></li><li class="chapter-item "><a href="../skills/disguise.html"><strong aria-hidden="true">4.10.</strong> Disguise</a></li><li class="chapter-item "><a href="../skills/escape_artist.html"><strong aria-hidden="true">4.11.</strong> Escape Artist</a></li><li class="chapter-item "><a href="../skills/forgery.html"><strong aria-hidden="true">4.12.</strong> Forgery</a></li><li class="chapter-item "><a href="../skills/gather_information.html"><strong aria-hidden="true">4.13.</strong> Gather Information</a></li><li class="chapter-item "><a href="../skills/handle_animal.html"><strong aria-hidden="true">4.14.</strong> Handle Animal</a></li><li class="chapter-item "><a href="../skills/heal.html"><strong aria-hidden="true">4.15.</strong> Heal</a></li><li class="chapter-item "><a href="../skills/hide.html"><strong aria-hidden="true">4.16.</strong> Hide</a></li><li class="chapter-item "><a href="../skills/index.html"><strong aria-hidden="true">4.17.</strong> Index</a></li><li class="chapter-item "><a href="../skills/intimidate.html"><strong aria-hidden="true">4.18.</strong> Intimidate</a></li><li class="chapter-item "><a href="../skills/jump.html"><strong aria-hidden="true">4.19.</strong> Jump</a></li><li class="chapter-item "><a href="../skills/knowledge.html"><strong aria-hidden="true">4.20.</strong> Knowledge</a></li><li class="chapter-item "><a href="../skills/listen.html"><strong aria-hidden="true">4.21.</strong> Listen</a></li><li class="chapter-item "><a href="../skills/move_silently.html"><strong aria-hidden="true">4.22.</strong> Move Silently</a></li><li class="chapter-item "><a href="../skills/open_lock.html"><strong aria-hidden="true">4.23.</strong> Open Lock</a></li><li class="chapter-item "><a href="../skills/perform.html"><strong aria-hidden="true">4.24.</strong> Perform</a></li><li class="chapter-item "><a href="../skills/profession.html"><strong aria-hidden="true">4.25.</strong> Profession</a></li><li class="chapter-item "><a href="../skills/ride.html"><strong aria-hidden="true">4.26.</strong> Ride</a></li><li class="chapter-item "><a href="../skills/search.html"><strong aria-hidden="true">4.27.</strong> Search</a></li><li class="chapter-item "><a href="../skills/sense_motive.html"><strong aria-hidden="true">4.28.</strong> Sense Motive</a></li><li class="chapter-item "><a href="../skills/sleight_of_hand.html"><strong aria-hidden="true">4.29.</strong> Sleight Of Hand</a></li><li class="chapter-item "><a href="../skills/speak_language.html"><strong aria-hidden="true">4.30.</strong> Speak Language</a></li><li class="chapter-item "><a href="../skills/spellcraft.html"><strong aria-hidden="true">4.31.</strong> Spellcraft</a></li><li class="chapter-item "><a href="../skills/spot.html"><strong aria-hidden="true">4.32.</strong> Spot</a></li><li class="chapter-item "><a href="../skills/survival.html"><strong aria-hidden="true">4.33.</strong> Survival</a></li><li class="chapter-item "><a href="../skills/swim.html"><strong aria-hidden="true">4.34.</strong> Swim</a></li><li class="chapter-item "><a href="../skills/tumble.html"><strong aria-hidden="true">4.35.</strong> Tumble</a></li><li class="chapter-item "><a href="../skills/use_magic_device.html"><strong aria-hidden="true">4.36.</strong> Use Magic Device</a></li><li class="chapter-item "><a href="../skills/use_rope.html"><strong aria-hidden="true">4.37.</strong> Use Rope</a></li></ol></li><li class="chapter-item "><a href="../feats.html"><strong aria-hidden="true">5.</strong> Feats</a></li><li class="chapter-item expanded "><a href="../equipment/index.html"><strong aria-hidden="true">6.</strong> Equipment</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../equipment/weapons.html"><strong aria-hidden="true">6.1.</strong> Weapons</a></li><li class="chapter-item expanded "><a href="../equipment/armor.html" class="active"><strong aria-hidden="true">6.2.</strong> Armor</a></li><li class="chapter-item "><a href="../equipment/goods_and_services.html"><strong aria-hidden="true">6.3.</strong> Goods And Services</a></li><li class="chapter-item "><a href="../equipment/special_materials.html"><strong aria-hidden="true">6.4.</strong> Special Materials</a></li><li class="chapter-item "><a href="../equipment/magic_item_basics.html"><strong aria-hidden="true">6.5.</strong> Magic Item Basics</a></li><li class="chapter-item "><a href="../equipment/magic_weapons.html"><strong aria-hidden="true">6.6.</strong> Magic Weapons</a></li><li class="chapter-item "><a href="../equipment/magic_armor.html"><strong aria-hidden="true">6.7.</strong> Magic Armor</a></li><li class="chapter-item "><a href="../equipment/potions.html"><strong aria-hidden="true">6.8.</strong> Potions</a></li><li class="chapter-item "><a href="../equipment/scrolls.html"><strong aria-hidden="true">6.9.</strong> Scrolls</a></li><li class="chapter-item "><a href="../equipment/wands.html"><strong aria-hidden="true">6.10.</strong> Wands</a></li><li class="chapter-item "><a href="../equipment/staffs.html"><strong aria-hidden="true">6.11.</strong> Staffs</a></li><li class="chapter-item "><a href="../equipment/rods.html"><strong aria-hidden="true">6.12.</strong> Rods</a></li><li class="chapter-item "><a href="../equipment/rings.html"><strong aria-hidden="true">6.13.</strong> Rings</a></li><li class="chapter-item "><a href="../equipment/wondrous_items.html"><strong aria-hidden="true">6.14.</strong> Wondrous Items</a></li><li class="chapter-item "><a href="../equipment/magic_item_creation.html"><strong aria-hidden="true">6.15.</strong> Magic Item Creation</a></li><li class="chapter-item "><a href="../equipment/intelligent_magic_items.html"><strong aria-hidden="true">6.16.</strong> Intelligent Magic Items</a></li><li class="chapter-item "><a href="../equipment/cursed_magic_items.html"><strong aria-hidden="true">6.17.</strong> Cursed Magic Items</a></li><li class="chapter-item "><a href="../equipment/artifacts.html"><strong aria-hidden="true">6.18.</strong> Artifacts</a></li></ol></li><li class="chapter-item "><a href="../license.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">System Reference Document v3.5</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="armor"><a class="header" href="#armor">Armor</a></h1>
+<h2 id="armor-qualities"><a class="header" href="#armor-qualities">Armor Qualities</a></h2>
+<p>To wear heavier armor effectively, a character can select the Armor Proficiency feats, but most classes are automatically proficient with the armors that work best for them.</p>
+<p>Armor and shields can take damage from some types of attacks. </p>
+<p>Here is the format for armor entries (given as column headings on Table: Armor and Shields, below).</p>
+<p>Cost: The cost of the armor for Small or Medium humanoid creatures. See Armor for Unusual Creatures, below, for armor prices for other creatures.</p>
+<p>Armor/Shield Bonus: Each armor grants an armor bonus to AC, while shields grant a shield bonus to AC. The armor bonus from a suit of armor doesn't stack with other effects or items that grant an armor bonus. Similarly, the shield bonus from a shield doesn't stack with other effects that grant a shield bonus.</p>
+<p>Maximum Dex Bonus: This number is the maximum Dexterity bonus to AC that this type of armor allows. Heavier armors limit mobility, reducing the wearer's ability to dodge blows. This restriction doesn't affect any other Dexterity-related abilities.</p>
+<p>Even if a character's Dexterity bonus to AC drops to 0 because of armor, this situation does not count as losing a Dexterity bonus to AC. </p>
+<p>Your character's encumbrance (the amount of gear he or she carries) may also restrict the maximum Dexterity bonus that can be applied to his or her Armor Class.</p>
+<p>Shields: Shields do not affect a character's maximum Dexterity bonus.</p>
+<p>Armor Check Penalty: Any armor heavier than leather hurts a character's ability to use some skills. An armor check penalty number is the penalty that applies to Balance, Climb, Escape Artist, Hide, Jump, Move Silently, Sleight of Hand, and Tumble checks by a character wearing a certain kind of armor. Double the normal armor check penalty is applied to Swim checks. A character's encumbrance (the amount of gear carried, including armor) may also apply an armor check penalty.</p>
+<p>Shields: If a character is wearing armor and using a shield, both armor check penalties apply.</p>
+<p>Nonproficient with Armor Worn: A character who wears armor and/or uses a shield with which he or she is not proficient takes the armor's (and/or shield's) armor check penalty on attack rolls and on all Strength-based and Dexterity-based ability and skill checks. The penalty for nonproficiency with armor stacks with the penalty for nonproficiency with shields.</p>
+<p>Sleeping in Armor: A character who sleeps in medium or heavy armor is automatically fatigued the next day. He or she takes a -2 penalty on Strength and Dexterity and can't charge or run. Sleeping in light armor does not cause fatigue.</p>
+<p>Arcane Spell Failure: Armor interferes with the gestures that a spellcaster must make to cast an arcane spell that has a somatic component. Arcane spellcasters face the possibility of arcane spell failure if they're wearing armor. Bards can wear light armor without incurring any arcane spell failure chance for their bard spells.</p>
+<p>Casting an Arcane Spell in Armor: A character who casts an arcane spell while wearing armor must usually make an arcane spell failure roll. The number in the Arcane Spell Failure Chance column on Table: Armor and Shields is the chance that the spell fails and is ruined. If the spell lacks a somatic component, however, it can be cast with no chance of arcane spell failure.</p>
+<p>Shields: If a character is wearing armor and using a shield, add the two numbers together to get a single arcane spell failure chance.</p>
+<p>Speed: Medium or heavy armor slows the wearer down. The number on Table: Armor and Shields is the character's speed while wearing the armor. Humans, elves, half-elves, and half-orcs have an unencumbered speed of 30 feet.</p>
+<p>They use the first column. Dwarves, gnomes, and halflings have an unencumbered speed of 20 feet. They use the second column. Remember, however, that a dwarf 's land speed remains 20 feet even in medium or heavy armor or when carrying a medium or heavy load.</p>
+<p>Shields: Shields do not affect a character's speed.</p>
+<p>Weight: This column gives the weight of the armor sized for a Medium wearer. Armor fitted for Small characters weighs half as much, and armor for Large characters weighs twice as much.</p>
+<p>| Table: Armor and Shields | |  |
+|   | |  |  |  |  |  | --- Speed --- |  | |  |
+| Armor | | Cost | Armor/Shield Bonus | Maximum Dex Bonus | Armor Check Penalty | Arcane Spell Failure Chance | (30 ft.) | (20 ft.) | Weight1 | |  |</p>
+<p>| Light armor | |  |  |  |  |  |  |  |  | |  |
+| Padded | | 5 gp | +1 | +8 | 0 | 5% | 30 ft. | 20 ft. | 10 lb. | |  |
+| Leather | | 10 gp | +2 | +6 | 0 | 10% | 30 ft. | 20 ft. | 15 lb. | |  |
+| Studded leather | | 25 gp | +3 | +5 | -1 | 15% | 30 ft. | 20 ft. | 20 lb. | |  |
+| Chain shirt | | 100 gp | +4 | +4 | -2 | 20% | 30 ft. | 20 ft. | 25 lb. | |  |</p>
+<p>| Medium armor | |  |  |  |  |  |  |  |  | |  |
+| Hide | | 15 gp | +3 | +4 | -3 | 20% | 20 ft. | 15 ft. | 25 lb. | |  |
+| Scale mail | | 50 gp | +4 | +3 | -4 | 25% | 20 ft. | 15 ft. | 30 lb. | |  |
+| Chainmail | | 150 gp | +5 | +2 | -5 | 30% | 20 ft. | 15 ft. | 40 lb. | |  |
+| Breastplate | | 200 gp | +5 | +3 | -4 | 25% | 20 ft. | 15 ft. | 30 lb. | |  |</p>
+<p>| Heavy armor | |  |  |  |  |  |  |  |  | |  |
+| Splint mail | | 200 gp | +6 | +0 | -7 | 40% | 20 ft.2 | 15 ft.2 | 45 lb. | |  |
+| Banded mail | | 250 gp | +6 | +1 | -6 | 35% | 20 ft.2 | 15 ft.2 | 35 lb. | |  |
+| Half-plate | | 600 gp | +7 | +0 | -7 | 40% | 20 ft.2 | 15 ft.2 | 50 lb. | |  |
+| Full plate | | 1,500 gp | +8 | +1 | -6 | 35% | 20 ft.2 | 15 ft.2 | 50 lb. | |  |</p>
+<p>| Shields | |  |  |  |  |  |  |  |  | |  |
+| Buckler | | 15 gp | +1 | -- | -1 | 5% | -- | -- | 5 lb. | |  |
+| Shield, light wooden | | 3 gp | +1 | -- | -1 | 5% | -- | -- | 5 lb. | |  |
+| Shield, light steel | | 9 gp | +1 | -- | -1 | 5% | -- | -- | 6 lb. | |  |
+| Shield, heavy wooden | | 7 gp | +2 | -- | -2 | 15% | -- | -- | 10 lb. | |  |
+| Shield, heavy steel | | 20 gp | +2 | -- | -2 | 15% | -- | -- | 15 lb. | |  |
+| Shield, tower | | 30 gp | +43 | +2 | -10 | 50% | -- | -- | 45 lb. | |  |</p>
+<p>| Extras | |  |  |  |  |  |  |  |  | |  |
+| Armor spikes | | +50 gp | -- | -- | -- | -- | -- | -- | +10 lb. | |  |
+| Gauntlet, locked | | 8 gp | -- | -- | Special | 4 | -- | -- | +5 lb. | |  |
+| Shield spikes | | +10 gp | -- | -- | -- | -- | -- | -- | +5 lb. | |  |</p>
+<ol>
+<li>Weight figures are for armor sized to fit Medium characters. Armor fitted for Small characters weighs half as much, and armor fitted for Large characters weighs twice as much.</li>
+<li>When running in heavy armor, you move only triple your speed, not quadruple.</li>
+<li>A tower shield can instead grant you cover. See the description.</li>
+<li>Hand not free to cast spells.</li>
+</ol>
+<h2 id="armor-descriptions"><a class="header" href="#armor-descriptions">Armor Descriptions</a></h2>
+<p>Any special benefits or accessories to the types of armor found on Table: Armor and Shields are described below.</p>
+<p>Armor Spikes: You can have spikes added to your armor, which allow you to deal extra piercing damage (see Table: Weapons) on a successful grapple attack. The spikes count as a martial weapon. If you are not proficient with them, you take a -4 penalty on grapple checks when you try to use them. You can also make a regular melee attack (or off-hand attack) with the spikes, and they count as a light weapon in this case. (You can't also make an attack with armor spikes if you have already made an attack with another off-hand weapon, and vice versa.)</p>
+<p>An enhancement bonus to a suit of armor does not improve the spikes' effectiveness, but the spikes can be made into magic weapons in their own right.</p>
+<p>Banded Mail: The suit includes gauntlets.</p>
+<p>Breastplate: It comes with a helmet and greaves. </p>
+<p>Buckler: This small metal shield is worn strapped to your forearm. You can use a bow or crossbow without penalty while carrying it. You can also use your shield arm to wield a weapon (whether you are using an off-hand weapon or using your off hand to help wield a two-handed weapon), but you take a -1 penalty on attack rolls while doing so. This penalty stacks with those that may apply for fighting with your off hand and for fighting with two weapons. In any case, if you use a weapon in your off hand, you don't get the buckler's AC bonus for the rest of the round.</p>
+<p>You can't bash someone with a buckler.</p>
+<p>Chain Shirt: A chain shirt comes with a steel cap.</p>
+<p>Chainmail: The suit includes gauntlets.</p>
+<p>Full Plate: The suit includes gauntlets, heavy leather boots, a visored helmet, and a thick layer of padding that is worn underneath the armor. Each suit of full plate must be individually fitted to its owner by a master armorsmith, although a captured suit can be resized to fit a new owner at a cost of 200 to 800 (2d4x100) gold pieces.</p>
+<p>Gauntlet, Locked: This armored gauntlet has small chains and braces that allow the wearer to attach a weapon to the gauntlet so that it cannot be dropped easily. It provides a +10 bonus on any roll made to keep from being disarmed in combat. Removing a weapon from a locked gauntlet or attaching a weapon to a locked gauntlet is a full-round action that provokes attacks of opportunity.</p>
+<p>The price given is for a single locked gauntlet. The weight given applies only if you're wearing a breastplate, light armor, or no armor. Otherwise, the locked gauntlet replaces a gauntlet you already have as part of the armor.</p>
+<p>While the gauntlet is locked, you can't use the hand wearing it for casting spells or employing skills. (You can still cast spells with somatic components, provided that your other hand is free.)</p>
+<p>Like a normal gauntlet, a locked gauntlet lets you deal lethal damage rather than nonlethal damage with an unarmed strike.</p>
+<p>Half-Plate: The suit includes gauntlets.</p>
+<p>Scale Mail: The suit includes gauntlets.</p>
+<p>Shield, Heavy, Wooden or Steel: You strap a shield to your forearm and grip it with your hand. A heavy shield is so heavy that you can't use your shield hand for anything else.</p>
+<p>Wooden or Steel: Wooden and steel shields offer the same basic protection, though they respond differently to special attacks.</p>
+<p>Shield Bash Attacks: You can bash an opponent with a heavy shield, using it as an off-hand weapon. See Table: Weapons for the damage dealt by a shield bash. Used this way, a heavy shield is a martial bludgeoning weapon. For the purpose of penalties on attack rolls, treat a heavy shield as a one-handed weapon. If you use your shield as a weapon, you lose its AC bonus until your next action (usually until the next round). An enhancement bonus on a shield does not improve the effectiveness of a shield bash made with it, but the shield can be made into a magic weapon in its own right.</p>
+<p>Shield, Light, Wooden or Steel: You strap a shield to your forearm and grip it with your hand. A light shield's weight lets you carry other items in that hand, although you cannot use weapons with it.</p>
+<p>Wooden or Steel: Wooden and steel shields offer the same basic protection, though they respond differently to special attacks.</p>
+<p>Shield Bash Attacks: You can bash an opponent with a light shield, using it as an off-hand weapon. See Table: Weapons for the damage dealt by a shield bash. Used this way, a light shield is a martial bludgeoning weapon. For the purpose of penalties on attack rolls, treat a light shield as a light weapon. If you use your shield as a weapon, you lose its AC bonus until your next action (usually until the next round). An enhancement bonus on a shield does not improve the effectiveness of a shield bash made with it, but the shield can be made into a magic weapon in its own right.</p>
+<p>Shield, Tower: This massive wooden shield is nearly as tall as you are. In most situations, it provides the indicated shield bonus to your AC. However, you can instead use it as total cover, though you must give up your attacks to do so. The shield does not, however, provide cover against targeted spells; a spellcaster can cast a spell on you by targeting the shield you are holding. You cannot bash with a tower shield, nor can you use your shield hand for anything else.</p>
+<p>When employing a tower shield in combat, you take a -2 penalty on attack rolls because of the shield's encumbrance.</p>
+<p>Shield Spikes: When added to your shield, these spikes turn it into a martial piercing weapon that increases the damage dealt by a shield bash as if the shield were designed for a creature one size category larger than you. You can't put spikes on a buckler or a tower shield. Otherwise, attacking with a spiked shield is like making a shield bash attack (see above).</p>
+<p>An enhancement bonus on a spiked shield does not improve the effectiveness of a shield bash made with it, but a spiked shield can be made into a magic weapon in its own right.</p>
+<p>Splint Mail: The suit includes gauntlets.</p>
+<h2 id="masterwork-armor"><a class="header" href="#masterwork-armor">Masterwork Armor</a></h2>
+<p>Just as with weapons, you can purchase or craft masterwork versions of armor or shields. Such a well-made item functions like the normal version, except that its armor check penalty is lessened by 1. </p>
+<p>A masterwork suit of armor or shield costs an extra 150 gp over and above the normal cost for that type of armor or shield.</p>
+<p>The masterwork quality of a suit of armor or shield never provides a bonus on attack or damage rolls, even if the armor or shield is used as a weapon.</p>
+<p>All magic armors and shields are automatically considered to be of masterwork quality.</p>
+<p>You can't add the masterwork quality to armor or a shield after it is created; it must be crafted as a masterwork item.</p>
+<h2 id="armor-for-unusual-creatures"><a class="header" href="#armor-for-unusual-creatures">Armor For Unusual Creatures</a></h2>
+<p>Armor and shields for unusually big creatures, unusually little creatures, and nonhumanoid creatures have different costs and weights from those given on Table: Armor and Shields. Refer to the appropriate line on the table below and apply the multipliers to cost and weight for the armor type in question.</p>
+<p>|   | | Humanoid | Nonhumanoid | |  |
+| Size | | Cost | Weight | Cost | Weight | |  |
+| Tiny or smaller1 | | x1/2 | x1/10 | x1 | x1/10 | |  |
+| Small | | x1 | x1/2 | x2 | x1/2 | |  |
+| Medium | | x1 | x1 | x2 | x1 | |  |
+| Large | | x2 | x2 | x4 | x2 | |  |
+| Huge | | x4 | x5 | x8 | x5 | |  |
+| Gargantuan | | x8 | x8 | x16 | x8 | |  |
+| Colossal | | x16 | x12 | x32 | x12 | |  |</p>
+<ol>
+<li>Divide armor bonus by 2.</li>
+</ol>
+<h2 id="getting-into-and-out-of-armor"><a class="header" href="#getting-into-and-out-of-armor">Getting Into And Out Of Armor</a></h2>
+<p>The time required to don armor depends on its type; see Table: Donning Armor.</p>
+<p>Don: This column tells how long it takes a character to put the armor on. (One minute is 10 rounds.) Readying (strapping on) a shield is only a move action.</p>
+<p>Don Hastily: This column tells how long it takes to put the armor on in a hurry. The armor check penalty and armor bonus for hastily donned armor are each 1 point worse than normal. </p>
+<p>Remove: This column tells how long it takes to get the armor off. Loosing a shield (removing it from the arm and dropping it) is only a move action.</p>
+<p>| Table: Donning Armor | |  |
+| Armor Type | Don | Don Hastily | Remove | |  |
+| Shield (any) | 1 move action | n/a | 1 move action | |  |
+| Padded, leather, hide, studded leather, or chain shirt | 1 minute | 5 rounds | 1 minute1 | |  |
+| Breastplate, scale mail, chainmail, banded mail, or splint mail | 4 minutes1 | 1 minute | 1 minute1 | |  |
+| Half-plate or full plate | 4 minutes2 | 4 minutes1 | 1d4+1 minutes1 | |  |</p>
+<ol>
+<li>If the character has some help, cut this time in half. A single character doing nothing else can help one or two adjacent characters. Two characters can't help each other don armor at the same time.</li>
+<li>The wearer must have help to don this armor. Without help, it can be donned only hastily.</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../equipment/weapons.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../equipment/goods_and_services.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../equipment/weapons.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../equipment/goods_and_services.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

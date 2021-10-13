@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Special Materials - System Reference Document v3.5</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The System Reference Document v3.5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../introduction.html">Introduction</a></li><li class="chapter-item "><a href="../basics.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li class="chapter-item "><a href="../races/index.html"><strong aria-hidden="true">2.</strong> Races</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../races/dwarf.html"><strong aria-hidden="true">2.1.</strong> Dwarf</a></li><li class="chapter-item "><a href="../races/elf.html"><strong aria-hidden="true">2.2.</strong> Elf</a></li><li class="chapter-item "><a href="../races/gnome.html"><strong aria-hidden="true">2.3.</strong> Gnome</a></li><li class="chapter-item "><a href="../races/half-elf.html"><strong aria-hidden="true">2.4.</strong> Half-Elf</a></li><li class="chapter-item "><a href="../races/half-orc.html"><strong aria-hidden="true">2.5.</strong> Half-Orc</a></li><li class="chapter-item "><a href="../races/halfling.html"><strong aria-hidden="true">2.6.</strong> Halfling</a></li><li class="chapter-item "><a href="../races/human.html"><strong aria-hidden="true">2.7.</strong> Human</a></li></ol></li><li class="chapter-item "><a href="../classes/index.html"><strong aria-hidden="true">3.</strong> Classes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../classes/barbarian.html"><strong aria-hidden="true">3.1.</strong> Barbarian</a></li><li class="chapter-item "><a href="../classes/bard.html"><strong aria-hidden="true">3.2.</strong> Bard</a></li><li class="chapter-item "><a href="../classes/cleric.html"><strong aria-hidden="true">3.3.</strong> Cleric</a></li><li class="chapter-item "><a href="../classes/druid.html"><strong aria-hidden="true">3.4.</strong> Druid</a></li><li class="chapter-item "><a href="../classes/fighter.html"><strong aria-hidden="true">3.5.</strong> Fighter</a></li><li class="chapter-item "><a href="../classes/monk.html"><strong aria-hidden="true">3.6.</strong> Monk</a></li><li class="chapter-item "><a href="../classes/paladin.html"><strong aria-hidden="true">3.7.</strong> Paladin</a></li><li class="chapter-item "><a href="../classes/ranger.html"><strong aria-hidden="true">3.8.</strong> Ranger</a></li><li class="chapter-item "><a href="../classes/rogue.html"><strong aria-hidden="true">3.9.</strong> Rogue</a></li><li class="chapter-item "><a href="../classes/sorcerer.html"><strong aria-hidden="true">3.10.</strong> Sorcerer</a></li><li class="chapter-item "><a href="../classes/wizard.html"><strong aria-hidden="true">3.11.</strong> Wizard</a></li></ol></li><li class="chapter-item "><a href="../skills/index.html"><strong aria-hidden="true">4.</strong> Skills</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../skills/appraise.html"><strong aria-hidden="true">4.1.</strong> Appraise</a></li><li class="chapter-item "><a href="../skills/balance.html"><strong aria-hidden="true">4.2.</strong> Balance</a></li><li class="chapter-item "><a href="../skills/bluff.html"><strong aria-hidden="true">4.3.</strong> Bluff</a></li><li class="chapter-item "><a href="../skills/climb.html"><strong aria-hidden="true">4.4.</strong> Climb</a></li><li class="chapter-item "><a href="../skills/concentration.html"><strong aria-hidden="true">4.5.</strong> Concentration</a></li><li class="chapter-item "><a href="../skills/craft.html"><strong aria-hidden="true">4.6.</strong> Craft</a></li><li class="chapter-item "><a href="../skills/decipher_script.html"><strong aria-hidden="true">4.7.</strong> Decipher Script</a></li><li class="chapter-item "><a href="../skills/diplomacy.html"><strong aria-hidden="true">4.8.</strong> Diplomacy</a></li><li class="chapter-item "><a href="../skills/disable_device.html"><strong aria-hidden="true">4.9.</strong> Disable Device</a></li><li class="chapter-item "><a href="../skills/disguise.html"><strong aria-hidden="true">4.10.</strong> Disguise</a></li><li class="chapter-item "><a href="../skills/escape_artist.html"><strong aria-hidden="true">4.11.</strong> Escape Artist</a></li><li class="chapter-item "><a href="../skills/forgery.html"><strong aria-hidden="true">4.12.</strong> Forgery</a></li><li class="chapter-item "><a href="../skills/gather_information.html"><strong aria-hidden="true">4.13.</strong> Gather Information</a></li><li class="chapter-item "><a href="../skills/handle_animal.html"><strong aria-hidden="true">4.14.</strong> Handle Animal</a></li><li class="chapter-item "><a href="../skills/heal.html"><strong aria-hidden="true">4.15.</strong> Heal</a></li><li class="chapter-item "><a href="../skills/hide.html"><strong aria-hidden="true">4.16.</strong> Hide</a></li><li class="chapter-item "><a href="../skills/index.html"><strong aria-hidden="true">4.17.</strong> Index</a></li><li class="chapter-item "><a href="../skills/intimidate.html"><strong aria-hidden="true">4.18.</strong> Intimidate</a></li><li class="chapter-item "><a href="../skills/jump.html"><strong aria-hidden="true">4.19.</strong> Jump</a></li><li class="chapter-item "><a href="../skills/knowledge.html"><strong aria-hidden="true">4.20.</strong> Knowledge</a></li><li class="chapter-item "><a href="../skills/listen.html"><strong aria-hidden="true">4.21.</strong> Listen</a></li><li class="chapter-item "><a href="../skills/move_silently.html"><strong aria-hidden="true">4.22.</strong> Move Silently</a></li><li class="chapter-item "><a href="../skills/open_lock.html"><strong aria-hidden="true">4.23.</strong> Open Lock</a></li><li class="chapter-item "><a href="../skills/perform.html"><strong aria-hidden="true">4.24.</strong> Perform</a></li><li class="chapter-item "><a href="../skills/profession.html"><strong aria-hidden="true">4.25.</strong> Profession</a></li><li class="chapter-item "><a href="../skills/ride.html"><strong aria-hidden="true">4.26.</strong> Ride</a></li><li class="chapter-item "><a href="../skills/search.html"><strong aria-hidden="true">4.27.</strong> Search</a></li><li class="chapter-item "><a href="../skills/sense_motive.html"><strong aria-hidden="true">4.28.</strong> Sense Motive</a></li><li class="chapter-item "><a href="../skills/sleight_of_hand.html"><strong aria-hidden="true">4.29.</strong> Sleight Of Hand</a></li><li class="chapter-item "><a href="../skills/speak_language.html"><strong aria-hidden="true">4.30.</strong> Speak Language</a></li><li class="chapter-item "><a href="../skills/spellcraft.html"><strong aria-hidden="true">4.31.</strong> Spellcraft</a></li><li class="chapter-item "><a href="../skills/spot.html"><strong aria-hidden="true">4.32.</strong> Spot</a></li><li class="chapter-item "><a href="../skills/survival.html"><strong aria-hidden="true">4.33.</strong> Survival</a></li><li class="chapter-item "><a href="../skills/swim.html"><strong aria-hidden="true">4.34.</strong> Swim</a></li><li class="chapter-item "><a href="../skills/tumble.html"><strong aria-hidden="true">4.35.</strong> Tumble</a></li><li class="chapter-item "><a href="../skills/use_magic_device.html"><strong aria-hidden="true">4.36.</strong> Use Magic Device</a></li><li class="chapter-item "><a href="../skills/use_rope.html"><strong aria-hidden="true">4.37.</strong> Use Rope</a></li></ol></li><li class="chapter-item "><a href="../feats.html"><strong aria-hidden="true">5.</strong> Feats</a></li><li class="chapter-item expanded "><a href="../equipment/index.html"><strong aria-hidden="true">6.</strong> Equipment</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../equipment/weapons.html"><strong aria-hidden="true">6.1.</strong> Weapons</a></li><li class="chapter-item "><a href="../equipment/armor.html"><strong aria-hidden="true">6.2.</strong> Armor</a></li><li class="chapter-item "><a href="../equipment/goods_and_services.html"><strong aria-hidden="true">6.3.</strong> Goods And Services</a></li><li class="chapter-item expanded "><a href="../equipment/special_materials.html" class="active"><strong aria-hidden="true">6.4.</strong> Special Materials</a></li><li class="chapter-item "><a href="../equipment/magic_item_basics.html"><strong aria-hidden="true">6.5.</strong> Magic Item Basics</a></li><li class="chapter-item "><a href="../equipment/magic_weapons.html"><strong aria-hidden="true">6.6.</strong> Magic Weapons</a></li><li class="chapter-item "><a href="../equipment/magic_armor.html"><strong aria-hidden="true">6.7.</strong> Magic Armor</a></li><li class="chapter-item "><a href="../equipment/potions.html"><strong aria-hidden="true">6.8.</strong> Potions</a></li><li class="chapter-item "><a href="../equipment/scrolls.html"><strong aria-hidden="true">6.9.</strong> Scrolls</a></li><li class="chapter-item "><a href="../equipment/wands.html"><strong aria-hidden="true">6.10.</strong> Wands</a></li><li class="chapter-item "><a href="../equipment/staffs.html"><strong aria-hidden="true">6.11.</strong> Staffs</a></li><li class="chapter-item "><a href="../equipment/rods.html"><strong aria-hidden="true">6.12.</strong> Rods</a></li><li class="chapter-item "><a href="../equipment/rings.html"><strong aria-hidden="true">6.13.</strong> Rings</a></li><li class="chapter-item "><a href="../equipment/wondrous_items.html"><strong aria-hidden="true">6.14.</strong> Wondrous Items</a></li><li class="chapter-item "><a href="../equipment/magic_item_creation.html"><strong aria-hidden="true">6.15.</strong> Magic Item Creation</a></li><li class="chapter-item "><a href="../equipment/intelligent_magic_items.html"><strong aria-hidden="true">6.16.</strong> Intelligent Magic Items</a></li><li class="chapter-item "><a href="../equipment/cursed_magic_items.html"><strong aria-hidden="true">6.17.</strong> Cursed Magic Items</a></li><li class="chapter-item "><a href="../equipment/artifacts.html"><strong aria-hidden="true">6.18.</strong> Artifacts</a></li></ol></li><li class="chapter-item "><a href="../license.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">System Reference Document v3.5</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="special-materials"><a class="header" href="#special-materials">Special Materials</a></h1>
+<p>In addition to magic items created with spells, some substances have innate special properties.</p>
+<p>If you make a suit of armor or weapon out of more than one special material, you get the benefit of only the most prevalent material. However, you can build a double weapon with each head made of a different special material. </p>
+<h2 id="special-weapons-materials"><a class="header" href="#special-weapons-materials">Special Weapons Materials</a></h2>
+<p>Each of the special materials described below has a definite game effect. Some creatures have damage reduction based on their creature type or core concept. Some are resistant to all but a special type of damage, such as that dealt by evil-aligned weapons or bludgeoning weapons. Others are vulnerable to weapons of a particular material. Characters may choose to carry several different types of weapons, depending upon the campaign and types of creatures they most commonly encounter. </p>
+<h2 id="special-material-descriptions"><a class="header" href="#special-material-descriptions">Special Material Descriptions</a></h2>
+<h3 id="adamantine"><a class="header" href="#adamantine">Adamantine</a></h3>
+<p>This ultrahard metal adds to the quality of a weapon or suit of armor. Weapons fashioned from adamantine have a natural ability to bypass hardness when sundering weapons or attacking objects, ignoring hardness less than 20. Armor made from adamantine grants its wearer damage reduction of 1/- if it's light armor, 2/- if it's medium armor, and 3/- if it's heavy armor. Adamantine is so costly that weapons and armor made from it are always of masterwork quality; the masterwork cost is included in the prices given below. Thus, adamantine weapons and ammunition have a +1 enhancement bonus on attack rolls, and the armor check penalty of adamantine armor is lessened by 1 compared to ordinary armor of its type. Items without metal parts cannot be made from adamantine. An arrow could be made of adamantine, but a quarterstaff could not.</p>
+<p>Only weapons, armor, and shields normally made of metal can be fashioned from adamantine. Weapons, armor and shields normally made of steel that are made of adamantine have one-third more hit points than normal. Adamantine has 40 hit points per inch of thickness and hardness 20.</p>
+<p>| Type of Adamantine Item | | Item Cost Modifier | |  |
+| Ammunition | | +60 gp | |  |
+| Light armor | | +5,000 gp | |  |
+| Medium armor | | +10,000 gp | |  |
+| Heavy armor | | +15,000 gp | |  |
+| Weapon | | +3,000 gp | |  |</p>
+<h3 id="darkwood"><a class="header" href="#darkwood">Darkwood</a></h3>
+<p>This rare magic wood is as hard as normal wood but very light. Any wooden or mostly wooden item (such as a bow, an arrow, or a spear) made from darkwood is considered a masterwork item and weighs only half as much as a normal wooden item of that type. Items not normally made of wood or only partially of wood (such as a battleaxe or a mace) either cannot be made from darkwood or do not gain any special benefit from being made of darkwood. The armor check penalty of a darkwood shield is lessened by 2 compared to an ordinary shield of its type. To determine the price of a darkwood item, use the original weight but add 10 gp per pound to the price of a masterwork version of that item.</p>
+<p>Darkwood has 10 hit points per inch of thickness and hardness 5.</p>
+<h3 id="dragonhide"><a class="header" href="#dragonhide">Dragonhide</a></h3>
+<p>Armorsmiths can work with the hides of dragons to produce armor or shields of masterwork quality. One dragon produces enough hide for a single suit of masterwork hide armor for a creature one size category smaller than the dragon. By selecting only choice scales and bits of hide, an armorsmith can produce one suit of masterwork banded mail for a creature two sizes smaller, one suit of masterwork half-plate for a creature three sizes smaller, or one masterwork breastplate or suit of full plate for a creature four sizes smaller. In each case, enough hide is available to produce a small or large masterwork shield in addition to the armor, provided that the dragon is Large or larger.</p>
+<p>Because dragonhide armor isn't made of metal, druids can wear it without penalty.</p>
+<p>Dragonhide armor costs double what masterwork armor of that type ordinarily costs, but it takes no longer to make than ordinary armor of that type.</p>
+<p>Dragonhide has 10 hit points per inch of thickness and hardness 10.</p>
+<h3 id="iron-cold"><a class="header" href="#iron-cold">Iron, Cold</a></h3>
+<p>This iron, mined deep underground, known for its effectiveness against fey creatures, is forged at a lower temperature to preserve its delicate properties. Weapons made of cold iron cost twice as much to make as their normal counterparts. Also, any magical enhancements cost an additional 2,000 gp. </p>
+<p>Items without metal parts cannot be made from cold iron. An arrow could be made of cold iron, but a quarterstaff could not.</p>
+<p>A double weapon that has only half of it made of cold iron increases its cost by 50%.</p>
+<p>Cold iron has 30 hit points per inch of thickness and hardness 10.</p>
+<h3 id="mithral"><a class="header" href="#mithral">Mithral</a></h3>
+<p>Mithral is a very rare silvery, glistening metal that is lighter than iron but just as hard. When worked like steel, it becomes a wonderful material from which to create armor and is occasionally used for other items as well. Most mithral armors are one category lighter than normal for purposes of movement and other limitations. Heavy armors are treated as medium, and medium armors are treated as light, but light armors are still treated as light. Spell failure chances for armors and shields made from mithral are decreased by 10%, maximum Dexterity bonus is increased by 2, and armor check penalties are lessened by 3 (to a minimum of 0).</p>
+<p>An item made from mithral weighs half as much as the same item made from other metals. In the case of weapons, this lighter weight does not change a weapon's size category or the ease with which it can be wielded (whether it is light, one-handed, or two-handed). Items not primarily of metal are not meaningfully affected by being partially made of mithral. (A longsword can be a mithral weapon, while a scythe cannot be.)</p>
+<p>Weapons or armors fashioned from mithral are always masterwork items as well; the masterwork cost is included in the prices given below.</p>
+<p>Mithral has 30 hit points per inch of thickness and hardness 15.</p>
+<p>| Type of Mithral Item | | Item Cost Modifier | |  |
+| Light armor | | +1,000 gp | |  |
+| Medium armor | | +4,000 gp | |  |
+| Heavy armor | | +9,000 gp | |  |
+| Shield | | +1,000 gp | |  |
+| Other items | | +500 gp/lb. | |  |</p>
+<h3 id="silver-alchemical"><a class="header" href="#silver-alchemical">Silver, Alchemical</a></h3>
+<p>A complex process involving metallurgy and alchemy can bond silver to a weapon made of steel so that it bypasses the damage reduction of creatures such as lycanthropes.</p>
+<p>On a successful attack with a silvered weapon, the wielder takes a -1 penalty on the damage roll (with the usual minimum of 1 point of damage). The alchemical silvering process can't be applied to nonmetal items, and it doesn't work on rare metals such as adamantine, cold iron, and mithral.</p>
+<p>Alchemical silver has 10 hit points per inch of thickness and hardness 8.</p>
+<p>| Type of Alchemical Silver Item | | Item Cost Modifier | |  |
+| Ammunition | | +2 gp | |  |
+| Light weapon | | +20 gp | |  |
+| One-handed weapon, or one head of a double weapon | | +90 gp | |  |
+| Two-handed weapon, or both heads of a double weapon | | +180 gp | |  |</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../equipment/goods_and_services.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../equipment/magic_item_basics.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../equipment/goods_and_services.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../equipment/magic_item_basics.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

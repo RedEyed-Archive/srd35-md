@@ -1,0 +1,598 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Staffs - System Reference Document v3.5</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The System Reference Document v3.5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../introduction.html">Introduction</a></li><li class="chapter-item "><a href="../basics.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li class="chapter-item "><a href="../races/index.html"><strong aria-hidden="true">2.</strong> Races</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../races/dwarf.html"><strong aria-hidden="true">2.1.</strong> Dwarf</a></li><li class="chapter-item "><a href="../races/elf.html"><strong aria-hidden="true">2.2.</strong> Elf</a></li><li class="chapter-item "><a href="../races/gnome.html"><strong aria-hidden="true">2.3.</strong> Gnome</a></li><li class="chapter-item "><a href="../races/half-elf.html"><strong aria-hidden="true">2.4.</strong> Half-Elf</a></li><li class="chapter-item "><a href="../races/half-orc.html"><strong aria-hidden="true">2.5.</strong> Half-Orc</a></li><li class="chapter-item "><a href="../races/halfling.html"><strong aria-hidden="true">2.6.</strong> Halfling</a></li><li class="chapter-item "><a href="../races/human.html"><strong aria-hidden="true">2.7.</strong> Human</a></li></ol></li><li class="chapter-item "><a href="../classes/index.html"><strong aria-hidden="true">3.</strong> Classes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../classes/barbarian.html"><strong aria-hidden="true">3.1.</strong> Barbarian</a></li><li class="chapter-item "><a href="../classes/bard.html"><strong aria-hidden="true">3.2.</strong> Bard</a></li><li class="chapter-item "><a href="../classes/cleric.html"><strong aria-hidden="true">3.3.</strong> Cleric</a></li><li class="chapter-item "><a href="../classes/druid.html"><strong aria-hidden="true">3.4.</strong> Druid</a></li><li class="chapter-item "><a href="../classes/fighter.html"><strong aria-hidden="true">3.5.</strong> Fighter</a></li><li class="chapter-item "><a href="../classes/monk.html"><strong aria-hidden="true">3.6.</strong> Monk</a></li><li class="chapter-item "><a href="../classes/paladin.html"><strong aria-hidden="true">3.7.</strong> Paladin</a></li><li class="chapter-item "><a href="../classes/ranger.html"><strong aria-hidden="true">3.8.</strong> Ranger</a></li><li class="chapter-item "><a href="../classes/rogue.html"><strong aria-hidden="true">3.9.</strong> Rogue</a></li><li class="chapter-item "><a href="../classes/sorcerer.html"><strong aria-hidden="true">3.10.</strong> Sorcerer</a></li><li class="chapter-item "><a href="../classes/wizard.html"><strong aria-hidden="true">3.11.</strong> Wizard</a></li></ol></li><li class="chapter-item "><a href="../skills/index.html"><strong aria-hidden="true">4.</strong> Skills</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../skills/appraise.html"><strong aria-hidden="true">4.1.</strong> Appraise</a></li><li class="chapter-item "><a href="../skills/balance.html"><strong aria-hidden="true">4.2.</strong> Balance</a></li><li class="chapter-item "><a href="../skills/bluff.html"><strong aria-hidden="true">4.3.</strong> Bluff</a></li><li class="chapter-item "><a href="../skills/climb.html"><strong aria-hidden="true">4.4.</strong> Climb</a></li><li class="chapter-item "><a href="../skills/concentration.html"><strong aria-hidden="true">4.5.</strong> Concentration</a></li><li class="chapter-item "><a href="../skills/craft.html"><strong aria-hidden="true">4.6.</strong> Craft</a></li><li class="chapter-item "><a href="../skills/decipher_script.html"><strong aria-hidden="true">4.7.</strong> Decipher Script</a></li><li class="chapter-item "><a href="../skills/diplomacy.html"><strong aria-hidden="true">4.8.</strong> Diplomacy</a></li><li class="chapter-item "><a href="../skills/disable_device.html"><strong aria-hidden="true">4.9.</strong> Disable Device</a></li><li class="chapter-item "><a href="../skills/disguise.html"><strong aria-hidden="true">4.10.</strong> Disguise</a></li><li class="chapter-item "><a href="../skills/escape_artist.html"><strong aria-hidden="true">4.11.</strong> Escape Artist</a></li><li class="chapter-item "><a href="../skills/forgery.html"><strong aria-hidden="true">4.12.</strong> Forgery</a></li><li class="chapter-item "><a href="../skills/gather_information.html"><strong aria-hidden="true">4.13.</strong> Gather Information</a></li><li class="chapter-item "><a href="../skills/handle_animal.html"><strong aria-hidden="true">4.14.</strong> Handle Animal</a></li><li class="chapter-item "><a href="../skills/heal.html"><strong aria-hidden="true">4.15.</strong> Heal</a></li><li class="chapter-item "><a href="../skills/hide.html"><strong aria-hidden="true">4.16.</strong> Hide</a></li><li class="chapter-item "><a href="../skills/index.html"><strong aria-hidden="true">4.17.</strong> Index</a></li><li class="chapter-item "><a href="../skills/intimidate.html"><strong aria-hidden="true">4.18.</strong> Intimidate</a></li><li class="chapter-item "><a href="../skills/jump.html"><strong aria-hidden="true">4.19.</strong> Jump</a></li><li class="chapter-item "><a href="../skills/knowledge.html"><strong aria-hidden="true">4.20.</strong> Knowledge</a></li><li class="chapter-item "><a href="../skills/listen.html"><strong aria-hidden="true">4.21.</strong> Listen</a></li><li class="chapter-item "><a href="../skills/move_silently.html"><strong aria-hidden="true">4.22.</strong> Move Silently</a></li><li class="chapter-item "><a href="../skills/open_lock.html"><strong aria-hidden="true">4.23.</strong> Open Lock</a></li><li class="chapter-item "><a href="../skills/perform.html"><strong aria-hidden="true">4.24.</strong> Perform</a></li><li class="chapter-item "><a href="../skills/profession.html"><strong aria-hidden="true">4.25.</strong> Profession</a></li><li class="chapter-item "><a href="../skills/ride.html"><strong aria-hidden="true">4.26.</strong> Ride</a></li><li class="chapter-item "><a href="../skills/search.html"><strong aria-hidden="true">4.27.</strong> Search</a></li><li class="chapter-item "><a href="../skills/sense_motive.html"><strong aria-hidden="true">4.28.</strong> Sense Motive</a></li><li class="chapter-item "><a href="../skills/sleight_of_hand.html"><strong aria-hidden="true">4.29.</strong> Sleight Of Hand</a></li><li class="chapter-item "><a href="../skills/speak_language.html"><strong aria-hidden="true">4.30.</strong> Speak Language</a></li><li class="chapter-item "><a href="../skills/spellcraft.html"><strong aria-hidden="true">4.31.</strong> Spellcraft</a></li><li class="chapter-item "><a href="../skills/spot.html"><strong aria-hidden="true">4.32.</strong> Spot</a></li><li class="chapter-item "><a href="../skills/survival.html"><strong aria-hidden="true">4.33.</strong> Survival</a></li><li class="chapter-item "><a href="../skills/swim.html"><strong aria-hidden="true">4.34.</strong> Swim</a></li><li class="chapter-item "><a href="../skills/tumble.html"><strong aria-hidden="true">4.35.</strong> Tumble</a></li><li class="chapter-item "><a href="../skills/use_magic_device.html"><strong aria-hidden="true">4.36.</strong> Use Magic Device</a></li><li class="chapter-item "><a href="../skills/use_rope.html"><strong aria-hidden="true">4.37.</strong> Use Rope</a></li></ol></li><li class="chapter-item "><a href="../feats.html"><strong aria-hidden="true">5.</strong> Feats</a></li><li class="chapter-item expanded "><a href="../equipment/index.html"><strong aria-hidden="true">6.</strong> Equipment</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../equipment/weapons.html"><strong aria-hidden="true">6.1.</strong> Weapons</a></li><li class="chapter-item "><a href="../equipment/armor.html"><strong aria-hidden="true">6.2.</strong> Armor</a></li><li class="chapter-item "><a href="../equipment/goods_and_services.html"><strong aria-hidden="true">6.3.</strong> Goods And Services</a></li><li class="chapter-item "><a href="../equipment/special_materials.html"><strong aria-hidden="true">6.4.</strong> Special Materials</a></li><li class="chapter-item "><a href="../equipment/magic_item_basics.html"><strong aria-hidden="true">6.5.</strong> Magic Item Basics</a></li><li class="chapter-item "><a href="../equipment/magic_weapons.html"><strong aria-hidden="true">6.6.</strong> Magic Weapons</a></li><li class="chapter-item "><a href="../equipment/magic_armor.html"><strong aria-hidden="true">6.7.</strong> Magic Armor</a></li><li class="chapter-item "><a href="../equipment/potions.html"><strong aria-hidden="true">6.8.</strong> Potions</a></li><li class="chapter-item "><a href="../equipment/scrolls.html"><strong aria-hidden="true">6.9.</strong> Scrolls</a></li><li class="chapter-item "><a href="../equipment/wands.html"><strong aria-hidden="true">6.10.</strong> Wands</a></li><li class="chapter-item expanded "><a href="../equipment/staffs.html" class="active"><strong aria-hidden="true">6.11.</strong> Staffs</a></li><li class="chapter-item "><a href="../equipment/rods.html"><strong aria-hidden="true">6.12.</strong> Rods</a></li><li class="chapter-item "><a href="../equipment/rings.html"><strong aria-hidden="true">6.13.</strong> Rings</a></li><li class="chapter-item "><a href="../equipment/wondrous_items.html"><strong aria-hidden="true">6.14.</strong> Wondrous Items</a></li><li class="chapter-item "><a href="../equipment/magic_item_creation.html"><strong aria-hidden="true">6.15.</strong> Magic Item Creation</a></li><li class="chapter-item "><a href="../equipment/intelligent_magic_items.html"><strong aria-hidden="true">6.16.</strong> Intelligent Magic Items</a></li><li class="chapter-item "><a href="../equipment/cursed_magic_items.html"><strong aria-hidden="true">6.17.</strong> Cursed Magic Items</a></li><li class="chapter-item "><a href="../equipment/artifacts.html"><strong aria-hidden="true">6.18.</strong> Artifacts</a></li></ol></li><li class="chapter-item "><a href="../license.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">System Reference Document v3.5</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>STAFFS</p>
+<p>A staff is a long shaft of wood that stores several spells. Unlike wands, which can contain a wide variety of spells, each staff is of a certain kind and holds specific spells. A staff has 50 charges when created.</p>
+<p>Physical Description: A typical staff is 4 feet to 7 feet long and 2 inches to 3 inches thick, weighing about 5 pounds. Most staffs are wood, but a rare few are bone, metal, or even glass. (These are extremely exotic.) Staffs often have a gem or some device at their tip or are shod in metal at one or both ends. Staffs are often decorated with carvings or runes. A typical staff is like a walking stick, quarterstaff, or cudgel. It has AC 7, 10 hit points, hardness 5, and a break DC of 24.</p>
+<p>Activation: Staffs use the spell trigger activation method, so casting a spell from a staff is usually a standard action that doesn't provoke attacks of opportunity. (If the spell being cast, however, has a longer casting time than 1 standard action, it takes that long to cast the spell from a staff.) To activate a staff, a character must hold it forth in at least one hand (or whatever passes for a hand, for nonhumanoid creatures).</p>
+<p>Special Qualities: Roll d%. A 01-30 result indicates that something (a design, inscription, or the like) provides some clue to the staff 's function, and 31-100 indicates no special qualities.</p>
+<p>| Table: Staffs | |  |
+| Medium | Major | | Staff | | Market Price | |  |
+| 01-15 | 01-03 | | Charming | | 16,500 gp | |  |
+| 16-30 | 04-09 | | Fire | | 17,750 gp | |  |
+| 31-40 | 10-11 | | Swarming insects | | 24,750 gp | |  |
+| 41-60 | 12-17 | | Healing | | 27,750 gp | |  |
+| 61-75 | 18-19 | | Size alteration | | 29,000 gp | |  |
+| 76-90 | 20-24 | | Illumination | | 48,250 gp | |  |
+| 91-95 | 25-31 | | Frost | | 56,250 gp | |  |
+| 96-100 | 32-38 | | Defense | | 58,250 gp | |  |
+| -- | 39-43 | | Abjuration | | 65,000 gp | |  |
+| -- | 44-48 | | Conjuration | | 65,000 gp | |  |
+| -- | 49-53 | | Enchantment | | 65,000 gp | |  |
+| -- | 54-58 | | Evocation | | 65,000 gp | |  |
+| -- | 59-63 | | Illusion | | 65,000 gp | |  |
+| -- | 64-68 | | Necromancy | | 65,000 gp | |  |
+| -- | 69-73 | | Transmutation | | 65,000 gp | |  |
+| -- | 74-77 | | Divination | | 73,500 gp | |  |
+| -- | 78-82 | | Earth and stone | | 80,500 gp | |  |
+| -- | 83-87 | | Woodlands | | 101,250 gp | |  |
+| -- | 88-92 | | Life | | 155,750 gp | |  |
+| -- | 93-97 | | Passage | | 170,500 gp | |  |
+| -- | 98-100 | | Power | | 211,000 gp | |  |</p>
+<p>Staff Descriptions</p>
+<p>Staffs use the wielder's ability score and relevant feats to set the DC for saves against their spells. Unlike with other sorts of magic items, the wielder can use his caster level when activating the power of a staff if it's higher than the caster level of the staff. </p>
+<p>This means that staffs are far more potent in the hands of a powerful spellcaster. Because they use the wielder's ability score to set the save DC for the spell, spells from a staff are often harder to resist than ones from other magic items, which use the minimum ability score required to cast the spell.  Not only are aspects of the spell dependant on caster level (range, duration, and so on) potentially higher, but spells from a staff are harder to dispel and have a better chance of overcoming a target's spell resistance.</p>
+<p>Furthermore, a staff can hold a spell of any level, unlike a wand, which is limited to spells of 4th level or lower. The minimum caster level of a staff is 8th. Standard staffs are described below.</p>
+<p>Abjuration: Usually carved from the heartwood of an ancient oak or other large tree, this staff allows use of the following spells:</p>
+<ul>
+<li>
+<p>Shield (1 charge)</p>
+</li>
+<li>
+<p>Resist energy (1 charge)</p>
+</li>
+<li>
+<p>Dispel magic (1 charge)</p>
+</li>
+<li>
+<p>Lesser globe of invulnerability (2 charges)</p>
+</li>
+<li>
+<p>Dismissal (2 charges)</p>
+</li>
+<li>
+<p>Repulsion (3 charges)</p>
+</li>
+</ul>
+<p>Strong abjuration; CL 13th; Craft Staff, dismissal, dispel magic, lesser globe of invulnerability, resist energy, repulsion, shield; Price 65,000 gp.</p>
+<p>Charming: Made of twisting wood ornately shaped and carved, this staff allows use of the following spells:</p>
+<ul>
+<li>
+<p>Charm person (1 charge)</p>
+</li>
+<li>
+<p>Charm monster (2 charges)</p>
+</li>
+</ul>
+<p>Moderate enchantment; CL 8th; Craft Staff, charm person, charm monster; Price 16,500 gp.</p>
+<p>Conjuration: This staff is usually made of ash or walnut and bears ornate carvings of many different kinds of creatures. It allows use of the following spells:</p>
+<ul>
+<li>
+<p>Unseen servant (1 charge)</p>
+</li>
+<li>
+<p>Summon swarm (1 charge)</p>
+</li>
+<li>
+<p>Stinking cloud (1 charge)</p>
+</li>
+<li>
+<p>Minor creation (2 charges)</p>
+</li>
+<li>
+<p>Cloudkill (2 charges)</p>
+</li>
+<li>
+<p>Summon monster VI (3 charges)</p>
+</li>
+</ul>
+<p>Strong conjuration; CL 13th; Craft Staff, cloudkill, stinking cloud, summon monster VI, summon swarm, unseen servant; Price 65,000 gp.</p>
+<p>Defense: The staff of defense is a simple-looking staff that throbs with power when held defensively. It allows use of the following spells:</p>
+<ul>
+<li>
+<p>Shield (1 charge)</p>
+</li>
+<li>
+<p>Shield of faith (1 charge)</p>
+</li>
+<li>
+<p>Shield other (1 charge)</p>
+</li>
+<li>
+<p>Shield of law (3 charges)</p>
+</li>
+</ul>
+<p>Strong abjuration; CL 15th; Craft Staff, shield, shield of faith, shield of law, shield other, creator must be lawful; Price 58,250 gp.</p>
+<p>Divination: Made from a supple length of willow, often with a forked tip, this staff allows use of the following spells:</p>
+<ul>
+<li>
+<p>Detect secret doors (1 charge)</p>
+</li>
+<li>
+<p>Locate object (1 charge)</p>
+</li>
+<li>
+<p>Tongues (1 charge)</p>
+</li>
+<li>
+<p>Locate creature (2 charges)</p>
+</li>
+<li>
+<p>Prying eyes (2 charges)</p>
+</li>
+<li>
+<p>True seeing (3 charges)</p>
+</li>
+</ul>
+<p>Strong divination; CL 13th; Craft Staff, detect secret doors, locate creature, locate object, prying eyes, tongues, true seeing; Price 73,500 gp.</p>
+<p>Earth and Stone: This staff is topped with a fist-sized emerald that gleams with smoldering power. It allows the use of the following spells: </p>
+<ul>
+<li>
+<p>Passwall (1 charge)</p>
+</li>
+<li>
+<p>Move earth (1 charge)</p>
+</li>
+</ul>
+<p>Moderate transmutation; CL 11th; Craft Staff, move earth, passwall; Price 80,500 gp.</p>
+<p>Enchantment: Often made from applewood and topped with a clear crystal, this staff allows use of the following spells:</p>
+<ul>
+<li>
+<p>Sleep (1 charge)</p>
+</li>
+<li>
+<p>Hideous laughter (1 charge)</p>
+</li>
+<li>
+<p>Suggestion (1 charge)</p>
+</li>
+<li>
+<p>Crushing despair (2 charges)</p>
+</li>
+<li>
+<p>Mind fog (2 charges)</p>
+</li>
+<li>
+<p>Suggestion, mass (3 charges)</p>
+</li>
+</ul>
+<p>Strong enchantment; CL 13th; Craft Staff, crushing despair, mass suggestion, mind fog, sleep, suggestion, hideous laughter; Price 65,000 gp.</p>
+<p>Evocation: Usually very smooth and carved from hickory, willow, or yew, this staff allows use of the following spells:</p>
+<ul>
+<li>
+<p>Magic missile (1 charge)</p>
+</li>
+<li>
+<p>Shatter (1 charge)</p>
+</li>
+<li>
+<p>Fireball (1 charge)</p>
+</li>
+<li>
+<p>Ice storm (2 charges)</p>
+</li>
+<li>
+<p>Wall of force (2 charges)</p>
+</li>
+<li>
+<p>Chain lightning (3 charges)</p>
+</li>
+</ul>
+<p>Strong evocation; CL 13th; Craft Staff, chain lightning, fireball, ice storm, magic missile,</p>
+<p>shatter, wall of force; Price 65,000 gp.</p>
+<p>Fire: Crafted from bronzewood with brass bindings, this staff allows use of the following spells:</p>
+<ul>
+<li>
+<p>Burning hands (1 charge)</p>
+</li>
+<li>
+<p>Fireball (1 charge)</p>
+</li>
+<li>
+<p>Wall of fire (2 charges)</p>
+</li>
+</ul>
+<p>Moderate evocation; CL 8th; Craft Staff, burning hands, fireball, wall of fire; Price 17,750 gp.</p>
+<p>Frost: Tipped on either end with a glistening diamond, this rune-covered staff allows use of the following spells:</p>
+<ul>
+<li>
+<p>Ice storm (1 charge)</p>
+</li>
+<li>
+<p>Wall of ice (1 charge)</p>
+</li>
+<li>
+<p>Cone of cold (2 charge)</p>
+</li>
+</ul>
+<p>Moderate evocation; CL 10th; Craft Staff, cone of cold, ice storm, wall of ice; Price 56,250 gp.</p>
+<p>Healing: This white ash staff, with inlaid silver runes, allows use of the following spells:</p>
+<ul>
+<li>
+<p>Lesser restoration (1 charge)</p>
+</li>
+<li>
+<p>Cure serious wounds (1 charge)</p>
+</li>
+<li>
+<p>Remove blindness/deafness (2 charges)</p>
+</li>
+<li>
+<p>Remove disease (3 charges)</p>
+</li>
+</ul>
+<p>Moderate conjuration; CL 8th; Craft Staff, cure serious wounds, lesser restoration, remove blindness/deafness, remove disease; Price 27,750 gp.</p>
+<p>Illusion: This staff is made from ebony or other dark wood and carved into an intricately twisted, fluted, or spiral shape. It allows use of the following spells:</p>
+<ul>
+<li>
+<p>Disguise self (1 charge)</p>
+</li>
+<li>
+<p>Mirror image (1 charge)</p>
+</li>
+<li>
+<p>Major image (1 charge)</p>
+</li>
+<li>
+<p>Rainbow pattern (2 charges)</p>
+</li>
+<li>
+<p>Persistent image (2 charges)</p>
+</li>
+<li>
+<p>Mislead (3 charges)</p>
+</li>
+</ul>
+<p>Strong illusion; CL 13th; Craft Staff, disguise self, major image, mirror image, persistent image, project image, rainbow pattern; Price 65,000 gp.</p>
+<p>Illumination: This staff is usually sheathed in silver and decorated with sunbursts. It allows use of the following spells:</p>
+<ul>
+<li>
+<p>Dancing lights (1 charge)</p>
+</li>
+<li>
+<p>Flare (1 charge)</p>
+</li>
+<li>
+<p>Daylight (2 charges)</p>
+</li>
+<li>
+<p>Sunburst (3 charges)</p>
+</li>
+</ul>
+<p>Strong evocation; CL 15th; Craft Staff, dancing lights, daylight, flare, sunburst; Price 48,250 gp.</p>
+<p>Life: Made of thick oak shod in gold, this staff allows use of the following spells:</p>
+<ul>
+<li>
+<p>Heal (1 charge)</p>
+</li>
+<li>
+<p>Raise dead (5 charges)</p>
+</li>
+</ul>
+<p>Moderate conjuration; CL 11th; Craft Staff, heal, resurrection; Price 155,750 gp.</p>
+<p>Necromancy: This staff is made from ebony or other dark wood and carved with the images of bones and skulls. It allows use of the following spells:</p>
+<ul>
+<li>
+<p>Cause fear (1 charge)</p>
+</li>
+<li>
+<p>Ghoul touch (1 charge)</p>
+</li>
+<li>
+<p>Halt undead (1 charge)</p>
+</li>
+<li>
+<p>Enervation (2 charges)</p>
+</li>
+<li>
+<p>Waves of fatigue (2 charges)</p>
+</li>
+<li>
+<p>Circle of death (3 charges)</p>
+</li>
+</ul>
+<p>Strong necromancy; CL 13th; Craft Staff, cause fear, circle of death, enervation, ghoul touch, halt undead, waves of fatigue; Price 65,000 gp.</p>
+<p>Passage: This potent item allows use of the following spells: </p>
+<ul>
+<li>
+<p>Dimension door (1 charge)</p>
+</li>
+<li>
+<p>Passwall (1 charge)</p>
+</li>
+<li>
+<p>Phase door (2 charges)</p>
+</li>
+<li>
+<p>Greater teleport (2 charges)</p>
+</li>
+<li>
+<p>Astral projection (2 charges)</p>
+</li>
+</ul>
+<p>Strong varied; CL 17th; Craft Staff, astral projection, dimension door, greater teleport, passwall, phase door; Price 170,500 gp.</p>
+<p>Power: The staff of power is a very potent magic item, with offensive and defensive abilities. It is usually topped with a glistening gem, its shaft straight and smooth. It has the following powers:</p>
+<ul>
+<li>
+<p>Magic missile (1 charge)</p>
+</li>
+<li>
+<p>Ray of enfeeblement (heightened to 5th level) (1 charge)</p>
+</li>
+<li>
+<p>Continual flame (1 charge)</p>
+</li>
+<li>
+<p>Levitate (1 charge)</p>
+</li>
+<li>
+<p>Lightning bolt (heightened to 5th level) (1 charge)</p>
+</li>
+<li>
+<p>Fireball (heightened to 5th level) (1 charge)</p>
+</li>
+<li>
+<p>Cone of cold (2 charges)</p>
+</li>
+<li>
+<p>Hold monster (2 charges)</p>
+</li>
+<li>
+<p>Wall of force (in a 10-ft.-diameter hemisphere around the caster only) (2 charges)</p>
+</li>
+<li>
+<p>Globe of invulnerability (2 charges)</p>
+</li>
+</ul>
+<p>The wielder of a staff of power gains a +2 luck bonus to AC and saving throws. The staff is also a +2 quarterstaff, and its wielder may use it to smite opponents. If 1 charge is expended (as a free action), the staff causes double damage (x3 on a critical hit) for 1 round.</p>
+<p>A staff of power can be used for a retributive strike, requiring it to be broken by its wielder. (If this breaking of the staff is purposeful and declared by the wielder, it can be performed as a standard action that does not require the wielder to make a Strength check.) All charges currently in the staff are instantly released in a 30-foot radius. All within 2 squares of the broken staff take points of damage equal to 8 x the number of charges in the staff, those 3 or 4 squares away take 6 x the number of charges in damage, and those 5 or 6 squares distant take 4 x the number of charges in damage. All those affected can make DC 17 Reflex saves to reduce the damage by half.</p>
+<p>The character breaking the staff has a 50% chance of traveling to another plane of existence, but if he does not, the explosive release of spell energy destroys him. Only certain items, including the staff of the magi and the staff of power, are capable of being used for a retributive strike.</p>
+<p>After all charges are used up from the staff, it remains a +2 quarterstaff. (Once empty of charges, it cannot be used for a retributive strike.)</p>
+<p>Strong varied; CL 15th; Craft Staff, Craft Magic Arms and Armor, magic missile, heightened ray of enfeeblement, continual flame, levitate, heightened fireball, heightened lightning bolt, cone of cold, hold monster, wall of force, globe of invulnerability; Price 211,000 gp.</p>
+<p>Size Alteration: Stout and sturdy, this staff of dark wood allows use of the following spells:</p>
+<ul>
+<li>
+<p>Enlarge person (1 charge)</p>
+</li>
+<li>
+<p>Reduce person (1 charge)</p>
+</li>
+<li>
+<p>Shrink item (1 charge)</p>
+</li>
+<li>
+<p>Enlarge person, mass (1 charge)</p>
+</li>
+<li>
+<p>Reduce person, mass (1 charge)</p>
+</li>
+</ul>
+<p>Faint conjuration; CL 8th; Craft Staff, enlarge person, mass enlarge person, reduce person, mass reduce person, shrink item; Price 29,000 gp.</p>
+<p>Swarming Insects: Made of twisted dark wood with dark spots resembling crawling insects (which occasionally seem to move), this staff allows use of the following spells:</p>
+<ul>
+<li>
+<p>Summon swarm (1 charge)</p>
+</li>
+<li>
+<p>Insect plague (3 charges)</p>
+</li>
+</ul>
+<p>Moderate conjuration; CL 9th; Craft Staff, insect plague, summon swarm; Price 24,750 gp.</p>
+<p>Transmutation: This staff is generally carved from or decorated with petrified wood and allows use of the following spells:</p>
+<ul>
+<li>
+<p>Expeditious retreat (1 charge)</p>
+</li>
+<li>
+<p>Alter self (1 charge)</p>
+</li>
+<li>
+<p>Blink (1 charge)</p>
+</li>
+<li>
+<p>Polymorph (2 charges)</p>
+</li>
+<li>
+<p>Baleful polymorph (2 charges)</p>
+</li>
+<li>
+<p>Disintegrate (3 charges)</p>
+</li>
+</ul>
+<p>Strong transmutation; CL 13th; Craft Staff, alter self, baleful polymorph, blink, disintegrate, expeditious retreat, polymorph; Price 65,000 gp.</p>
+<p>Woodlands: Appearing to have grown naturally into its shape, this oak, ash, or yew staff allows use of the following spells:</p>
+<ul>
+<li>
+<p>Charm animal (1 charge)</p>
+</li>
+<li>
+<p>Speak with animals (1 charge)</p>
+</li>
+<li>
+<p>Barkskin (2 charges)</p>
+</li>
+<li>
+<p>Wall of thorns (3 charges)</p>
+</li>
+<li>
+<p>Summon nature's ally VI (3 charges)</p>
+</li>
+<li>
+<p>Animate plants (4 charges)</p>
+</li>
+</ul>
+<p>The staff may be used as a weapon, functioning as a +2 quarterstaff. The staff of the woodlands also allows its wielder to pass without trace at will, with no charge cost. These two attributes continue to function after all the charges are expended.</p>
+<p>Moderate varied; CL 13th; Craft Staff, Craft Magic Arms and Armor, animate plants, barkskin, charm animal, pass without trace, speak with animals, summon nature's ally VI, wall of thorns; Price 101,250 gp.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../equipment/wands.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../equipment/rods.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../equipment/wands.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../equipment/rods.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

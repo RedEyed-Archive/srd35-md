@@ -1,0 +1,441 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Rings - System Reference Document v3.5</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The System Reference Document v3.5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../introduction.html">Introduction</a></li><li class="chapter-item "><a href="../basics.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li class="chapter-item "><a href="../races/index.html"><strong aria-hidden="true">2.</strong> Races</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../races/dwarf.html"><strong aria-hidden="true">2.1.</strong> Dwarf</a></li><li class="chapter-item "><a href="../races/elf.html"><strong aria-hidden="true">2.2.</strong> Elf</a></li><li class="chapter-item "><a href="../races/gnome.html"><strong aria-hidden="true">2.3.</strong> Gnome</a></li><li class="chapter-item "><a href="../races/half-elf.html"><strong aria-hidden="true">2.4.</strong> Half-Elf</a></li><li class="chapter-item "><a href="../races/half-orc.html"><strong aria-hidden="true">2.5.</strong> Half-Orc</a></li><li class="chapter-item "><a href="../races/halfling.html"><strong aria-hidden="true">2.6.</strong> Halfling</a></li><li class="chapter-item "><a href="../races/human.html"><strong aria-hidden="true">2.7.</strong> Human</a></li></ol></li><li class="chapter-item "><a href="../classes/index.html"><strong aria-hidden="true">3.</strong> Classes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../classes/barbarian.html"><strong aria-hidden="true">3.1.</strong> Barbarian</a></li><li class="chapter-item "><a href="../classes/bard.html"><strong aria-hidden="true">3.2.</strong> Bard</a></li><li class="chapter-item "><a href="../classes/cleric.html"><strong aria-hidden="true">3.3.</strong> Cleric</a></li><li class="chapter-item "><a href="../classes/druid.html"><strong aria-hidden="true">3.4.</strong> Druid</a></li><li class="chapter-item "><a href="../classes/fighter.html"><strong aria-hidden="true">3.5.</strong> Fighter</a></li><li class="chapter-item "><a href="../classes/monk.html"><strong aria-hidden="true">3.6.</strong> Monk</a></li><li class="chapter-item "><a href="../classes/paladin.html"><strong aria-hidden="true">3.7.</strong> Paladin</a></li><li class="chapter-item "><a href="../classes/ranger.html"><strong aria-hidden="true">3.8.</strong> Ranger</a></li><li class="chapter-item "><a href="../classes/rogue.html"><strong aria-hidden="true">3.9.</strong> Rogue</a></li><li class="chapter-item "><a href="../classes/sorcerer.html"><strong aria-hidden="true">3.10.</strong> Sorcerer</a></li><li class="chapter-item "><a href="../classes/wizard.html"><strong aria-hidden="true">3.11.</strong> Wizard</a></li></ol></li><li class="chapter-item "><a href="../skills/index.html"><strong aria-hidden="true">4.</strong> Skills</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../skills/appraise.html"><strong aria-hidden="true">4.1.</strong> Appraise</a></li><li class="chapter-item "><a href="../skills/balance.html"><strong aria-hidden="true">4.2.</strong> Balance</a></li><li class="chapter-item "><a href="../skills/bluff.html"><strong aria-hidden="true">4.3.</strong> Bluff</a></li><li class="chapter-item "><a href="../skills/climb.html"><strong aria-hidden="true">4.4.</strong> Climb</a></li><li class="chapter-item "><a href="../skills/concentration.html"><strong aria-hidden="true">4.5.</strong> Concentration</a></li><li class="chapter-item "><a href="../skills/craft.html"><strong aria-hidden="true">4.6.</strong> Craft</a></li><li class="chapter-item "><a href="../skills/decipher_script.html"><strong aria-hidden="true">4.7.</strong> Decipher Script</a></li><li class="chapter-item "><a href="../skills/diplomacy.html"><strong aria-hidden="true">4.8.</strong> Diplomacy</a></li><li class="chapter-item "><a href="../skills/disable_device.html"><strong aria-hidden="true">4.9.</strong> Disable Device</a></li><li class="chapter-item "><a href="../skills/disguise.html"><strong aria-hidden="true">4.10.</strong> Disguise</a></li><li class="chapter-item "><a href="../skills/escape_artist.html"><strong aria-hidden="true">4.11.</strong> Escape Artist</a></li><li class="chapter-item "><a href="../skills/forgery.html"><strong aria-hidden="true">4.12.</strong> Forgery</a></li><li class="chapter-item "><a href="../skills/gather_information.html"><strong aria-hidden="true">4.13.</strong> Gather Information</a></li><li class="chapter-item "><a href="../skills/handle_animal.html"><strong aria-hidden="true">4.14.</strong> Handle Animal</a></li><li class="chapter-item "><a href="../skills/heal.html"><strong aria-hidden="true">4.15.</strong> Heal</a></li><li class="chapter-item "><a href="../skills/hide.html"><strong aria-hidden="true">4.16.</strong> Hide</a></li><li class="chapter-item "><a href="../skills/index.html"><strong aria-hidden="true">4.17.</strong> Index</a></li><li class="chapter-item "><a href="../skills/intimidate.html"><strong aria-hidden="true">4.18.</strong> Intimidate</a></li><li class="chapter-item "><a href="../skills/jump.html"><strong aria-hidden="true">4.19.</strong> Jump</a></li><li class="chapter-item "><a href="../skills/knowledge.html"><strong aria-hidden="true">4.20.</strong> Knowledge</a></li><li class="chapter-item "><a href="../skills/listen.html"><strong aria-hidden="true">4.21.</strong> Listen</a></li><li class="chapter-item "><a href="../skills/move_silently.html"><strong aria-hidden="true">4.22.</strong> Move Silently</a></li><li class="chapter-item "><a href="../skills/open_lock.html"><strong aria-hidden="true">4.23.</strong> Open Lock</a></li><li class="chapter-item "><a href="../skills/perform.html"><strong aria-hidden="true">4.24.</strong> Perform</a></li><li class="chapter-item "><a href="../skills/profession.html"><strong aria-hidden="true">4.25.</strong> Profession</a></li><li class="chapter-item "><a href="../skills/ride.html"><strong aria-hidden="true">4.26.</strong> Ride</a></li><li class="chapter-item "><a href="../skills/search.html"><strong aria-hidden="true">4.27.</strong> Search</a></li><li class="chapter-item "><a href="../skills/sense_motive.html"><strong aria-hidden="true">4.28.</strong> Sense Motive</a></li><li class="chapter-item "><a href="../skills/sleight_of_hand.html"><strong aria-hidden="true">4.29.</strong> Sleight Of Hand</a></li><li class="chapter-item "><a href="../skills/speak_language.html"><strong aria-hidden="true">4.30.</strong> Speak Language</a></li><li class="chapter-item "><a href="../skills/spellcraft.html"><strong aria-hidden="true">4.31.</strong> Spellcraft</a></li><li class="chapter-item "><a href="../skills/spot.html"><strong aria-hidden="true">4.32.</strong> Spot</a></li><li class="chapter-item "><a href="../skills/survival.html"><strong aria-hidden="true">4.33.</strong> Survival</a></li><li class="chapter-item "><a href="../skills/swim.html"><strong aria-hidden="true">4.34.</strong> Swim</a></li><li class="chapter-item "><a href="../skills/tumble.html"><strong aria-hidden="true">4.35.</strong> Tumble</a></li><li class="chapter-item "><a href="../skills/use_magic_device.html"><strong aria-hidden="true">4.36.</strong> Use Magic Device</a></li><li class="chapter-item "><a href="../skills/use_rope.html"><strong aria-hidden="true">4.37.</strong> Use Rope</a></li></ol></li><li class="chapter-item "><a href="../feats.html"><strong aria-hidden="true">5.</strong> Feats</a></li><li class="chapter-item expanded "><a href="../equipment/index.html"><strong aria-hidden="true">6.</strong> Equipment</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../equipment/weapons.html"><strong aria-hidden="true">6.1.</strong> Weapons</a></li><li class="chapter-item "><a href="../equipment/armor.html"><strong aria-hidden="true">6.2.</strong> Armor</a></li><li class="chapter-item "><a href="../equipment/goods_and_services.html"><strong aria-hidden="true">6.3.</strong> Goods And Services</a></li><li class="chapter-item "><a href="../equipment/special_materials.html"><strong aria-hidden="true">6.4.</strong> Special Materials</a></li><li class="chapter-item "><a href="../equipment/magic_item_basics.html"><strong aria-hidden="true">6.5.</strong> Magic Item Basics</a></li><li class="chapter-item "><a href="../equipment/magic_weapons.html"><strong aria-hidden="true">6.6.</strong> Magic Weapons</a></li><li class="chapter-item "><a href="../equipment/magic_armor.html"><strong aria-hidden="true">6.7.</strong> Magic Armor</a></li><li class="chapter-item "><a href="../equipment/potions.html"><strong aria-hidden="true">6.8.</strong> Potions</a></li><li class="chapter-item "><a href="../equipment/scrolls.html"><strong aria-hidden="true">6.9.</strong> Scrolls</a></li><li class="chapter-item "><a href="../equipment/wands.html"><strong aria-hidden="true">6.10.</strong> Wands</a></li><li class="chapter-item "><a href="../equipment/staffs.html"><strong aria-hidden="true">6.11.</strong> Staffs</a></li><li class="chapter-item "><a href="../equipment/rods.html"><strong aria-hidden="true">6.12.</strong> Rods</a></li><li class="chapter-item expanded "><a href="../equipment/rings.html" class="active"><strong aria-hidden="true">6.13.</strong> Rings</a></li><li class="chapter-item "><a href="../equipment/wondrous_items.html"><strong aria-hidden="true">6.14.</strong> Wondrous Items</a></li><li class="chapter-item "><a href="../equipment/magic_item_creation.html"><strong aria-hidden="true">6.15.</strong> Magic Item Creation</a></li><li class="chapter-item "><a href="../equipment/intelligent_magic_items.html"><strong aria-hidden="true">6.16.</strong> Intelligent Magic Items</a></li><li class="chapter-item "><a href="../equipment/cursed_magic_items.html"><strong aria-hidden="true">6.17.</strong> Cursed Magic Items</a></li><li class="chapter-item "><a href="../equipment/artifacts.html"><strong aria-hidden="true">6.18.</strong> Artifacts</a></li></ol></li><li class="chapter-item "><a href="../license.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">System Reference Document v3.5</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>RINGS</p>
+<p>Rings bestow magical powers upon their wearers. Only a rare few have charges. Anyone can use a ring.</p>
+<p>A character can only effectively wear two magic rings. A third magic ring doesn't work if the wearer is already wearing two magic rings.</p>
+<p>Physical Description: Rings have no appreciable weight. Although exceptions exist that are crafted from glass or bone, the vast majority of rings are forged from metal--usually precious metals such as gold, silver, and platinum. A ring has AC 13, 2 hit points, hardness 10, and a break DC of 25.</p>
+<p>Activation: Usually, a ring's ability is activated by a command word (a standard action that does not provoke attacks of opportunity) or it works continually. Some rings have exceptional activation methods, according to their descriptions.</p>
+<p>Special Qualities: Roll d%. A result of 01 indicates the ring is intelligent, 02-31 indicates that something (a design, inscription, or the like) provides a clue to its function, and 32-100 indicates no special qualities. Intelligent items have extra abilities and sometimes extraordinary powers and special purposes. Rings with charges can never be intelligent.</p>
+<p>| Table: Rings | |  |
+| Minor | Medium | Major | | Ring | | Market Price | |  |
+| 01-18 | -- | -- | | Protection +1 | | 2,000 gp | |  |
+| 19-28 | -- | -- | | Feather falling | | 2,200 gp | |  |
+| 29-36 | -- | -- | | Sustenance | | 2,500 gp | |  |
+| 37-44 | -- | -- | | Climbing | | 2,500 gp | |  |
+| 45-52 | -- | -- | | Jumping | | 2,500 gp | |  |
+| 53-60 | -- | -- | | Swimming | | 2,500 gp | |  |
+| 61-70 | 01-05 | -- | | Counterspells | | 4,000 gp | |  |
+| 71-75 | 06-08 | -- | | Mind shielding | | 8,000 gp | |  |
+| 76-80 | 09-18 | -- | | Protection +2 | | 8,000 gp | |  |
+| 81-85 | 19-23 | -- | | Force shield | | 8,500 gp | |  |
+| 86-90 | 24-28 | -- | | Ram | | 8,600 gp | |  |
+| -- | 29-34 | -- | | Climbing, improved | | 10,000 gp | |  |
+| -- | 35-40 | -- | | Jumping, improved | | 10,000 gp | |  |
+| -- | 41-46 | -- | | Swimming, improved | | 10,000 gp | |  |
+| 91-93 | 47-51 | -- | | Animal friendship | | 10,800 gp | |  |
+| 94-96 | 50-56 | 01-02 | | Energy resistance, minor | | 12,000 gp | |  |
+| 97-98 | 57-61 | -- | | Chameleon power | | 12,700 gp | |  |
+| 99-100 | 62-66 | -- | | Water walking | | 15,000 gp | |  |
+| -- | 67-71 | 03-07 | | Protection +3 | | 18,000 gp | |  |
+| -- | 72-76 | 08-10 | | Spell storing, minor | | 18,000 gp | |  |
+| -- | 77-81 | 11-15 | | Invisibility | | 20,000 gp | |  |
+| -- | 82-85 | 16-19 | | Wizardry (I) | | 20,000 gp | |  |
+| -- | 86-90 | 20-25 | | Evasion | | 25,000 gp | |  |
+| -- | 91-93 | 26-28 | | X-ray vision | | 25,000 gp | |  |
+| -- | 94-97 | 29-32 | | Blinking | | 27,000 gp | |  |
+| -- | 98-100 | 33-39 | | Energy resistance, major | | 28,000 gp | |  |
+| -- | -- | 40-49 | | Protection +4 | | 32,000 gp | |  |
+| -- | -- | 50-55 | | Wizardry (II) | | 40,000 gp | |  |
+| -- | -- | 56-60 | | Freedom of movement | | 40,000 gp | |  |
+| -- | -- | 61-63 | | Energy resistance, greater | | 44,000 gp | |  |
+| -- | -- | 64-65 | | Friend shield (pair) | | 50,000 gp | |  |
+| -- | -- | 66-70 | | Protection +5 | | 50,000 gp | |  |
+| -- | -- | 71-74 | | Shooting stars | | 50,000 gp | |  |
+| -- | -- | 75-79 | | Spell storing | | 50,000 gp | |  |
+| -- | -- | 80-83 | | Wizardry (III) | | 70,000 gp | |  |
+| -- | -- | 84-86 | | Telekinesis | | 75,000 gp | |  |
+| -- | -- | 87-88 | | Regeneration | | 90,000 gp | |  |
+| -- | -- | 89 | | Three wishes | | 97,950 gp | |  |
+| -- | -- | 90-92 | | Spell turning | | 98,280 gp | |  |
+| -- | -- | 93-94 | | Wizardry (IV) | | 100,000 gp | |  |
+| -- | -- | 95 | | Djinni calling | | 125,000 gp | |  |
+| -- | -- | 96 | | Elemental command (air) | | 200,000 gp | |  |
+| -- | -- | 97 | | Elemental command (earth) | | 200,000 gp | |  |
+| -- | -- | 98 | | Elemental command (fire) | | 200,000 gp | |  |
+| -- | -- | 99 | | Elemental command (water) | | 200,000 gp | |  |
+| -- | -- | 100 | | Spell storing, major | | 200,000 gp | |  |</p>
+<p>Ring Descriptions</p>
+<p>Standard rings are described below.</p>
+<p>Animal Friendship: On command, this ring affects an animal as if the wearer had cast charm animal.</p>
+<p>Faint enchantment; CL 3rd; Forge Ring, charm animal; Price 10,800 gp.</p>
+<p>Blinking: On command, this ring makes the wearer blink, as with the blink spell.</p>
+<p>Moderate transmutation; CL 7th; Forge Ring, blink; Price 27,000 gp.</p>
+<p>Chameleon Power: As a free action, the wearer of this ring can gain the ability to magically blend in with the surroundings. This provides a +10 competence bonus on her Hide checks. As a standard action, she can also command the ring to utilize the spell disguise self as often as she wants.</p>
+<p>Faint illusion; CL 3rd; Forge Ring, disguise self, invisibility; Price 12,700 gp.</p>
+<p>Climbing: This ring is actually a magic leather cord that ties around a finger. It continually grants the wearer a +5 competence bonus on Climb checks.</p>
+<p>Faint transmutatation; CL 5th; Forge Ring, creator must have 5 ranks in the Climb skill; Price 2,500 gp.</p>
+<p>Climbing, Improved: As climbing, except it grants a +10 competence bonus on its wearer's Climb checks.</p>
+<p>Faint transmutation; CL 5th; Forge Ring, creator must have 10 ranks in the Climb skill; Price 10,000 gp.</p>
+<p>Counterspells: This ring might seem to be a ring of spell storing upon first examination. However, while it allows a single spell of 1st through 6th level to be cast into it, that spell cannot be cast out of the ring again. Instead, should that spell ever be cast upon the wearer, the spell is immediately countered, as a counterspell action, requiring no action (or even knowledge) on the wearer's part. Once so used, the spell cast within the ring is gone. A new spell (or the same one as before) may be placed in it again.</p>
+<p>Moderate evocation; CL 11th; Forge Ring, imbue with spell ability; Price 4,000 gp.</p>
+<p>Djinni Calling: One of the many rings of fable, this &quot;genie&quot; ring is most useful indeed. It serves as a special gate by means of which a specific djinni can be called from the Elemental Plane of Air. When the ring is rubbed (a standard action), the call goes out, and the djinni appears on the next round. The djinni faithfully obeys and serves the wearer of the ring, but never for more than 1 hour per day. If the djinni of the ring is ever killed, the ring becomes nonmagical and worthless.</p>
+<p>Strong conjuration; CL 17th; Forge Ring, gate; Price 125,000 gp.</p>
+<p>Elemental Command: All four kinds of elemental command rings are very powerful. Each appears to be nothing more than a lesser magic ring until fully activated (by meeting a special condition, such as single-handedly slaying an elemental of the appropriate type or exposure to a sacred material of the appropriate element), but each has certain other powers as well as the following common properties.</p>
+<p>Elementals of the plane to which the ring is attuned can't attack the wearer, or even approach within 5 feet of him. If the wearer desires, he may forego this protection and instead attempt to charm the elemental (as charm monster, Will DC 17 negates). If the charm attempt fails, however, absolute protection is lost and no further attempt at charming can be made.</p>
+<p>Creatures from the plane to which the ring is attuned who attack the wearer take a -1 penalty on their attack rolls. The ring wearer makes applicable saving throws from the extraplanar creature's attacks with a +2 resistance bonus. He gains a +4 morale bonus on all attack rolls against such creatures. Any weapon he uses bypasses the damage reduction of such creatures, regardless of any qualities the weapon may or may not have.</p>
+<p>The wearer of the ring is able to converse with creatures from the plane to which his ring is attuned. These creatures recognize that he wears the ring. They show a healthy respect for the wearer if alignments are similar. If alignments are opposed, creatures fear the wearer if he is strong. If he is weak, they hate and desire to slay him.</p>
+<p>The possessor of a ring of elemental command takes a saving throw penalty as follows:</p>
+<p>| Element | Saving Throw Penalty | |  |
+| Air | -2 against earth-based effects | |  |
+| Earth | -2 against air- or electricity-based effects | |  |
+| Fire | -2 against water- or cold-based effects | |  |
+| Water | -2 against fire-based effects | |  |
+In addition to the powers described above, each specific ring gives its wearer the following abilities according to its kind.</p>
+<p>Ring of Elemental Command (Air)</p>
+<ul>
+<li>
+<p>Feather fall (unlimited use, wearer only)</p>
+</li>
+<li>
+<p>Resist energy (electricity) (unlimited use, wearer only)</p>
+</li>
+<li>
+<p>Gust of wind (twice per day)</p>
+</li>
+<li>
+<p>Wind wall (unlimited use)</p>
+</li>
+<li>
+<p>Air walk (once per day, wearer only)</p>
+</li>
+<li>
+<p>Chain lightning (once per week)</p>
+</li>
+</ul>
+<p>The ring appears to be a ring of feather falling until a certain condition is met to activate its full potential. It must be reactivated each time a new wearer acquires it.</p>
+<p>Ring of Elemental Command (Earth)</p>
+<ul>
+<li>
+<p>Meld into stone (unlimited use, wearer only)</p>
+</li>
+<li>
+<p>Soften earth or stone (unlimited use)</p>
+</li>
+<li>
+<p>Stone shape (twice per day)</p>
+</li>
+<li>
+<p>Stoneskin (once per week, wearer only)</p>
+</li>
+<li>
+<p>Passwall (twice per week)</p>
+</li>
+<li>
+<p>Wall of stone (once per day)</p>
+</li>
+</ul>
+<p>The ring appears to be a ring of meld into stone until the established condition is met.</p>
+<p>Ring of Elemental Command (Fire)</p>
+<ul>
+<li>
+<p>Resist energy (fire) (as a major ring of energy resistance [fire])</p>
+</li>
+<li>
+<p>Burning hands (unlimited use)</p>
+</li>
+<li>
+<p>Flaming sphere (twice per day)</p>
+</li>
+<li>
+<p>Pyrotechnics (twice per day)</p>
+</li>
+<li>
+<p>Wall of fire (once per day)</p>
+</li>
+<li>
+<p>Flame strike (twice per week)</p>
+</li>
+</ul>
+<p>The ring appears to be a major ring of energy resistance (fire) until the established condition is met.</p>
+<p>Ring of Elemental Command (Water)</p>
+<ul>
+<li>
+<p>Water walk (unlimited use)</p>
+</li>
+<li>
+<p>Create water (unlimited use)</p>
+</li>
+<li>
+<p>Water breathing (unlimited use)</p>
+</li>
+<li>
+<p>Wall of ice (once per day)</p>
+</li>
+<li>
+<p>Ice storm (twice per week)</p>
+</li>
+<li>
+<p>Control water (twice per week)</p>
+</li>
+</ul>
+<p>The ring appears to be a ring of water walking until the established condition is met.</p>
+<p>Strong conjuration; CL 15th; Forge Ring, summon monster VI, all appropriate spells; Price 200,000 gp.</p>
+<p>Energy Resistance: This reddish iron ring continually protects the wearer from damage from one type of energy--acid, cold, electricity, fire, or sonic (chosen by the creator of the item; determine randomly if found as part of a treasure hoard). Each time the wearer would normally take such damage, subtract the ring's resistance value from the damage dealt.</p>
+<p>A minor ring of energy resistance grants 10 points of resistance. A major ring of energy resistance grants 20 points of resistance. A greater ring of energy resistance grants 30 points of resistance.</p>
+<p>Faint (minor or major) or moderate (greater) abjuration; CL 3rd  (minor), 7th (major), or 11th (greater); Forge Ring, resist energy; Price 12,000 gp (minor), 28,000 gp (major), 44,000 gp (greater).</p>
+<p>Evasion: This ring continually grants the wearer the ability to avoid damage as if she had evasion. Whenever she makes a Reflex saving throw to determine whether she takes half damage, a successful save results in no damage.</p>
+<p>Moderate transmutation; CL 7th; Forge Ring, jump; Price 25,000 gp.</p>
+<p>Feather Falling: This ring is crafted with a feather pattern all around its edge. It acts exactly like a feather fall spell, activated immediately if the wearer falls more than 5 feet.</p>
+<p>Faint transmutation; CL 1st; Forge Ring, feather fall; Price 2,200 gp.</p>
+<p>Force Shield: An iron band, this simple ring generates a shield-sized (and shield-shaped) wall of force that stays with the ring and can be wielded by the wearer as if it were a heavy shield (+2 AC). This special creation has no armor check penalty or arcane spell failure chance since it is weightless and encumbrance-free. It can be activated and deactivated at will as a free action.</p>
+<p>Moderate evocation; CL 9th; Forge Ring, wall of force; Price 8,500 gp.</p>
+<p>Freedom of Movement: This gold ring allows the wearer to act as if continually under the effect of a freedom of movement spell.</p>
+<p>Moderate abjuration; CL 7th; Forge Ring, freedom of movement; Price 40,000 gp.</p>
+<p>Friend Shield: These curious rings always come in pairs. A friend shield ring without its mate is useless. Either wearer of one of a pair of the rings can, at any time, command his or her ring to cast a shield other spell with the wearer of the mated ring as the recipient. This effect has no range limitation. </p>
+<p>Moderate abjuration; CL 10th; Forge Ring, shield other; Price 50,000 gp (for a pair).</p>
+<p>Invisibility: By activating this simple silver ring, the wearer can benefit from invisibility, as the spell.</p>
+<p>Faint illusion; CL 3rd; Forge Ring, invisibility; Price 20,000 gp.</p>
+<p>Jumping: This ring continually allows the wearer to leap about, providing a +5 competence bonus on all his Jump checks.</p>
+<p>Faint transmutation; CL 2nd; Forge Ring, creator must have 5 ranks in the Jump skill; Price 2,500 gp.</p>
+<p>Jumping, Improved: As jumping, except it grants a +10 competence bonus on its wearer's Jump check.</p>
+<p>Moderate transmutation; CL 7th; Forge Ring, creator must have 10 ranks in the Jump skill; Price 10,000 gp.</p>
+<p>Mind Shielding: This ring is usually of fine workmanship and wrought from heavy gold. The wearer is continually immune to detect thoughts, discern lies, and any attempt to magically discern her alignment.</p>
+<p>Faint aburation; CL 3rd; Forge Ring, nondetection; Price 8,000 gp.</p>
+<p>Protection: This ring offers continual magical protection in the form of a deflection bonus of +1 to +5 to AC.</p>
+<p>Faint abjuration; CL 5th; Forge Ring, shield of faith, caster must be of a level at least three times greater than the bonus of the ring; Price 2,000 gp (ring +1); 8,000 gp (ring +2); 18,000 gp (ring +3); 32,000 gp (ring +4); 50,000 gp (ring +5).</p>
+<p>Ram: The ring of the ram is an ornate ring forged of hard metal, usually iron or an iron alloy. It has the head of a ram as its device.</p>
+<p>The wearer can command the ring to give forth a ramlike force, manifested by a vaguely discernible shape that resembles the head of a ram or a goat. This force strikes a single target, dealing 1d6 points of damage if 1 charge is expended, 2d6 points if 2 charges are used, or 3d6 points if 3 charges (the maximum) are used. Treat this as a ranged attack with a 50-foot maximum range and no penalties for distance. </p>
+<p>The force of the blow is considerable, and those struck by the ring are subject to a bull rush if within 30 feet of the ring-wearer. (The ram has Strength 25 and is Large.) The ram gains a +1 bonus on the bull rush attempt if 2 charges are expended, or +2 if 3 charges are expended.</p>
+<p>In addition to its attack mode, the ring of the ram also has the power to open doors as if it were a character with Strength 25. If 2 charges are expended, the effect is equivalent to a character with Strength 27. If 3 charges are expended, the effect is that of a character with Strength 29.</p>
+<p>A newly created ring has 50 charges. When all the charges are expended, the ring becomes a nonmagical item.</p>
+<p>Moderate transmutation; CL 9th; Forge Ring, bull's strength, telekinesis; Price 8,600 gp.</p>
+<p>Regeneration: This white gold ring continually allows a living wearer to heal 1 point of damage per level every hour rather than every day. (This ability cannot be aided by the Heal skill.) Nonlethal damage heals at a rate of 1 point of damage per level every 5 minutes. If the wearer loses a limb, an organ, or any other body part while wearing this ring, the ring regenerates it as the spell. In either case, only damage taken while wearing the ring is regenerated.</p>
+<p>Strong conjuration; CL 15th; Forge Ring, regenerate; Price 90,000 gp.</p>
+<p>Shooting Stars: This ring has two modes of operation, one for being in shadowy darkness or outdoors at night and a second one when the wearer is underground or indoors at night.</p>
+<p>During the night under the open sky or in areas of shadow or darkness, the ring of shooting stars can perform the following functions on command.</p>
+<ul>
+<li>
+<p>Dancing lights (once per hour)</p>
+</li>
+<li>
+<p>Light (twice per night)</p>
+</li>
+<li>
+<p>Ball lightning (special, once per night)</p>
+</li>
+<li>
+<p>Shooting stars (special, three per week)</p>
+</li>
+</ul>
+<p>The first special function, ball lightning, releases one to four balls of lightning (ring wearer's choice). These glowing globes resemble dancing lights, and the ring wearer controls them in the same fashion (see the dancing lights spell description). The spheres have a 120-foot range and a duration of 4 rounds. They can be moved at 120 feet per round. Each sphere is about 3 feet in diameter, and any creature who comes within 5 feet of one causes its charge to dissipate, taking electricity damage in the process according to the number of balls created.</p>
+<p>| Number of Balls | Damage per Ball | |  |
+| 4 lightning balls | 1d6 points of damage each | |  |
+| 3 lightning balls | 2d6 points of damage each | |  |
+| 2 lightning balls | 3d6 points of damage each | |  |
+| 1 lightning ball | 4d6 points of damage | |  |
+Once the ball lightning function is activated, the balls can be released at any time before the sun rises. (Multiple balls can be released in the same round.)</p>
+<p>The second special function produces three shooting stars that can be released from the ring each week, simultaneously or one at a time. They impact for 12 points of damage and spread (as a fireball) in a 5-foot-radius sphere for 24 points of fire damage.</p>
+<p>Any creature struck by a shooting star takes full damage from impact plus full fire damage from the spread unless it makes a DC 13 Reflex save. Creatures not struck but within the spread ignore the impact damage and take only half damage from the fire spread on a successful DC 13 Reflex save. Range is 70 feet, at the end of which the shooting star explodes, unless it strikes a creature or object before that. A shooting star always follows a straight line, and any creature in its path must make a save or be hit by the projectile.</p>
+<p>Indoors at night, or underground, the ring of shooting stars has the following properties.</p>
+<ul>
+<li>
+<p>Faerie fire (twice per day)</p>
+</li>
+<li>
+<p>Spark shower (special, once per day)</p>
+</li>
+</ul>
+<p>The spark shower is a flying cloud of sizzling purple sparks that fan out from the ring for a distance of 20 feet in an arc 10 feet wide. Creatures within this area take 2d8 points of damage each if not wearing metal armor or carrying a metal weapon. Those wearing metal armor and/or carrying a metal weapon take 4d8 points of damage.</p>
+<p>Strong evocation; CL 12th; Forge Ring, light, faerie fire, fireball, lightning bolt; Price 50,000 gp.</p>
+<p>Spell Storing, Minor: A minor ring of spell storing contains up to three levels of spells that the wearer can cast. Each spell has a caster level equal to the minimum level needed to cast that spell. The user need not provide any material components or focus, or pay an XP cost to cast the spell, and there is no arcane spell failure chance for wearing armor (because the ring wearer need not gesture). The activation time for the ring is same as the casting time for the relevant spell, with a minimum of 1 standard action.</p>
+<p>For a randomly generated ring, treat it as a scroll to determine what spells are stored in it. If you roll a spell that would put the ring over the three-level limit, ignore that roll; the ring has no more spells in it. (Not every newly discovered ring need be fully charged.)</p>
+<p>A spellcaster can cast any spells into the ring, so long as the total spell levels do not add up to more than three. Metamagic versions of spells take up storage space equal to their spell level modified by the metamagic feat. A spellcaster can use a scroll to put a spell into the minor ring of spell storing.</p>
+<p>The ring magically imparts to the wearer the names of all spells currently stored within it.</p>
+<p>Faint evocation; CL 5th; Forge Ring, imbue with spell ability; Price 18,000 gp.</p>
+<p>Spell Storing: As the minor ring of spell storing, except it holds up to five levels of spells.</p>
+<p>Moderate evocation; CL 9th; Forge Ring, imbue with spell ability; Price 50,000 gp.</p>
+<p>Spell Storing, Major: As the minor ring of spell storing, except it holds up to ten levels of spells.</p>
+<p>Strong evocation; CL 17th; Forge Ring, imbue with spell ability; Price 200,000 gp.</p>
+<p>Spell Turning: Up to three times per day on command, this simple platinum band automatically reflects the next nine levels of spells cast at the wearer, exactly as if spell turning had been cast upon the wearer.</p>
+<p>Strong abjuration; CL 13th; Forge Ring, spell turning; Price 98,280 gp.</p>
+<p>Sustenance: This ring continually provides its wearer with life-sustaining nourishment. The ring also refreshes the body and mind, so that its wearer needs only sleep 2 hours per day to gain the benefit of 8 hours of sleep. The ring must be worn for a full week before it begins to work. If it is removed, the owner must wear it for another week to reattune it to himself.</p>
+<p>Faint conjuration; CL 5th; Forge Ring, create food and water; Price 2,500 gp.</p>
+<p>Swimming: This silver ring has a wave pattern etched into the band. It continually grants the wearer a +5 competence bonus on Swim checks.</p>
+<p>Faint transmutation; CL 2nd; Forge Ring, creator must have 5 ranks in the Swim skill; Price 2,500 gp.</p>
+<p>Swimming, Improved: As swimming, except it grants a +10 competence bonus on its wearer's Swim checks.</p>
+<p>Moderate transmutation; CL 7th; Forge Ring, creator must have 10 ranks in the Swim skill; Price 10,000 gp.</p>
+<p>Telekinesis: This ring allows the caster to use the spell telekinesis on command.</p>
+<p>Moderate transmutation; CL 9th; Forge Ring, telekinesis; Price 75,000 gp.</p>
+<p>Three Wishes: This ring is set with three rubies. Each ruby stores a wish spell, activated by the ring. When a wish is used, that ruby disappears. For a randomly generated ring, roll 1d3 to determine the remaining number of rubies. When all the wishes are used, the ring becomes a nonmagical item.</p>
+<p>Strong evocation (if miracle is used); CL 20th; Forge Ring, wish or miracle; Price 97,950 gp; Cost 11,475 gp + 15,918 XP.</p>
+<p>Water Walking: This ring, set with an opal, allows the wearer to continually utilize the effects of the spell water walk.</p>
+<p>Moderate transmutation; CL 9th; Forge Ring, water walk; Price 15,000 gp.</p>
+<p>Wizardry: This special ring comes in four kinds (ring of wizardry I, ring of wizardry II, ring of wizardry III, and ring of wizardry IV), all of them useful only to arcane spellcasters. The wearer's arcane spells per day are doubled for one specific spell level. A ring of wizardry I doubles 1st-level spells, a ring of wizardry II doubles 2nd-level spells, a ring of wizardry III doubles 3rd-level spells, and a ring of wizardry IV doubles 4th-level spells. Bonus spells from high ability scores or school specialization are not doubled.</p>
+<p>Moderate (wizardry I) or strong (wizardry II-IV) (no school); CL 11th (I), 14th (II), 17th (III), 20th (IV); Forge Ring, limited wish; Price 20,000 gp (I), 40,000 gp (II), 70,000 gp (III), 100,000 gp (IV).</p>
+<p>X-Ray Vision: On command, this ring gives its possessor the ability to see into and through solid matter. Vision range is 20 feet, with the viewer seeing as if he were looking at something in normal light even if there is no illumination. X-ray vision can penetrate 1 foot of stone, 1 inch of common metal, or up to 3 feet of wood or dirt. Thicker substances or a thin sheet of lead blocks the vision.</p>
+<p>Using the ring is physically exhausting, causing the wearer 1 point of Constitution damage per minute after the first 10 minutes of use in a single day.</p>
+<p>Moderate divination; CL 6th; Forge Ring, true seeing; Price 25,000 gp.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../equipment/rods.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../equipment/wondrous_items.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../equipment/rods.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../equipment/wondrous_items.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

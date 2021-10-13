@@ -1,0 +1,477 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Magic Item Creation - System Reference Document v3.5</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The System Reference Document v3.5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../introduction.html">Introduction</a></li><li class="chapter-item "><a href="../basics.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li class="chapter-item "><a href="../races/index.html"><strong aria-hidden="true">2.</strong> Races</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../races/dwarf.html"><strong aria-hidden="true">2.1.</strong> Dwarf</a></li><li class="chapter-item "><a href="../races/elf.html"><strong aria-hidden="true">2.2.</strong> Elf</a></li><li class="chapter-item "><a href="../races/gnome.html"><strong aria-hidden="true">2.3.</strong> Gnome</a></li><li class="chapter-item "><a href="../races/half-elf.html"><strong aria-hidden="true">2.4.</strong> Half-Elf</a></li><li class="chapter-item "><a href="../races/half-orc.html"><strong aria-hidden="true">2.5.</strong> Half-Orc</a></li><li class="chapter-item "><a href="../races/halfling.html"><strong aria-hidden="true">2.6.</strong> Halfling</a></li><li class="chapter-item "><a href="../races/human.html"><strong aria-hidden="true">2.7.</strong> Human</a></li></ol></li><li class="chapter-item "><a href="../classes/index.html"><strong aria-hidden="true">3.</strong> Classes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../classes/barbarian.html"><strong aria-hidden="true">3.1.</strong> Barbarian</a></li><li class="chapter-item "><a href="../classes/bard.html"><strong aria-hidden="true">3.2.</strong> Bard</a></li><li class="chapter-item "><a href="../classes/cleric.html"><strong aria-hidden="true">3.3.</strong> Cleric</a></li><li class="chapter-item "><a href="../classes/druid.html"><strong aria-hidden="true">3.4.</strong> Druid</a></li><li class="chapter-item "><a href="../classes/fighter.html"><strong aria-hidden="true">3.5.</strong> Fighter</a></li><li class="chapter-item "><a href="../classes/monk.html"><strong aria-hidden="true">3.6.</strong> Monk</a></li><li class="chapter-item "><a href="../classes/paladin.html"><strong aria-hidden="true">3.7.</strong> Paladin</a></li><li class="chapter-item "><a href="../classes/ranger.html"><strong aria-hidden="true">3.8.</strong> Ranger</a></li><li class="chapter-item "><a href="../classes/rogue.html"><strong aria-hidden="true">3.9.</strong> Rogue</a></li><li class="chapter-item "><a href="../classes/sorcerer.html"><strong aria-hidden="true">3.10.</strong> Sorcerer</a></li><li class="chapter-item "><a href="../classes/wizard.html"><strong aria-hidden="true">3.11.</strong> Wizard</a></li></ol></li><li class="chapter-item "><a href="../skills/index.html"><strong aria-hidden="true">4.</strong> Skills</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../skills/appraise.html"><strong aria-hidden="true">4.1.</strong> Appraise</a></li><li class="chapter-item "><a href="../skills/balance.html"><strong aria-hidden="true">4.2.</strong> Balance</a></li><li class="chapter-item "><a href="../skills/bluff.html"><strong aria-hidden="true">4.3.</strong> Bluff</a></li><li class="chapter-item "><a href="../skills/climb.html"><strong aria-hidden="true">4.4.</strong> Climb</a></li><li class="chapter-item "><a href="../skills/concentration.html"><strong aria-hidden="true">4.5.</strong> Concentration</a></li><li class="chapter-item "><a href="../skills/craft.html"><strong aria-hidden="true">4.6.</strong> Craft</a></li><li class="chapter-item "><a href="../skills/decipher_script.html"><strong aria-hidden="true">4.7.</strong> Decipher Script</a></li><li class="chapter-item "><a href="../skills/diplomacy.html"><strong aria-hidden="true">4.8.</strong> Diplomacy</a></li><li class="chapter-item "><a href="../skills/disable_device.html"><strong aria-hidden="true">4.9.</strong> Disable Device</a></li><li class="chapter-item "><a href="../skills/disguise.html"><strong aria-hidden="true">4.10.</strong> Disguise</a></li><li class="chapter-item "><a href="../skills/escape_artist.html"><strong aria-hidden="true">4.11.</strong> Escape Artist</a></li><li class="chapter-item "><a href="../skills/forgery.html"><strong aria-hidden="true">4.12.</strong> Forgery</a></li><li class="chapter-item "><a href="../skills/gather_information.html"><strong aria-hidden="true">4.13.</strong> Gather Information</a></li><li class="chapter-item "><a href="../skills/handle_animal.html"><strong aria-hidden="true">4.14.</strong> Handle Animal</a></li><li class="chapter-item "><a href="../skills/heal.html"><strong aria-hidden="true">4.15.</strong> Heal</a></li><li class="chapter-item "><a href="../skills/hide.html"><strong aria-hidden="true">4.16.</strong> Hide</a></li><li class="chapter-item "><a href="../skills/index.html"><strong aria-hidden="true">4.17.</strong> Index</a></li><li class="chapter-item "><a href="../skills/intimidate.html"><strong aria-hidden="true">4.18.</strong> Intimidate</a></li><li class="chapter-item "><a href="../skills/jump.html"><strong aria-hidden="true">4.19.</strong> Jump</a></li><li class="chapter-item "><a href="../skills/knowledge.html"><strong aria-hidden="true">4.20.</strong> Knowledge</a></li><li class="chapter-item "><a href="../skills/listen.html"><strong aria-hidden="true">4.21.</strong> Listen</a></li><li class="chapter-item "><a href="../skills/move_silently.html"><strong aria-hidden="true">4.22.</strong> Move Silently</a></li><li class="chapter-item "><a href="../skills/open_lock.html"><strong aria-hidden="true">4.23.</strong> Open Lock</a></li><li class="chapter-item "><a href="../skills/perform.html"><strong aria-hidden="true">4.24.</strong> Perform</a></li><li class="chapter-item "><a href="../skills/profession.html"><strong aria-hidden="true">4.25.</strong> Profession</a></li><li class="chapter-item "><a href="../skills/ride.html"><strong aria-hidden="true">4.26.</strong> Ride</a></li><li class="chapter-item "><a href="../skills/search.html"><strong aria-hidden="true">4.27.</strong> Search</a></li><li class="chapter-item "><a href="../skills/sense_motive.html"><strong aria-hidden="true">4.28.</strong> Sense Motive</a></li><li class="chapter-item "><a href="../skills/sleight_of_hand.html"><strong aria-hidden="true">4.29.</strong> Sleight Of Hand</a></li><li class="chapter-item "><a href="../skills/speak_language.html"><strong aria-hidden="true">4.30.</strong> Speak Language</a></li><li class="chapter-item "><a href="../skills/spellcraft.html"><strong aria-hidden="true">4.31.</strong> Spellcraft</a></li><li class="chapter-item "><a href="../skills/spot.html"><strong aria-hidden="true">4.32.</strong> Spot</a></li><li class="chapter-item "><a href="../skills/survival.html"><strong aria-hidden="true">4.33.</strong> Survival</a></li><li class="chapter-item "><a href="../skills/swim.html"><strong aria-hidden="true">4.34.</strong> Swim</a></li><li class="chapter-item "><a href="../skills/tumble.html"><strong aria-hidden="true">4.35.</strong> Tumble</a></li><li class="chapter-item "><a href="../skills/use_magic_device.html"><strong aria-hidden="true">4.36.</strong> Use Magic Device</a></li><li class="chapter-item "><a href="../skills/use_rope.html"><strong aria-hidden="true">4.37.</strong> Use Rope</a></li></ol></li><li class="chapter-item "><a href="../feats.html"><strong aria-hidden="true">5.</strong> Feats</a></li><li class="chapter-item expanded "><a href="../equipment/index.html"><strong aria-hidden="true">6.</strong> Equipment</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../equipment/weapons.html"><strong aria-hidden="true">6.1.</strong> Weapons</a></li><li class="chapter-item "><a href="../equipment/armor.html"><strong aria-hidden="true">6.2.</strong> Armor</a></li><li class="chapter-item "><a href="../equipment/goods_and_services.html"><strong aria-hidden="true">6.3.</strong> Goods And Services</a></li><li class="chapter-item "><a href="../equipment/special_materials.html"><strong aria-hidden="true">6.4.</strong> Special Materials</a></li><li class="chapter-item "><a href="../equipment/magic_item_basics.html"><strong aria-hidden="true">6.5.</strong> Magic Item Basics</a></li><li class="chapter-item "><a href="../equipment/magic_weapons.html"><strong aria-hidden="true">6.6.</strong> Magic Weapons</a></li><li class="chapter-item "><a href="../equipment/magic_armor.html"><strong aria-hidden="true">6.7.</strong> Magic Armor</a></li><li class="chapter-item "><a href="../equipment/potions.html"><strong aria-hidden="true">6.8.</strong> Potions</a></li><li class="chapter-item "><a href="../equipment/scrolls.html"><strong aria-hidden="true">6.9.</strong> Scrolls</a></li><li class="chapter-item "><a href="../equipment/wands.html"><strong aria-hidden="true">6.10.</strong> Wands</a></li><li class="chapter-item "><a href="../equipment/staffs.html"><strong aria-hidden="true">6.11.</strong> Staffs</a></li><li class="chapter-item "><a href="../equipment/rods.html"><strong aria-hidden="true">6.12.</strong> Rods</a></li><li class="chapter-item "><a href="../equipment/rings.html"><strong aria-hidden="true">6.13.</strong> Rings</a></li><li class="chapter-item "><a href="../equipment/wondrous_items.html"><strong aria-hidden="true">6.14.</strong> Wondrous Items</a></li><li class="chapter-item expanded "><a href="../equipment/magic_item_creation.html" class="active"><strong aria-hidden="true">6.15.</strong> Magic Item Creation</a></li><li class="chapter-item "><a href="../equipment/intelligent_magic_items.html"><strong aria-hidden="true">6.16.</strong> Intelligent Magic Items</a></li><li class="chapter-item "><a href="../equipment/cursed_magic_items.html"><strong aria-hidden="true">6.17.</strong> Cursed Magic Items</a></li><li class="chapter-item "><a href="../equipment/artifacts.html"><strong aria-hidden="true">6.18.</strong> Artifacts</a></li></ol></li><li class="chapter-item "><a href="../license.html">License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">System Reference Document v3.5</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>CREATING MAGIC ITEMS</p>
+<p>To create magic items, spellcasters use special feats. They invest time, money, and their own personal energy (in the form of experience points) in an item's creation.</p>
+<p>Note that all items have prerequisites in their descriptions. These prerequisites must be met for the item to be created. Most of the time, they take the form of spells that must be known by the item's creator (although access through another magic item or spellcaster is allowed).</p>
+<p>While item creation costs are handled in detail below, note that normally the two primary factors are the caster level of the creator and the level of the spell or spells put into the item. A creator can create an item at a lower caster level than her own, but never lower than the minimum level needed to cast the needed spell. Using metamagic feats, a caster can place spells in items at a higher level than normal.</p>
+<p>Magic supplies for items are always half of the base price in gp and 1/25 of the base price in XP. For many items, the market price equals the base price.</p>
+<p>Armor, shields, weapons, and items with a value independent of their magically enhanced properties add their item cost to the market price. The item cost does not influence the base price (which determines the cost of magic supplies and the experience point cost), but it does increase the final market price.</p>
+<p>In addition, some items cast or replicate spells with costly material components or with XP components. For these items, the market price equals the base price plus an extra price for the spell component costs. Each XP in the component costs adds 5 gp to the market price. The cost to create these items is the magic supplies cost and the base XP cost (both determined by the base price) plus the costs for the components. Descriptions of these items include an entry that gives the total cost of creating the item.</p>
+<p>The creator also needs a fairly quiet, comfortable, and well-lit place in which to work. Any place suitable for preparing spells is suitable for making items. Creating an item requires one day per 1,000 gp in the item's base price, with a minimum of at least one day. Potions are an exception to this rule; they always take just one day to brew. The character must spend the gold and XP at the beginning of the construction process.</p>
+<p>The caster works for 8 hours each day. He cannot rush the process by working longer each day. But the days need not be consecutive, and the caster can use the rest of his time as he sees fit.</p>
+<p>A character can work on only one item at a time. If a character starts work on a new item, all materials used and XP spent on the under-construction item are wasted.</p>
+<p>The secrets of creating artifacts are long lost.</p>
+<p>| Table: Summary of Magic Item Creation Costs | |  |
+|   |   |   | | Spell Component Costs | |  |  | |  |
+| Magic Item  | Feat  | Item Cost  | Material2  | XP3  | Magic Supplies Cost  | Base Price4 | |  |
+| Armor  | Craft Magic Arms and Armor | Masterwork armor  | Cost x 50 (usually none) | x 50 (usually none) </p>
+<p>x 5 gp | 1/2 the value on Table: Armor and Shields | Value on Table: Armor and Shields | |  |
+| Shield   | Craft Magic Arms and Armor | Masterwork shield  | x 50 (usually none) | x? 50 (usually none) </p>
+<p>x 5 gp | 1/2 the value on Table: Armor and Shields | Value on Table: Armor and Shields | |  |
+| Weapon  | Craft Magic Arms and Armor | Masterwork weapon  | x 50 (usually none)  | x 50 (usually none) </p>
+<p>x 5 gp | 1/2 the value on Table: Weapons  | Value on Table: Weapons | |  |
+| Potion  | Brew Potion |  --  | Cost (usually none)  | Cost (usually none)  | 1/2 x 25 x level of spell x level of caster | 25 x level of spell x level of caster | |  |
+| Ring  | Forge Ring  | -- |  x 50  | x 50 </p>
+<p>x 5 gp | Special, see Table: Estimating Magic Item Gold Price Values, below | Special, see Table: Estimating Magic Item Gold Price Values, below | |  |
+| Rod  | Craft Rod  | 1  | x 50 (often none) | x 50 (often none)  | Special, see Table: Estimating Magic Item Gold Price Values, below | Special, see Table: Estimating Magic Item Gold Price Values, below | |  |
+| Scroll  | Scribe Scroll  | --  | Cost (usually none)  | Cost (usually none)  | 1/2 x 12.5 x level of spell x level of caster | 12.5 x level of spell x level of caster | |  |
+| Staff  | Craft Staff  | Masterwork quarterstaff (300 gp) | x 50 / (# of charges used to activate spell) | x 50 x 5 gp / (# of charges used to activate spell) | See Creating Staffs, below  | See Creating Staffs, below | |  |
+| Wand  | Craft Wand  | --  | x 50  | x 50 </p>
+<p>x 5 gp  | 1/2 x 375 x level of spell x level of caster ? | 375 x level of spell x level of caster | |  |
+| Wondrous</p>
+<p>Item  | Craft Wondrous Item  | 5  | x 50 (usually none) | x 50 (usually none)</p>
+<p>x 5 gp | Special, see Table: Estimating Magic Item Gold Price Values, below | Special, see Table: Estimating Magic Item Gold Price Values, below | |  |
+| 1 Rods usable as weapons must include the masterwork weapon cost. | |  |
+| 2 This cost is only for spells activated by the item that have material or XP components. Having a spell with a costly component as a prerequisite does not automatically incur this cost if the item doesn't actually cast the spell.  | |  |
+| 3 If purchasing a staff, the buyer pays 5 x the XP value in gold pieces. | |  |
+| 4 A character creating an item pays 1/25 the base price in experience points. | |  |
+| 5 Some items have additional value from a masterwork item component.  | |  |
+| An item's market price is the sum of the item cost, spell component costs, and the base price. | |  |</p>
+<p>| Table: Estimating Magic Item Gold Piece Values | |  |
+| Effect  | Base Price  | Example | |  |
+| Ability bonus (enhancement)  | Bonus squared  x 1,000 gp  | Gloves of Dexterity +2 | |  |
+| Armor bonus (enhancement)  | Bonus squared  x 1,000 gp  | +1 chainmail | |  |
+| Bonus spell  | Spell level squared  x 1,000 gp  | Pearl of power | |  |
+| AC bonus (deflection)  | Bonus squared  x 2,000 gp  | Ring of protection +3 | |  |
+| AC bonus (other)1  | Bonus squared  x 2,500 gp  | Ioun stone, dusty rose prism | |  |
+| Natural armor bonus (enhancement)  | Bonus squared  x 2,000 gp  | Amulet of natural armor +1 | |  |
+| Save bonus (resistance)  | Bonus squared  x 1,000 gp  | Cloak of resistance +5 | |  |
+| Save bonus (other)1  | Bonus squared  x 2,000 gp  | Stone of good luck | |  |
+| Skill bonus (competence)  | Bonus squared  x 100 gp  | Cloak of elvenkind | |  |
+| Spell resistance  | 10,000 gp per point over SR 12; </p>
+<p>SR 13 minimum  | Mantle of spell resistance | |  |
+| Weapon bonus (enhancement)  | Bonus squared  x 2,000 gp  | +1 longsword | |  |
+| Spell Effect  | Base Price  | Example | |  |
+| Single use, spell completion  | Spell level  x caster level  x 25 gp  | Scroll of haste | |  |
+| Single use, use-activated  | Spell level  x caster level  x 50 gp  | Potion of cure light wounds | |  |
+| 50 charges, spell trigger  | Spell level  x caster level  x 750 gp  | Wand of fireball | |  |
+| Command word  | Spell level  x caster level  x 1,800 gp  | Cape of the mountebank | |  |
+| Use-activated or continuous  | Spell level  x caster level  x 2,000 gp2  | Lantern of revealing | |  |
+| Special  | Base Price Adjustment  | Example | |  |
+| Charges per day  | Divide by (5 divided by charges per day)  | Boots of teleportation | |  |
+| Uncustomary space limitation3  | Multiply entire cost by 1.5  | Helm of teleportation | |  |
+| No space limitation4  | Multiply entire cost by 2  | Ioun stone | |  |
+| Multiple different abilities  | Multiply higher item cost by 2  | Helm of brilliance | |  |
+| Charged (50 charges)  | 1/2 unlimited use base price  | Ring of the ram | |  |
+| Component  | Extra Cost  | Example | |  |
+| Armor, shield, or weapon  | Add cost of masterwork item  | +1 composite longbow | |  |
+| Spell has material component cost  | Add directly into price of item per charge5  | Wand of stoneskin | |  |
+| Spell has XP cost  | Add 5 gp per 1 XP per charge5  | Ring of three wishes | |  |
+| Spell Level: A 0-level spell is half the value of a 1st-level spell for determining price. | |  |
+| 1 Such as a luck, insight, sacred, or profane bonus. | |  |
+| 2 If a continuous item has an effect based on a spell with a duration measured in rounds, multiply the cost by 4. If the duration of the spell is 1 minute/level, multiply the cost by 2, and if the duration is 10 minutes/level, multiply the cost by 1.5. If the spell has a 24-hour duration or greater, divide the cost in half. | |  |
+| 3 See Body Slot Affinities, below. | |  |
+| 4 An item that does not take up one of the spaces on a body costs double. | |  |
+| 5 If item is continuous or unlimited, not charged, determine cost as if it had 100 charges. If it has some daily limit, determine as if it had 50 charges. | |  |</p>
+<p>MAGIC ITEM GOLD PIECE VALUES</p>
+<p>Many factors must be considered when determining the price of new magic items. The easiest way to come up with a price is to match the new item to an item that is already priced that price as a guide. Otherwise, use the guidelines summarized on Table: Estimating Magic Item Gold Piece Values.</p>
+<p>Multiple Similar Abilities: For items with multiple similar abilities that don't take up space on a character's body use the following formula: Calculate the price of the single most costly ability, then add 75% of the value of the next most costly ability, plus one-half the value of any other abilities.</p>
+<p>Multiple Different Abilities: Abilities such as an attack roll bonus or saving throw bonus and a spell-like function are not similar, and their values are simply added together to determine the cost. For items that do take up a space on a character's body each additional power not only has no discount but instead has a 50% increase in price.</p>
+<p>0-Level Spells: When multiplying spell levels to determine value, 0- level spells should be treated as 1/2 level.</p>
+<p>Other Considerations: Once you have a final cost figure, reduce that number if either of the following conditions applies:</p>
+<p>--Item Requires Skill to Use: Some items require a specific skill to get them to function. This factor should reduce the cost about 10%.</p>
+<p>--Item Requires Specific Class or Alignment to Use: Even more restrictive than requiring a skill, this limitation cuts the cost by 30%.</p>
+<p>Prices presented in the magic item descriptions (the gold piece value following the item's caster level) are the market value, which is generally twice what it costs the creator to make the item.</p>
+<p>Since different classes get access to certain spells at different levels, the prices for two characters to make the same item might actually be different. An item is only worth two times what the caster of lowest possible level can make it for. Calculate the market price based on the lowest possible level caster, no matter who makes the item.</p>
+<p>Not all items adhere to these formulas directly. The reasons for this are several. First and foremost, these few formulas aren't enough to truly gauge the exact differences between items. The price of a magic item may be modified based on its actual worth. The formulas only provide a starting point. The pricing of scrolls assumes that, whenever possible, a wizard or cleric created it. Potions and wands follow the formulas exactly. Staffs follow the formulas closely, and other items require at least some judgment calls.</p>
+<p>MASTERWORK ITEMS</p>
+<p>Masterwork items are extraordinarily well-made items. They are more expensive, but they benefit the user with improved quality. They are not magical in any way. However, only masterwork items may be enhanced to become magic armor and weapons. (Items that are not weapons or armor may or may not be masterwork items.)</p>
+<p>CREATING MAGIC ARMOR</p>
+<p>To create magic armor, a character needs a heat source and some iron, wood, or leatherworking tools. He also needs a supply of materials, the most obvious being the armor or the pieces of the armor to be assembled. Armor to be made into magic armor must be masterwork armor, and the masterwork cost is added to the base price to determine final market value. Additional magic supplies costs for the materials are subsumed in the cost for creating the magic armor--half the base price of the item.</p>
+<p>Creating magic armor has a special prerequisite: The creator's caster level must be at least three times the enhancement bonus of the armor. If an item has both an enhancement bonus and a special ability, the higher of the two caster level requirements must be met.</p>
+<p>Magic armor or a magic shield must have at least a +1 enhancement bonus to have any of the abilities listed on Table: Armor Special Abilities and Table: Shield Special Abilities.</p>
+<p>If spells are involved in the prerequisites for making the armor, the creator must have prepared the spells to be cast (or must know the spells, in the case of a sorcerer or bard), must provide any material components or focuses the spells require, and must pay any XP costs required for the spells. The act of working on the armor triggers the prepared spells, making them unavailable for casting during each day of the armor's creation. (That is, those spell slots are expended from his currently prepared spells, just as if they had been cast.)</p>
+<p>Creating some armor may entail other prerequisites beyond or other than spellcasting. See the individual descriptions for details.</p>
+<p>Crafting magic armor requires one day for each 1,000 gp value of the base price.</p>
+<p>Item Creation Feat Required: Craft Magic Arms and Armor.</p>
+<p>CREATING MAGIC WEAPONS</p>
+<p>To create a magic weapon, a character needs a heat source and some iron, wood, or leatherworking tools. She also needs a supply of materials, the most obvious being the weapon or the pieces of the weapon to be assembled. Only a masterwork weapon can become a magic weapon, and the masterwork cost is added to the total cost to determine final market value. Additional magic supplies costs for the materials are subsumed in the cost for creating the magic weapon--half the base price given on Table: Weapons, according to the weapon's total effective bonus.</p>
+<p>Creating a magic weapon has a special prerequisite: The creator's caster level must be at least three times the enhancement bonus of the weapon. If an item has both an enhancement bonus and a special ability the higher of the two caster level requirements must be met.</p>
+<p>A magic weapon must have at least a +1 enhancement bonus to have any of the abilities listed on Table: Melee Weapon Special Abilities or Table Ranged Weapon Special Abilities.</p>
+<p>If spells are involved in the prerequisites for making the weapon, the creator must have prepared the spells to be cast (or must know the spells, in the case of a sorcerer or bard) but need not provide any material components or focuses the spells require, nor are any XP costs inherent in a prerequisite spell incurred in the creation of the item. The act of working on the weapon triggers the prepared spells, making them unavailable for casting during each day of the weapon's creation. (That is, those spell slots are expended from his currently prepared spells, just as if they had been cast.)</p>
+<p>At the time of creation, the creator must decide if the weapon glows or not as a side-effect of the magic imbued within it. This decision does not affect the price or the creation time, but once the item is finished, the decision is binding.</p>
+<p>Creating magic double-headed weapons is treated as creating two weapons when determining cost, time, XP, and special abilities.</p>
+<p>Creating some weapons may entail other prerequisites beyond or other than spellcasting. See the individual descriptions for details.</p>
+<p>Crafting a magic weapon requires one day for each 1,000 gp value of the base price.</p>
+<p>Item Creation Feat Required: Craft Magic Arms and Armor.</p>
+<p>CREATING POTIONS</p>
+<p>The creator of a potion needs a level working surface and at least a few containers in which to mix liquids, as well as a source of heat to boil the brew. In addition, he needs ingredients. The costs for materials and ingredients are subsumed in the cost for brewing the potion--25 gp x? the level of the spell x ?the level of the caster.</p>
+<p>All ingredients and materials used to brew a potion must be fresh and unused. The character must pay the full cost for brewing each potion. (Economies of scale do not apply.)</p>
+<p>The imbiber of the potion is both the caster and the target. Spells with a range of personal cannot be made into potions.</p>
+<p>The creator must have prepared the spell to be placed in the potion (or must know the spell, in the case of a sorcerer or bard) and must provide any material component or focus the spell requires.</p>
+<p>If casting the spell would reduce the caster's XP total, he pays the XP cost upon beginning the brew in addition to the XP cost for making the potion itself. Material components are consumed when he begins working, but a focus is not. (A focus used in brewing a potion can be reused.) The act of brewing triggers the prepared spell, making it unavailable for casting until the character has rested and regained spells. (That is, that spell slot is expended from his currently prepared spells, just as if it had been cast.) Brewing a potion requires one day.</p>
+<p>Item Creation Feat Required: Brew Potion.</p>
+<p>| Potion Base Prices (By Brewer's Class) | |  |
+| Spell Level | Clr, Drd, Wiz | Sor | Brd | Pal, Rgr* | |  |
+| 0 | 25 gp | 25 gp | 25 gp | -- | |  |
+| 1st | 50 gp | 50 gp | 100 gp | 100 gp | |  |
+| 2nd | 300 gp | 400 gp | 400 gp | 400 gp | |  |
+| 3rd | 750 gp | 900 gp | 1,050 gp | 750 gp | |  |
+| * Caster level is half class level. | |  |
+| Prices assume that the potion was made at the minimum caster level. | |  |</p>
+<p>| Base Cost to Brew a Potion (By Brewer's Class) | |  |
+| Spell Level | Clr, Drd, Wiz | Sor | Brd | Pal, Rgr* | |  |
+| 0 | 12 gp 5 sp</p>
+<p>+1 XP | 12 gp 5 sp</p>
+<p>+1 XP | 12 gp 5 sp</p>
+<p>+1 XP | -- | |  |
+| 1st | 25 gp</p>
+<p>+2 XP | 25 gp</p>
+<p>+2 XP | 50 gp</p>
+<p>+4 XP | 50 gp</p>
+<p>+4 XP | |  |
+| 2nd | 150 gp</p>
+<p>+12 XP | 200 gp</p>
+<p>+16 XP | 200 gp</p>
+<p>+16 XP | 200 gp</p>
+<p>+16 XP | |  |
+| 3rd | 375 gp</p>
+<p>+30 XP | 450 gp</p>
+<p>+36 XP | 525 gp</p>
+<p>+42 XP | 375 gp</p>
+<p>+30 XP | |  |
+| * Caster level is half class level. | |  |
+| Costs assume that the creator makes the potion at the minimum caster level. | |  |</p>
+<p>CREATING RINGS</p>
+<p>To create a magic ring, a character needs a heat source. He also needs a supply of materials, the most obvious being a ring or the pieces of the ring to be assembled. The cost for the materials is subsumed in the cost for creating the ring. Ring costs are difficult to formularize. Refer to Table: Estimating Magic Item Gold Piece Values and use the ring prices in the ring descriptions as a guideline. Creating a ring generally costs half the ring's market price.</p>
+<p>Rings that duplicate spells with costly material or XP components add in the value of 50 x the spell's component cost. Having a spell with a costly component as a prerequisite does not automatically incur this cost. The act of working on the ring triggers the prepared spells, making them unavailable for casting during each day of the ring's creation. (That is, those spell slots are expended from his currently prepared spells, just as if they had been cast.)</p>
+<p>Creating some rings may entail other prerequisites beyond or other than spellcasting. See the individual descriptions for details.</p>
+<p>Forging a ring requires one day for each 1,000 gp of the base price.</p>
+<p>Item Creation Feat Required: Forge Ring.</p>
+<p>CREATING RODS</p>
+<p>To create a magic rod, a character needs a supply of materials, the most obvious being a rod or the pieces of the rod to be assembled. The cost for the materials is subsumed in the cost for creating the rod. Rod costs are difficult to formularize. Refer to Table: Estimating Magic Item Gold Piece Values and use the rod prices in the rod descriptions as a guideline. Creating a rod costs half the market value listed.</p>
+<p>If spells are involved in the prerequisites for making the rod, the creator must have prepared the spells to be cast (or must know the spells, in the case of a sorcerer or bard) but need not provide any material components or focuses the spells require, nor are any XP costs inherent in a prerequisite spell incurred in the creation of the item. The act of working on the rod triggers the prepared spells, making them unavailable for casting during each day of the rod's creation. (That is, those spell slots are expended from his currently prepared spells, just as if they had been cast.)</p>
+<p>Creating some rods may entail other prerequisites beyond or other than spellcasting. See the individual descriptions for details.</p>
+<p>Crafting a rod requires one day for each 1,000 gp of the base price.</p>
+<p>Item Creation Feat Required: Craft Rod.</p>
+<p>CREATING SCROLLS</p>
+<p>To create a scroll, a character needs a supply of choice writing materials, the cost of which is subsumed in the cost for scribing the scroll--12.5 gp x the level of the spell x the level of the caster.</p>
+<p>All writing implements and materials used to scribe a scroll must be fresh and unused. A character must pay the full cost for scribing each spell scroll no matter how many times she previously has scribed the same spell.</p>
+<p>The creator must have prepared the spell to be scribed (or must know the spell, in the case of a sorcerer or bard) and must provide any material component or focus the spell requires. If casting the spell would reduce the caster's XP total, she pays the cost upon beginning the scroll in addition to the XP cost for making the scroll itself. Likewise, a material component is consumed when she begins writing, but a focus is not. (A focus used in scribing a scroll can be reused.) The act of writing triggers the prepared spell, making it unavailable for casting until the character has rested and regained spells. (That is, that spell slot is expended from her currently prepared spells, just as if it had been cast.)</p>
+<p>Scribing a scroll requires one day per each 1,000 gp of the base price.</p>
+<p>Item Creation Feat Required: Scribe Scroll.</p>
+<p>| Scroll Base Prices (By Scriber's Class) | |  |
+| Spell Level | Clr, Drd, Wiz | Sor | Brd | Pal, Rgr* | |  |
+| 0 | 12 gp 5 sp | 12 gp 5 sp | 12 gp 5 sp | -- | |  |
+| 1st | 25 gp | 25 gp | 50 gp | 50 gp | |  |
+| 2nd | 150 gp | 200 gp | 200 gp | 200 gp | |  |
+| 3rd | 375 gp | 450 gp | 525 gp | 375 gp | |  |
+| 4th | 700 gp | 800 gp | 1,000 gp | 700 gp | |  |
+| 5th | 1,125 gp | 1,250 gp | 1,625 gp | -- | |  |
+| 6th | 1,650 gp | 1,800 gp | 2,400 gp | -- | |  |
+| 7th | 2,275 gp | 2,450 gp | -- | -- | |  |
+| 8th | 3,000 gp | 3,200 gp | -- | -- | |  |
+| 9th | 3,825 gp | 4,050 gp | -- | -- | |  |
+| * Caster level is half class level. | |  |
+| Prices assume that the scroll was made at the minimum caster level. | |  |</p>
+<p>| Base Magic Supplies and XP Cost to Scribe a Scroll (By Scriber's Class) | |  |
+| Spell Level | Clr, Drd, Wiz | Sor | Brd | Pal, Rgr* | |  |
+| 0 | 6 gp 2 sp 5 cp</p>
+<p>+1 XP | 6 gp 2 sp 5 cp</p>
+<p>+1 XP | 6 gp 2 sp 5 cp</p>
+<p>+1 XP | -- | |  |
+| 1st | 12 gp 5 sp</p>
+<p>+1 XP | 12 gp 5 sp</p>
+<p>+1 XP | 25 gp</p>
+<p>+1 XP | 25 gp</p>
+<p>+2 XP | |  |
+| 2nd | 75 gp</p>
+<p>+6 XP | 100 gp</p>
+<p>+8 XP | 100 gp</p>
+<p>+8 XP | 100 gp</p>
+<p>+8 XP | |  |
+| 3rd | 187 gp 5 sp</p>
+<p>+15 XP | 225 gp</p>
+<p>+18 XP | 262 gp 5 sp</p>
+<p>+21 XP | 187 gp 5 sp</p>
+<p>+15 XP | |  |
+| 4th | 350 gp</p>
+<p>+28 XP | 400 gp</p>
+<p>+32 XP | 500 gp</p>
+<p>+40 XP | 350 gp</p>
+<p>+28 XP | |  |
+| 5th | 562 gp 5 sp</p>
+<p>+45 XP | 625 gp</p>
+<p>+50 XP | 812 gp 5 sp</p>
+<p>+65 XP | -- | |  |
+| 6th | 826 gp</p>
+<p>+66 XP | 900 gp</p>
+<p>+72 XP | 1,200 gp</p>
+<p>+96 XP | -- | |  |
+| 7th | 1,135 gp 5 sp</p>
+<p>+91 XP | 1,225 gp</p>
+<p>+98 XP | -- | -- | |  |
+| 8th | 1,500 gp</p>
+<p>+120 XP | 1,600 gp</p>
+<p>+128 XP | -- | -- | |  |
+| 9th | 1,912 gp 5 sp</p>
+<p>+153 XP | 2, 025 gp</p>
+<p>+162 XP | -- | -- | |  |
+| * Caster level is half class level. | |  |
+| Costs assume that the creator makes the scroll at the minimum caster level. | |  |</p>
+<p>CREATING STAFFS</p>
+<p>To create a magic staff, a character needs a supply of materials, the most obvious being a staff or the pieces of the staff to be assembled.</p>
+<p>The cost for the materials is subsumed in the cost for creating the staff--375 gp x the level of the highest-level spell x the level of the caster, plus 75% of the value of the next most costly ability (281.25 gp x the level of the spell x the level of the caster), plus one-half of the value of any other abilities (187.5 gp x the level of the spell x the level of the caster). Staffs are always fully charged (50 charges) when created.</p>
+<p>If desired, a spell can be placed into the staff at only half the normal cost, but then activating that particular spell costs 2 charges from the staff. The caster level of all spells in a staff must be the same, and no staff can have a caster level of less than 8th, even if all the spells in the staff are low-level spells.</p>
+<p>The creator must have prepared the spells to be stored (or must know the spell, in the case of a sorcerer or bard) and must provide any focus the spells require as well as material and XP component costs sufficient to activate the spell a maximum number of times (50 divided by the number of charges one use of the spell expends). This is in addition to the XP cost for making the staff itself. Material components are consumed when he begins working, but focuses are not. (A focus used in creating a staff can be reused.) The act of working on the staff triggers the prepared spells, making them unavailable for casting during each day of the staff 's creation. (That is, those spell slots are expended from his currently prepared spells, just as if they had been cast.)</p>
+<p>Creating a few staffs may entail other prerequisites beyond spellcasting. See the individual descriptions for details.</p>
+<p>Crafting a staff requires one day for each 1,000 gp of the base price.</p>
+<p>Item Creation Feat Required: Craft Staff.</p>
+<p>CREATING WANDS</p>
+<p>To create a magic wand, a character needs a small supply of materials, the most obvious being a baton or the pieces of the wand to be assembled. The cost for the materials is subsumed in the cost for creating the wand--375 gp x the level of the spell x the level of the caster. Wands are always fully charged (50 charges) when created.</p>
+<p>The creator must have prepared the spell to be stored (or must know the spell, in the case of a sorcerer or bard) and must provide any focuses the spell requires. Fifty of each needed material component are required, one for each charge. If casting the spell would reduce the caster's XP total, she pays the cost (multiplied by 50) upon beginning the wand in addition to the XP cost for making the wand itself. Likewise, material components are consumed when she begins working, but focuses are not. (A focus used in creating a wand can be reused.) The act of working on the wand triggers the prepared spell, making it unavailable for casting during each day devoted to the wand's creation. (That is, that spell slot is expended from her currently prepared spells, just as if it had been cast.)</p>
+<p>Crafting a wand requires one day per each 1,000 gp of the base price.</p>
+<p>Item Creation Feat Required: Craft Wand.</p>
+<p>| Wand Base Prices (By Crafter's Class) | |  |
+| Spell Level | Clr, Drd, Wiz | Sor | Brd | Pal, Rgr* | |  |
+| 0 | 375 gp | 375 gp | 375 gp | -- | |  |
+| 1st | 750 gp | 750 gp | 1,500 gp | 1,500 gp | |  |
+| 2nd | 4,500 gp | 6,000 gp | 6,000 gp | 6,000 gp | |  |
+| 3rd | 11,250 gp | 13,500 gp | 15,750 gp | 11,250 gp | |  |
+| 4th | 21,000 gp | 24,000 gp | 30,000 gp | 21,000 gp | |  |
+| * Caster level is half class level. | |  |
+| Prices assume that the wand was made at the minimum caster level. | |  |</p>
+<p>| Base Magic Supplies and XP Cost to Craft a Wand (By Crafter's Class) | |  |
+| Spell Level | Clr, Drd, Wiz | Sor | Brd | Pal, Rgr* | |  |
+| 0 | 187 gp 5 sp</p>
+<p>+15 XP | 187 gp 5 sp</p>
+<p>+15 XP | 187 gp 5 sp</p>
+<p>+15 XP | -- | |  |
+| 1st | 375 gp</p>
+<p>+30 XP | 375 gp</p>
+<p>+30 XP | 750 gp</p>
+<p>+60 XP | 750 gp</p>
+<p>+60 XP | |  |
+| 2nd | 2,250 gp</p>
+<p>+180 XP | 3,000 gp</p>
+<p>+240 XP | 3,000 gp</p>
+<p>+240 XP | 3,000 gp</p>
+<p>+240 XP | |  |
+| 3rd | 5,625 gp</p>
+<p>+450 XP | 6,750 gp</p>
+<p>+540 XP | 7,875 gp</p>
+<p>+630 XP | 5,625 gp</p>
+<p>+450 XP | |  |
+| 4th | 10,500 gp</p>
+<p>+840 XP | 12,000 gp</p>
+<p>+960 XP | 15,000 gp</p>
+<p>+1200 XP | 10,500 gp</p>
+<p>+840 XP | |  |
+| * Caster level is half class level. | |  |
+| Costs assume that the creator makes the wand at the minimum caster level. | |  |</p>
+<p>CREATING WONDROUS ITEMS</p>
+<p>To create a wondrous item, a character usually needs some sort of equipment or tools to work on the item. She also needs a supply of materials, the most obvious being the item itself or the pieces of the item to be assembled. The cost for the materials is subsumed in the cost for creating the item. Wondrous item costs are difficult to formularize. Refer to Table: Estimating Magic Item Gold Piece Values and use the item prices in the item descriptions as a guideline. Creating an item costs half the market value listed.</p>
+<p>If spells are involved in the prerequisites for making the item, the creator must have prepared the spells to be cast (or must know the spells, in the case of a sorcerer or bard) but need not provide any material components or focuses the spells require, nor are any XP costs inherent in a prerequisite spell incurred in the creation of the item. The act of working on the item triggers the prepared spells, making them unavailable for casting during each day of the item's creation. (That is, those spell slots are expended from his currently prepared spells, just as if they had been cast.)</p>
+<p>Creating some items may entail other prerequisites beyond or other than spellcasting. See the individual descriptions for details.</p>
+<p>Crafting a wondrous item requires one day for each 1,000 gp of the base price.</p>
+<p>Item Creation Feat Required: Craft Wondrous Item.</p>
+<p>INTELLIGENT ITEM CREATION</p>
+<p>To create an intelligent item, a character must have a caster level of 15th or higher. Time and creation cost are based on the normal item creation rules, with the market price values on Table: Item Intelligence, Wisdom, Charisma, and Capabilities treated as additions to time, gp cost, and XP cost. The item's alignment is the same as its creator's. Determine other features randomly, following the guidelines in the relevant section.</p>
+<p>ADDING NEW ABILITIES</p>
+<p>A creator can add new magical abilities to a magic item with no restrictions. The cost to do this is the same as if the item was not magical. Thus, a +1 longsword can be made into a +2 vorpal longsword, with the cost to create it being equal to that of a +2 vorpal sword minus the cost of a +1 sword.</p>
+<p>If the item is one that occupies a specific place on a character's body the cost of adding any additional ability to that item increases by 50%. For example, if a character adds the power to confer invisibility to her ring of protection +2, the cost of adding this ability is the same as for creating a ring of invisibility multiplied by 1.5.</p>
+<p>BODY SLOT AFFINITIES</p>
+<p>Each location on the body, or body slot, has one or more affinities: a word or phrase that describes the general function or nature of magic items designed for that body slot. Body slot affinities are deliberately broad, abstract categorizations, because a hard-and-fast rule can't cover the great variety among wondrous items.</p>
+<p>You can use the affinities in the list below to guide your decisions on which magic items should be allowed in which body slots. And when you design your own magic items, the affinities give you some guidance for what form a particular item should take.</p>
+<p>Some body slots have different affinities for different specific items. </p>
+<p>| Body Slot | Affinity | |  |
+| Headband, helmet | Mental improvement, ranged attacks | |  |
+| Hat | Interaction | |  |
+| Phylactery | Morale, alignment | |  |
+| Eye lenses, goggles | Vision | |  |
+| Cloak, cape, mantle | Transformation, protection | |  |
+| Amulet, brooch, medallion, necklace, periapt, scarab | Protection, discernment | |  |
+| Robe  | Multiple effects | |  |
+| Shirt  | Physical improvement | |  |
+| Vest, vestment  | Class ability improvement | |  |
+| Bracers  | Combat | |  |
+| Bracelets  | Allies | |  |
+| Gloves  | Quickness | |  |
+| Gauntlets  | Destructive power | |  |
+| Belt  | Physical improvement | |  |
+| Boots  | Movement | |  |
+Wondrous items that don't match the affinity for a particular body slot should cost 50% more than wondrous items that match the affinity.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../equipment/wondrous_items.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../equipment/intelligent_magic_items.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../equipment/wondrous_items.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../equipment/intelligent_magic_items.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
