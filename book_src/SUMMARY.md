@@ -60,7 +60,25 @@
   * [Use Magic Device](skills/use_magic_device.md)
   * [Use Rope](skills/use_rope.md)
 * [Feats](feats.md)
-<!-- TODO: Equipment -->
+* [Equipment](equipment/index.md)
+  * [Weapons](equipment/weapons.md)
+  * [Armor](equipment/armor.md)
+  * [Goods And Services](equipment/goods_and_services.md)
+  * [Special Materials](equipment/special_materials.md)
+  * [Magic Item Basics](equipment/magic_item_basics.md)
+  * [Magic Weapons](equipment/magic_weapons.md)
+  * [Magic Armor](equipment/magic_armor.md)
+  * [Potions](equipment/potions.md)
+  * [Scrolls](equipment/scrolls.md)
+  * [Wands](equipment/wands.md)
+  * [Staffs](equipment/staffs.md)
+  * [Rods](equipment/rods.md)
+  * [Rings](equipment/rings.md)
+  * [Wondrous Items](equipment/wondrous_items.md)
+  * [Magic Item Creation](equipment/magic_item_creation.md)
+  * [Intelligent Magic Items](equipment/intelligent_magic_items.md)
+  * [Cursed Magic Items](equipment/cursed_magic_items.md)
+  * [Artifacts](equipment/artifacts.md)
 <!-- TODO: Magic -->
 <!-- TODO: Exploration -->
 <!-- TODO: Combat -->
