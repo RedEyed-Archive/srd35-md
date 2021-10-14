@@ -1,4 +1,4 @@
-CREATING MAGIC ITEMS
+# Magic Item Creation
 
 To create magic items, spellcasters use special feats. They invest time, money, and their own personal energy (in the form of experience points) in an item's creation.
 
@@ -95,22 +95,20 @@ SR 13 minimum  | Mantle of spell resistance | |  |
 | 4 An item that does not take up one of the spaces on a body costs double. | |  |
 | 5 If item is continuous or unlimited, not charged, determine cost as if it had 100 charges. If it has some daily limit, determine as if it had 50 charges. | |  |
 
-
-MAGIC ITEM GOLD PIECE VALUES
+## Magic Item Gold Piece Values
 
 Many factors must be considered when determining the price of new magic items. The easiest way to come up with a price is to match the new item to an item that is already priced that price as a guide. Otherwise, use the guidelines summarized on Table: Estimating Magic Item Gold Piece Values.
 
-Multiple Similar Abilities: For items with multiple similar abilities that don't take up space on a character's body use the following formula: Calculate the price of the single most costly ability, then add 75% of the value of the next most costly ability, plus one-half the value of any other abilities.
+**Multiple Similar Abilities:** For items with multiple similar abilities that don't take up space on a character's body use the following formula: Calculate the price of the single most costly ability, then add 75% of the value of the next most costly ability, plus one-half the value of any other abilities.
 
-Multiple Different Abilities: Abilities such as an attack roll bonus or saving throw bonus and a spell-like function are not similar, and their values are simply added together to determine the cost. For items that do take up a space on a character's body each additional power not only has no discount but instead has a 50% increase in price.
+**Multiple Different Abilities:** Abilities such as an attack roll bonus or saving throw bonus and a spell-like function are not similar, and their values are simply added together to determine the cost. For items that do take up a space on a character's body each additional power not only has no discount but instead has a 50% increase in price.
 
-0-Level Spells: When multiplying spell levels to determine value, 0- level spells should be treated as 1/2 level.
+**0th-Level Spells:** When multiplying spell levels to determine value, 0- level spells should be treated as 1/2 level.
 
-Other Considerations: Once you have a final cost figure, reduce that number if either of the following conditions applies:
+**Other Considerations:** Once you have a final cost figure, reduce that number if either of the following conditions applies:
 
---Item Requires Skill to Use: Some items require a specific skill to get them to function. This factor should reduce the cost about 10%.
-
---Item Requires Specific Class or Alignment to Use: Even more restrictive than requiring a skill, this limitation cuts the cost by 30%.
+* Item Requires Skill to Use: Some items require a specific skill to get them to function. This factor should reduce the cost about 10%.
+* Item Requires Specific Class or Alignment to Use: Even more restrictive than requiring a skill, this limitation cuts the cost by 30%.
 
 Prices presented in the magic item descriptions (the gold piece value following the item's caster level) are the market value, which is generally twice what it costs the creator to make the item.
 
@@ -118,15 +116,11 @@ Since different classes get access to certain spells at different levels, the pr
 
 Not all items adhere to these formulas directly. The reasons for this are several. First and foremost, these few formulas aren't enough to truly gauge the exact differences between items. The price of a magic item may be modified based on its actual worth. The formulas only provide a starting point. The pricing of scrolls assumes that, whenever possible, a wizard or cleric created it. Potions and wands follow the formulas exactly. Staffs follow the formulas closely, and other items require at least some judgment calls.
 
-
-
-MASTERWORK ITEMS
+## Masterwork Items
 
 Masterwork items are extraordinarily well-made items. They are more expensive, but they benefit the user with improved quality. They are not magical in any way. However, only masterwork items may be enhanced to become magic armor and weapons. (Items that are not weapons or armor may or may not be masterwork items.)
 
-
-
-CREATING MAGIC ARMOR
+## Creating Magic Armor
 
 To create magic armor, a character needs a heat source and some iron, wood, or leatherworking tools. He also needs a supply of materials, the most obvious being the armor or the pieces of the armor to be assembled. Armor to be made into magic armor must be masterwork armor, and the masterwork cost is added to the base price to determine final market value. Additional magic supplies costs for the materials are subsumed in the cost for creating the magic armor--half the base price of the item.
 
@@ -142,9 +136,7 @@ Crafting magic armor requires one day for each 1,000 gp value of the base price.
 
 Item Creation Feat Required: Craft Magic Arms and Armor.
 
-
-
-CREATING MAGIC WEAPONS
+## Creating Magic Weapons
 
 To create a magic weapon, a character needs a heat source and some iron, wood, or leatherworking tools. She also needs a supply of materials, the most obvious being the weapon or the pieces of the weapon to be assembled. Only a masterwork weapon can become a magic weapon, and the masterwork cost is added to the total cost to determine final market value. Additional magic supplies costs for the materials are subsumed in the cost for creating the magic weapon--half the base price given on Table: Weapons, according to the weapon's total effective bonus.
 
@@ -164,9 +156,7 @@ Crafting a magic weapon requires one day for each 1,000 gp value of the base pri
 
 Item Creation Feat Required: Craft Magic Arms and Armor.
 
-
-
-CREATING POTIONS
+## Creating Potions
 
 The creator of a potion needs a level working surface and at least a few containers in which to mix liquids, as well as a source of heat to boil the brew. In addition, he needs ingredients. The costs for materials and ingredients are subsumed in the cost for brewing the potion--25 gp x? the level of the spell x ?the level of the caster.
 
@@ -229,8 +219,7 @@ Item Creation Feat Required: Brew Potion.
 | * Caster level is half class level. | |  |
 | Costs assume that the creator makes the potion at the minimum caster level. | |  |
 
-
-CREATING RINGS
+## Creating Rings
 
 To create a magic ring, a character needs a heat source. He also needs a supply of materials, the most obvious being a ring or the pieces of the ring to be assembled. The cost for the materials is subsumed in the cost for creating the ring. Ring costs are difficult to formularize. Refer to Table: Estimating Magic Item Gold Piece Values and use the ring prices in the ring descriptions as a guideline. Creating a ring generally costs half the ring's market price.
 
@@ -242,9 +231,7 @@ Forging a ring requires one day for each 1,000 gp of the base price.
 
 Item Creation Feat Required: Forge Ring.
 
-
-
-CREATING RODS
+## Creating Rods
 
 To create a magic rod, a character needs a supply of materials, the most obvious being a rod or the pieces of the rod to be assembled. The cost for the materials is subsumed in the cost for creating the rod. Rod costs are difficult to formularize. Refer to Table: Estimating Magic Item Gold Piece Values and use the rod prices in the rod descriptions as a guideline. Creating a rod costs half the market value listed.
 
@@ -256,9 +243,7 @@ Crafting a rod requires one day for each 1,000 gp of the base price.
 
 Item Creation Feat Required: Craft Rod.
 
-
-
-CREATING SCROLLS
+## Creating Scrolls
 
 To create a scroll, a character needs a supply of choice writing materials, the cost of which is subsumed in the cost for scribing the scroll--12.5 gp x the level of the spell x the level of the caster.
 
@@ -363,8 +348,7 @@ Item Creation Feat Required: Scribe Scroll.
 | * Caster level is half class level. | |  |
 | Costs assume that the creator makes the scroll at the minimum caster level. | |  |
 
-
-CREATING STAFFS
+## Creating Staffs
 
 To create a magic staff, a character needs a supply of materials, the most obvious being a staff or the pieces of the staff to be assembled.
 
@@ -380,9 +364,7 @@ Crafting a staff requires one day for each 1,000 gp of the base price.
 
 Item Creation Feat Required: Craft Staff.
 
-
-
-CREATING WANDS
+## Creating Wands
 
 To create a magic wand, a character needs a small supply of materials, the most obvious being a baton or the pieces of the wand to be assembled. The cost for the materials is subsumed in the cost for creating the wand--375 gp x the level of the spell x the level of the caster. Wands are always fully charged (50 charges) when created.
 
@@ -453,8 +435,7 @@ Item Creation Feat Required: Craft Wand.
 | * Caster level is half class level. | |  |
 | Costs assume that the creator makes the wand at the minimum caster level. | |  |
 
-
-CREATING WONDROUS ITEMS
+## Creating Wondrous Items
 
 To create a wondrous item, a character usually needs some sort of equipment or tools to work on the item. She also needs a supply of materials, the most obvious being the item itself or the pieces of the item to be assembled. The cost for the materials is subsumed in the cost for creating the item. Wondrous item costs are difficult to formularize. Refer to Table: Estimating Magic Item Gold Piece Values and use the item prices in the item descriptions as a guideline. Creating an item costs half the market value listed.
 
@@ -466,23 +447,17 @@ Crafting a wondrous item requires one day for each 1,000 gp of the base price.
 
 Item Creation Feat Required: Craft Wondrous Item.
 
-
-
-INTELLIGENT ITEM CREATION
+## Intelligent Item Creation
 
 To create an intelligent item, a character must have a caster level of 15th or higher. Time and creation cost are based on the normal item creation rules, with the market price values on Table: Item Intelligence, Wisdom, Charisma, and Capabilities treated as additions to time, gp cost, and XP cost. The item's alignment is the same as its creator's. Determine other features randomly, following the guidelines in the relevant section.
 
-
-
-ADDING NEW ABILITIES
+## Adding New Abilities
 
 A creator can add new magical abilities to a magic item with no restrictions. The cost to do this is the same as if the item was not magical. Thus, a +1 longsword can be made into a +2 vorpal longsword, with the cost to create it being equal to that of a +2 vorpal sword minus the cost of a +1 sword.
 
 If the item is one that occupies a specific place on a character's body the cost of adding any additional ability to that item increases by 50%. For example, if a character adds the power to confer invisibility to her ring of protection +2, the cost of adding this ability is the same as for creating a ring of invisibility multiplied by 1.5.
 
-
-
-BODY SLOT AFFINITIES
+## Body Slot Affinities
 
 Each location on the body, or body slot, has one or more affinities: a word or phrase that describes the general function or nature of magic items designed for that body slot. Body slot affinities are deliberately broad, abstract categorizations, because a hard-and-fast rule can't cover the great variety among wondrous items.
 

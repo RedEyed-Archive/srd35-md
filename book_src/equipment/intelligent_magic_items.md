@@ -1,10 +1,4 @@
-This material is Open Game Content, and is licensed for public use under the terms of the Open Game License v1.0a.
-
-MAGIC ITEMS VI (INTELLIGENT, CURSED, & ARTIFACTS)
-
-
-
-INTELLIGENT ITEMS
+# Intelligent Items
 
 Magic items sometimes have intelligence of their own. Magically imbued with sentience, these items think and feel the same way characters do and should be treated as NPCs. Intelligent items have extra abilities and sometimes extraordinary powers and special purposes. Only permanent magic items (as opposed to single-use items or those with charges) can be intelligent. (This means that potions, scrolls, and wands, among other items, are never intelligent.) In general, less than 1% of magic items have intelligence.
 
@@ -12,9 +6,7 @@ Intelligent items can actually be considered creatures because they have Intelli
 
 Unlike most magic items, intelligent items can activate their own powers without waiting for a command word from their owner. Intelligent items act during their owner's turn in the initiative order.
 
-
-
-INTELLIGENT ITEM ALIGNMENT
+## Intelligent Item Alignment
 
 Any item with intelligence has an alignment. Note that intelligent weapons already have alignments, either stated or by implication.  If you're generating a random intelligent weapon, that weapon's alignment must fit with any alignment-oriented special abilities it has.
 
@@ -23,77 +15,45 @@ Any character whose alignment does not correspond to that of the item (except as
 | Intelligent Item Alignment | |  |
 | d% | | Alignment of Item | |  |
 | 01-05 | | Chaotic good | |  |
-| 06-15 | | Chaotic neutral* | |  |
+| 06-15 | | Chaotic neutral\* | |  |
 | 16-20 | | Chaotic evil | |  |
-| 21-25 | | Neutral evil* | |  |
+| 21-25 | | Neutral evil\* | |  |
 | 26-30 | | Lawful evil | |  |
 | 31-55 | | Lawful good | |  |
-| 56-60 | | Lawful neutral* | |  |
-| 61-80 | | Neutral good* | |  |
+| 56-60 | | Lawful neutral\* | |  |
+| 61-80 | | Neutral good\* | |  |
 | 81-100 | | Neutral | |  |
-| * The item can also be used by any character whose alignment corresponds to the nonneutral portion of the item's alignment. | |  |
 
+\* The item can also be used by any character whose alignment corresponds to the nonneutral portion of the item's alignment.
 
-LANGUAGES SPOKEN BY ITEM
+## Languages Spoken By Item
 
 Like a character, an intelligent item speaks Common plus one additional language per point of Intelligence bonus. Choose appropriate languages, taking into account the item's origin and purposes.
 
-
-
 | Table: Item Intelligence, Wisdom, Charisma, and Capabilities | |  |
 | d% | | Mental Ability Scores | Communication | | Capabilities | | Senses | | Base Price Modifier | |  |
-| 01-34 | | Two at 12,
-
-one at 10 | Empathy1 | One lesser power | 30 ft. vision and hearing | | +1,000 gp | |  |
-| 35-59 | | Two at 13,
-
-one at 10 | Empathy1 | Two lesser powers | 60 ft. vision and hearing | | +2,000 gp | |  |
-| 60-79 | | Two at 14,
-
-one at 10 | Speech2 | Two lesser powers | 120 ft. vision and hearing | | +4,000 gp | |  |
-| 80-91 | | Two at 15,
-
-one at 10 | Speech2 | Three lesser powers | 60 ft. darkvision 
-
-and hearing | | +5,000 gp | |  |
-| 92-97 | | Two at 16,
-
-one at 10 | Speech2 3 | Three lesser powers | 60 ft. darkvision 
-
-and hearing | | +6,000 gp | |  |
-| 98 | | Two at 17,
-
-one at 10 | Speech, telepathy 3 4 | Three lesser powers 
-
-and one greater power6 | 120 ft. darkvision 
-
-and hearing | | +9,000 gp | |  |
-| 99 | | Two at 18,
-
-one at 10 | Speech, telepathy 4 5 | Three lesser powers 
-
-and two greater powers6 | 120 ft. darkvision, blindsense, and hearing | | +12,000 gp | |  |
-| 100 | | Two at 19,
-
-one at 10 | Speech, telepathy 4 5 | Four lesser powers 
-
-and three greater powers6 | 120 ft. darkvision, blindsense, and hearing | | +15,000 gp | |  |
+| 01-34 | | Two at 12, one at 10 | Empathy1 | One lesser power | 30 ft. vision and hearing | | +1,000 gp | |  |
+| 35-59 | | Two at 13, one at 10 | Empathy1 | Two lesser powers | 60 ft. vision and hearing | | +2,000 gp | |  |
+| 60-79 | | Two at 14, one at 10 | Speech2 | Two lesser powers | 120 ft. vision and hearing | | +4,000 gp | |  |
+| 80-91 | | Two at 15, one at 10 | Speech2 | Three lesser powers | 60 ft. darkvision and hearing | | +5,000 gp | |  |
+| 92-97 | | Two at 16, one at 10 | Speech2 3 | Three lesser powers | 60 ft. darkvision and hearing | | +6,000 gp | |  |
+| 98 | | Two at 17, one at 10 | Speech, telepathy 3 4 | Three lesser powers and one greater power6 | 120 ft. darkvision and hearing | | +9,000 gp | |  |
+| 99 | | Two at 18, one at 10 | Speech, telepathy 4 5 | Three lesser powers and two greater powers6 | 120 ft. darkvision, blindsense, and hearing | | +12,000 gp | |  |
+| 100 | | Two at 19, one at 10 | Speech, telepathy 4 5 | Four lesser powers and three greater powers6 | 120 ft. darkvision, blindsense, and hearing | | +15,000 gp | |  |
 | 1 The possessor feels urges and sometimes emotions from the item that encourage or discourage certain courses of action. | |  |
 | 2 Like a character, an intelligent item speaks Common plus one language per point of Intelligence bonus. It can communicate telepathically withthe wielder. | |  |
-| 3 The item can also read any languages it can speak. | |  |
-| 4 The item can use either communication mode at will, with language use as any speaking item. It can communicate telepathically with the wielder. | |  |
-| 5 The item can read all languages as well as use read magic. | |  |
-| 6 The intelligent item can have a special purpose (and corresponding dedicated power) rather than a greater power, if appropriate. | |  |
 
+3) The item can also read any languages it can speak. | |  |
+4) The item can use either communication mode at will, with language use as any speaking item. It can communicate telepathically with the wielder. | |  |
+5) The item can read all languages as well as use read magic. | |  |
+6) The intelligent item can have a special purpose (and corresponding dedicated power) rather than a greater power, if appropriate. | |  |
 
-INTELLIGENT ITEM POWERS
+## Intelligent Item Powers
 
 The table above determines how many lesser and greater powers an intelligent item has. To find the item's specific powers, choose or roll on the appropriate tables below.
 
 | Intelligent Item Lesser Powers | |  |
-| d% | | Lesser Power | | Base Price
-
-Modifier | |  |
+| d% | | Lesser Power | | Base Price Modifier | |  |
 | 01-05 | | Item can bless its allies 3/day | | +1,000 gp | |  |
 | 06-10 | | Item can use faerie fire 3/day  | | +1,100 gp | |  |
 | 11-13 | | Item can cast minor image 1/day | | +2,200 gp | |  |
@@ -116,6 +76,7 @@ Modifier | |  |
 | 87-89 | | Item can use daze monster 3/day | | +6,500 gp | |  |
 | 90-95 | | Item can use locate object 3/day | | +6,500 gp | |  |
 | 96-100 | | Item can use cure moderate wounds (2d8+3) on wielder 3/day | | +6,500 gp | |  |
+
 All powers function at the direction of the item, although intelligent items generally follow the wishes of their owner. Activating a power or concentrating on an active one is a standard action the item takes.
 
 
@@ -148,8 +109,7 @@ All powers function at the direction of the item, although intelligent items gen
 | 98-100 | | Item can use detect thoughts at will | +44,000 gp | |  |
 | If the same power is rolled twice, roll again. | |  |
 
-
-SPECIAL PURPOSE ITEMS
+## Special Purpose Items
 
 | Intelligent Item Purpose | |  |
 | d% | | Purpose | |  |
@@ -166,18 +126,13 @@ SPECIAL PURPOSE ITEMS
 | 96-100 | | Choose one | |  |
 | * The purpose of the neutral (N) version of this item is to preserve the balance by defeating/slaying powerful beings of the extreme alignments (LG, LE, CG, CE). | |  |
 
-
-Purpose
+### Purpose
 
 An item's purpose must suit the type and alignment of the item and should always be treated reasonably. A purpose of "defeat/slay arcane spellcasters" doesn't mean that the sword forces the wielder to kill every wizard she sees. Nor does it mean that the sword believes it is possible to kill every wizard, sorcerer, and bard in the world. It does mean that the item hates arcane spellcasters and wants to bring the local wizard's cabal to ruin, as well as end the rule of a sorceress-queen in a nearby land. Likewise, a purpose of "defend elves" doesn't mean that if the wielder is an elf, he only wants to help himself. It means that the item wants to be used in furthering the cause of elves, stamping out their enemies and aiding their leaders. A purpose of "defeat/slay all" isn't just a matter of self-preservation. It means that the item won't rest (or let its wielder rest) until it places itself above all others.
 
-
-
-DEDICATED POWER
+## Dedicated Power
 
 A dedicated power operates only when an intelligent item is in pursuit of its special purpose. This determination is always made by the item. It should always be easy and straightforward to see how the ends justify the means. Unlike its other powers, an intelligent item can refuse to use its dedicated power even if the owner is dominant (see Items against Characters, below).
-
-
 
 | Special Purpose Item Dedicated Powers | |  |
 | d% | | Dedicated Power | | Base Price Modifier | |  |
@@ -199,12 +154,9 @@ A dedicated power operates only when an intelligent item is in pursuit of its sp
 | 93-98 | | Item can use waves of exhaustion | | +164,000 gp | |  |
 | 99-100 | | Item can use true resurrection on wielder, once per month | | +200,000 gp | |  |
 
-
-ITEM EGO
+## Item Ego
 
 Ego is a measure of the total power and force of personality that an item possesses. Only after all aspects of an item have been generated can its Ego score be calculated. An item's Ego score helps determine whether the item or the character is dominant in their relationship, as detailed below.
-
-
 
 | Item Ego | |  |
 | Attribute of Item | | Ego Points | |  |
@@ -220,46 +172,30 @@ Ego is a measure of the total power and force of personality that an item posses
 | Each +1 of Wisdom bonus | | 1 | |  |
 | Each +1 of Charisma bonus | | 1 | |  |
 
-
-ITEMS AGAINST CHARACTERS
+## Items Against Characters
 
 When an item has an Ego of its own, it has a will of its own. The item is, of course, absolutely true to its alignment. If the character who possesses the item is not true to that alignment's goals or the item's special purpose, personality conflict--item against character--results. Similarly, any item with an Ego score of 20 or higher always considers itself superior to any character, and a personality conflict results if the possessor does not always agree with the item.
 
 When a personality conflict occurs, the possessor must make a Will saving throw (DC = item's Ego). If the possessor succeeds, she is dominant. If she fails, the item is dominant. Dominance lasts for one day or until a critical situation occurs (such as a major battle, a serious threat to either the item or the character, and so on). Should an item gain dominance, it resists the character's desires and demands concessions such as any of the following.
 
 * Removal of associates or items whose alignment or personality is distasteful to the item.
-
 * The character divesting herself of all other magic items or items of a certain type.
-
 * Obedience from the character so the item can direct where they go for its own purposes.
-
 * Immediate seeking out and slaying of creatures hateful to the item.
-
 * Magical protections and devices to protect the item from molestation when it is not in use.
-
 * That the character carry the item with her on all occasions.
-
 * That the character relinquish the item in favor of a more suitable possessor due to alignment differences or conduct.
 
 In extreme circumstances, the item can resort to even harsher measures, such as the following acts:
 
 * Force its possessor into combat.
-
 * Refuse to strike opponents.
-
 * Strike at its wielder or her associates.
-
 * Force its possessor to surrender to an opponent.
-
 * Cause itself to drop from the character's grasp.
-
-
 
 Naturally, such actions are unlikely when harmony reigns between the character's and item's alignments or when their purposes and personalities are well matched. Even so, an item might wish to have a lesser character possess it in order to easily establish and maintain dominance over him, or a higher-level possessor so as to better accomplish its goals.
 
 All magic items with personalities desire to play an important role in whatever activity is under way, particularly combat. Such items are rivals of each other, even if they are of the same alignment. No intelligent item wants to share its wielder with others. An intelligent item is aware of the presence of any other intelligent item within 60 feet, and most intelligent items try their best to mislead or distract their host so that she ignores or destroys the rival. Of course, alignment might change this sort of behavior. 
 
 Items with personalities are never totally controlled or silenced by the characters who possess them, even though they may never successfully control their possessors. They may be powerless to force their demands but remain undaunted and continue to air their wishes and demands.
-
-
-
